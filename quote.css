@@ -677,75 +677,312 @@
    ========================================================================== */
 .q-receipt {
     max-width: 720px;
-    margin: 0 auto;
+/* ==========================================================================
+   OFFICIAL BRANDED QUOTATION DOCUMENT (Luxury Editorial Layout)
+   ========================================================================== */
+.q-quotation-doc {
+    max-width: 840px;
+    margin: 0 auto 28px;
     background: var(--q-white);
-    border: 1px solid var(--q-gold);
+    border: 1.5px solid var(--q-gold);
     border-radius: var(--q-radius);
-    padding: clamp(24px, 4vw, 40px);
-    box-shadow: var(--q-shadow);
+    padding: clamp(24px, 4vw, 42px);
+    box-shadow: 0 12px 40px rgba(88, 29, 43, 0.08);
+    color: var(--q-charcoal);
+    position: relative;
 }
 
-.q-receipt-header {
-    text-align: center;
-    padding-bottom: 24px;
-    border-bottom: 1px dashed var(--q-border);
+.q-doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid var(--q-maroon);
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+    gap: 20px;
+}
+
+.q-doc-crest {
+    color: var(--q-gold);
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    margin-bottom: 6px;
+}
+
+.q-doc-logo-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--q-maroon);
+    line-height: 1;
+    margin: 0;
+}
+
+.q-doc-logo-sub {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--q-gold-dark);
+    margin-top: 6px;
+}
+
+.q-doc-contact {
+    font-size: 0.76rem;
+    color: var(--q-muted);
+    margin-top: 8px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.q-doc-meta {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.q-doc-type-pill {
+    display: inline-block;
+    background: var(--q-maroon);
+    color: var(--q-white);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    margin-bottom: 8px;
+}
+
+.q-doc-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--q-gold-dark);
+    margin-bottom: 4px;
+}
+
+.q-doc-meta-item {
+    font-size: 0.8rem;
+    color: var(--q-muted);
+    margin-top: 2px;
+}
+
+.q-doc-client-card {
+    background: var(--q-sand-light);
+    border: 1px solid var(--q-sand);
+    border-radius: 8px;
+    padding: 16px 20px;
     margin-bottom: 24px;
 }
 
-.q-receipt-ref {
-    display: inline-block;
-    padding: 4px 14px;
-    border-radius: 20px;
-    background: var(--q-sand-light);
-    color: var(--q-maroon);
+.q-doc-card-title {
+    font-family: 'Cinzel', serif;
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.16em;
+    color: var(--q-maroon);
+    border-bottom: 1px solid rgba(88, 29, 43, 0.12);
+    padding-bottom: 6px;
     margin-bottom: 12px;
 }
 
-.q-receipt-total-label {
+.q-doc-client-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 24px;
+    font-size: 0.84rem;
+}
+
+.q-doc-lbl {
+    color: var(--q-muted);
+    margin-right: 6px;
+}
+
+.q-doc-full-col {
+    grid-column: 1 / -1;
+}
+
+.q-doc-table-wrap {
+    margin-bottom: 24px;
+    overflow-x: auto;
+}
+
+.q-doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.84rem;
+}
+
+.q-doc-table th {
+    background: var(--q-maroon);
+    color: var(--q-white);
+    font-family: 'Cinzel', serif;
     font-size: 0.76rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 11px 14px;
+    text-align: left;
+}
+
+.q-doc-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--q-sand);
+    vertical-align: middle;
+}
+
+.q-doc-subtext {
+    font-size: 0.74rem;
+    color: var(--q-muted);
+    margin-top: 3px;
+    line-height: 1.4;
+}
+
+.q-doc-row-style {
+    background: var(--q-sand-light);
+}
+
+.q-doc-row-addon {
+    background: #FFFDF9;
+}
+
+.q-doc-total-box {
+    background: linear-gradient(135deg, var(--q-sand-light) 0%, #F5ECE0 100%);
+    border: 1.5px solid var(--q-gold);
+    border-radius: 8px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.q-doc-privilege-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--q-maroon);
+    letter-spacing: 0.1em;
+}
+
+.q-doc-total-note {
+    font-size: 0.76rem;
+    color: var(--q-muted);
+    margin-top: 4px;
+}
+
+.q-doc-total-right {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.q-doc-total-lbl {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    font-weight: 700;
     color: var(--q-muted);
 }
 
-.q-receipt-total-val {
-    font-size: clamp(2.4rem, 5vw, 3.4rem);
+.q-doc-total-val {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
     font-weight: 800;
     color: var(--q-maroon);
     line-height: 1.1;
-    margin: 4px 0 10px;
+    margin-top: 2px;
 }
 
-.q-receipt-meta-grid {
+.q-doc-terms-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    border-top: 1px solid var(--q-sand);
+    padding-top: 20px;
+    margin-bottom: 24px;
+}
+
+.q-doc-terms-box {
     background: var(--q-sand-light);
-    border-radius: 8px;
+    border: 1px solid var(--q-sand);
+    border-radius: 6px;
     padding: 14px 18px;
-    margin-bottom: 24px;
-    font-size: 0.82rem;
 }
 
-.q-receipt-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 24px;
-    font-size: 0.88rem;
+.q-doc-box-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--q-maroon);
+    margin-bottom: 10px;
 }
 
-.q-receipt-table td {
-    padding: 10px 0;
-    border-bottom: 1px solid var(--q-sand-light);
+.q-doc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.76rem;
+    color: var(--q-charcoal);
+    line-height: 1.6;
 }
 
-.q-receipt-table td:last-child {
-    text-align: right;
+.q-doc-list li {
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 4px;
+}
+
+.q-doc-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--q-gold);
+    font-weight: bold;
+}
+
+.q-doc-sign-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1.5px solid var(--q-maroon);
+    padding-top: 18px;
+    gap: 20px;
+}
+
+.q-doc-seal {
+    font-size: 0.76rem;
+    color: var(--q-muted);
+}
+
+.q-doc-seal-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--q-maroon);
+    letter-spacing: 0.12em;
+}
+
+.q-doc-sign-block {
+    text-align: right;
+    font-size: 0.76rem;
+    color: var(--q-muted);
+}
+
+.q-doc-sign-line {
+    width: 160px;
+    border-bottom: 1px solid var(--q-border);
+    margin-bottom: 8px;
+    margin-left: auto;
+}
+
+.q-doc-sign-block strong {
+    display: block;
+    color: var(--q-maroon);
+    font-weight: 700;
 }
 
 .q-receipt-actions {
@@ -914,8 +1151,28 @@
     .q-style-grid,
     .q-addons-grid,
     .q-form-grid,
-    .q-receipt-meta-grid {
+    .q-doc-client-grid,
+    .q-doc-terms-grid {
         grid-template-columns: 1fr;
+    }
+
+    .q-doc-header,
+    .q-doc-total-box,
+    .q-doc-sign-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .q-doc-meta,
+    .q-doc-total-right,
+    .q-doc-sign-block {
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .q-doc-sign-line {
+        margin-left: 0;
     }
     
     .q-footer-bar {
@@ -936,5 +1193,68 @@
     .q-btn-next {
         flex-grow: 1;
         justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   PRINT STYLES FOR OFFICIAL BRANDED QUOTATION
+   ========================================================================== */
+@media print {
+    /* Hide everything on the page outside the quotation */
+    body > *:not(.quote-modal-overlay),
+    .quote-modal-overlay > *:not(.quote-modal-dialog),
+    .q-modal-header,
+    .q-stepper,
+    .q-footer-bar,
+    .q-receipt-actions,
+    .q-close-btn,
+    .q-pane:not(#qPane5) {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    body, html {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .quote-modal-overlay {
+        position: static !important;
+        background: none !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    .quote-modal-dialog {
+        max-width: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        display: block !important;
+    }
+
+    .q-body {
+        padding: 0 !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .q-quotation-doc {
+        border: 1.5px solid #D4AF37 !important;
+        box-shadow: none !important;
+        padding: 24px 30px !important;
+        max-width: 800px !important;
+        margin: 0 auto !important;
+        background: #ffffff !important;
+        page-break-inside: avoid !important;
+    }
+
+    @page {
+        size: A4 portrait;
+        margin: 10mm;
     }
 }
