@@ -506,34 +506,52 @@ nav.nav-center a.active::after {
     height: 100%;
     object-fit: cover;
     object-position: center 35%;
-    filter: brightness(0.55) contrast(1.05) saturate(1.15);
-    transform: scale(1.03);
+    filter: brightness(0.92) contrast(1.04) saturate(1.15);
+    transform: scale(1.02);
     transition: transform 10s ease;
 }
 
 .page-hero-banner:hover .hero-bg-img {
-    transform: scale(1.06);
+    transform: scale(1.05);
 }
 
 .hero-bg-scrim {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 80% 70% at 50% 45%, rgba(59, 17, 27, 0.65) 0%, rgba(43, 13, 20, 0.88) 75%, rgba(26, 6, 11, 0.96) 100%),
-        linear-gradient(180deg, rgba(30, 8, 14, 0.5) 0%, rgba(43, 13, 20, 0.8) 100%);
+        radial-gradient(ellipse 95% 85% at 50% 40%, rgba(20, 4, 8, 0.12) 0%, rgba(26, 6, 11, 0.32) 65%, rgba(26, 6, 11, 0.6) 100%),
+        linear-gradient(180deg, rgba(20, 4, 8, 0.2) 0%, rgba(20, 4, 8, 0.08) 45%, rgba(20, 4, 8, 0.45) 100%);
     z-index: 2;
 }
 
 .page-hero-banner .hero-content-wrap {
     position: relative;
     z-index: 5;
-    max-width: 840px;
+    max-width: 860px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: clamp(32px, 5vw, 48px) clamp(24px, 5vw, 52px);
+    border-radius: 8px;
+    background: rgba(26, 6, 11, 0.52);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(197, 160, 89, 0.45);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), inset 0 0 30px rgba(0, 0, 0, 0.25);
 }
 
 .page-hero-banner .section-eyebrow {
     color: var(--gold-subtle);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 18px;
+    background: rgba(10, 2, 4, 0.55);
+    border-radius: 20px;
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    margin-bottom: 16px;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .page-hero-banner .section-eyebrow::before,
@@ -543,33 +561,34 @@ nav.nav-center a.active::after {
 
 .page-hero-banner .hero-page-title {
     font-family: var(--font-title);
-    font-size: clamp(2.4rem, 5.2vw, 4.2rem);
-    font-weight: 600;
-    letter-spacing: 0.12em;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--cream-light);
-    line-height: 1.2;
-    margin-bottom: 16px;
-    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+    color: #FFFFFF;
+    line-height: 1.18;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 4px 20px rgba(0, 0, 0, 0.9);
 }
 
 .page-hero-banner .hero-page-tagline {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    font-size: clamp(1.2rem, 2.2vw, 1.7rem);
     color: var(--gold-subtle);
-    margin-bottom: 18px;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    margin-bottom: 16px;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
 }
 
 .page-hero-banner .hero-page-desc {
-    font-size: clamp(1.02rem, 1.25vw, 1.18rem);
+    font-size: clamp(1.05rem, 1.25vw, 1.2rem);
     line-height: 1.75;
-    color: rgba(251, 247, 240, 0.92);
-    max-width: 660px;
+    color: #FFFFFF;
+    max-width: 680px;
     margin: 0 auto 28px;
     font-weight: 400;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
 }
 
 /* ==========================================================================
