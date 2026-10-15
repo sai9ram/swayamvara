@@ -369,28 +369,27 @@ nav.nav-center a.active::after {
     background: linear-gradient(90deg, transparent, var(--gold-subtle), transparent);
 }
 
-/* Corner Watermark Mandalas */
-.section-mandala-tr {
+/* Corner Watermark Mandalas (Zig-Zag Heirloom Elements) */
+.section-mandala-tr,
+.section-mandala-bl {
     position: absolute;
-    top: -50px;
-    right: -50px;
-    width: clamp(200px, 22vw, 320px);
-    height: clamp(200px, 22vw, 320px);
-    opacity: 0.08;
+    width: clamp(220px, 24vw, 360px);
+    height: clamp(220px, 24vw, 360px);
+    opacity: 0.085;
     pointer-events: none;
     z-index: 1;
+    filter: sepia(0.5) hue-rotate(335deg) saturate(1.8);
+}
+
+.section-mandala-tr {
+    top: -45px;
+    right: -45px;
     animation: rotateSlow 110s linear infinite;
 }
 
 .section-mandala-bl {
-    position: absolute;
-    bottom: -50px;
-    left: -50px;
-    width: clamp(200px, 22vw, 320px);
-    height: clamp(200px, 22vw, 320px);
-    opacity: 0.08;
-    pointer-events: none;
-    z-index: 1;
+    bottom: -45px;
+    left: -45px;
     animation: rotateSlowRev 110s linear infinite;
 }
 
