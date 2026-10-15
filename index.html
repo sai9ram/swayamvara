@@ -2001,6 +2001,103 @@
             }
         }
 
+        /* ---- Services Section CTA Group Alignment ---- */
+        .wedexp-cta-group {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: clamp(48px, 6vw, 72px) auto 0;
+            width: 100%;
+            max-width: 1400px;
+            text-align: center;
+        }
+
+        .wedexp-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-family: var(--font-sans);
+            font-size: 0.74rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 16px 36px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            box-sizing: border-box;
+            min-height: 54px;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .wedexp-cta-btn span {
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .wedexp-cta-btn svg {
+            flex-shrink: 0;
+            transition: transform 0.35s ease;
+        }
+
+        .wedexp-cta-btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        .wedexp-cta-primary {
+            background: linear-gradient(135deg, #641D2D 0%, #3B111B 100%);
+            color: #FBF7F0;
+            border: 1px solid rgba(197, 160, 89, 0.45);
+            box-shadow: 0 10px 28px -6px rgba(100, 29, 45, 0.35);
+        }
+
+        .wedexp-cta-primary:hover {
+            background: linear-gradient(135deg, #7A2437 0%, #4D1623 100%);
+            border-color: rgba(197, 160, 89, 0.85);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 34px -6px rgba(100, 29, 45, 0.5), 0 0 18px rgba(197, 160, 89, 0.25);
+            color: #FBF7F0;
+        }
+
+        .wedexp-cta-secondary {
+            background: transparent;
+            color: #641D2D;
+            border: 1.5px solid rgba(100, 29, 45, 0.35);
+            box-shadow: 0 4px 14px rgba(100, 29, 45, 0.05);
+        }
+
+        .wedexp-cta-secondary:hover {
+            background: rgba(100, 29, 45, 0.08);
+            border-color: #641D2D;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(100, 29, 45, 0.12);
+            color: #641D2D;
+        }
+
+        @media (max-width: 640px) {
+            .wedexp-cta-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 14px;
+                padding: 0 16px;
+                margin-top: 36px;
+            }
+            .wedexp-cta-btn {
+                width: 100%;
+                max-width: 340px;
+                white-space: normal;
+                text-align: center;
+                padding: 15px 22px;
+                font-size: 0.72rem;
+            }
+        }
+
         /* ============================================================
            MAIN PORTFOLIO — SELECTED WEDDINGS ("Stories that stay.")
            ============================================================ */
@@ -5888,7 +5985,7 @@
                     <div class="wedexp-panel-mesh"></div>
                     <span class="wedexp-panel-num">01</span>
                     <div class="wedexp-panel-content">
-                        c <span class="wedexp-panel-eyebrow">Category One</span>
+                        <span class="wedexp-panel-eyebrow">Category One</span>
                         <h3 class="wedexp-panel-heading">Destination<br>Weddings</h3>
                         <div class="wedexp-panel-rule"></div>
                         <p class="wedexp-panel-caption">We travel with you anywhere to take photos.</p>
@@ -5973,23 +6070,23 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- /wedexp-accordion -->
 
-            <!-- Services Section CTA Group -->
-            <div style="text-align: center; margin-top: 48px; position: relative; z-index: 5; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-                <a href="services.html" class="portfolio-cta-btn" style="background: var(--accent-deep); color: var(--cream-light); border-color: var(--accent-deep);">
-                    <span>Explore All Services &amp; Packages</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </a>
-                <a href="#contact" class="portfolio-cta-btn">
-                    <span>Build Your Quote</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </a>
-            </div>
-
+        <!-- Services Section CTA Group -->
+        <div class="wedexp-cta-group">
+            <a href="services.html" class="wedexp-cta-btn wedexp-cta-primary">
+                <span>Explore All Services &amp; Packages</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+            <a href="#contact" class="wedexp-cta-btn wedexp-cta-secondary">
+                <span>Build Your Quote</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
         </div>
     </section>
 
