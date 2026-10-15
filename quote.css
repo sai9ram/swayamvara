@@ -427,7 +427,7 @@
     background: var(--q-white);
     border: 1px solid var(--q-sand);
     border-radius: 8px;
-    padding: 12px 14px;
+    padding: 10px 14px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -435,6 +435,27 @@
     cursor: pointer;
     transition: var(--q-transition);
     user-select: none;
+}
+
+.q-service-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.q-service-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid var(--q-sand);
+    background: #1A070B;
+}
+
+.q-service-btn.selected .q-service-thumb {
+    border-color: rgba(255, 255, 255, 0.35);
 }
 
 .q-service-btn:hover {

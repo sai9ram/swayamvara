@@ -6,7 +6,7 @@
 (function () {
     'use strict';
 
-    // 1. Reference Ceremonies and Services Data
+    // 1. Reference Ceremonies and Services Data with camera thumbnails
     const QUOTE_DATA = {
         styles: {
             candid: {
@@ -25,89 +25,89 @@
                 name: 'Engagement',
                 img: '491505012_18064652374967204_1171644279762775076_n.jpg',
                 services: [
-                    { id: 'trad_photo', name: 'Traditional Photo', price: 10000 },
-                    { id: 'trad_video', name: 'Traditional Video', price: 10000 },
-                    { id: 'candid_photo', name: 'Candid Photo', price: 15000 },
-                    { id: 'candid_video', name: 'Candid Video', price: 15000 },
-                    { id: 'drone', name: 'Drone Coverage', price: 12000 }
+                    { id: 'trad_photo', name: 'Traditional Photo', price: 10000, thumb: 'Traditional camera.jpg' },
+                    { id: 'trad_video', name: 'Traditional Video', price: 10000, thumb: 'Traditional Video.webp' },
+                    { id: 'candid_photo', name: 'Candid Photo', price: 15000, thumb: 'Candid Camera.webp' },
+                    { id: 'candid_video', name: 'Candid Video', price: 15000, thumb: 'Candid Video.avif' },
+                    { id: 'drone', name: 'Drone Coverage', price: 12000, thumb: 'Drone camera.webp' }
                 ]
             },
             pelli_koduku: {
                 name: 'Pelli Koduku & Haldi',
                 img: '572900385_18083386771967204_4933992170849967498_n.jpg',
                 services: [
-                    { id: 'trad_photo', name: 'Traditional Photo', price: 10000 },
-                    { id: 'trad_video', name: 'Traditional Video', price: 10000 },
-                    { id: 'candid_photo', name: 'Candid Photo', price: 15000 },
-                    { id: 'candid_video', name: 'Candid Video', price: 15000 }
+                    { id: 'trad_photo', name: 'Traditional Photo', price: 10000, thumb: 'Traditional camera.jpg' },
+                    { id: 'trad_video', name: 'Traditional Video', price: 10000, thumb: 'Traditional Video.webp' },
+                    { id: 'candid_photo', name: 'Candid Photo', price: 15000, thumb: 'Candid Camera.webp' },
+                    { id: 'candid_video', name: 'Candid Video', price: 15000, thumb: 'Candid Video.avif' }
                 ]
             },
             pelli_kuthuru: {
                 name: 'Pelli Kuthuru & Haldi',
                 img: '621829770_18085461035126499_5689806598605301436_n.webp',
                 services: [
-                    { id: 'trad_photo', name: 'Traditional Photo', price: 10000 },
-                    { id: 'trad_video', name: 'Traditional Video', price: 10000 },
-                    { id: 'candid_photo', name: 'Candid Photo', price: 15000 },
-                    { id: 'candid_video', name: 'Candid Video', price: 15000 }
+                    { id: 'trad_photo', name: 'Traditional Photo', price: 10000, thumb: 'Traditional camera.jpg' },
+                    { id: 'trad_video', name: 'Traditional Video', price: 10000, thumb: 'Traditional Video.webp' },
+                    { id: 'candid_photo', name: 'Candid Photo', price: 15000, thumb: 'Candid Camera.webp' },
+                    { id: 'candid_video', name: 'Candid Video', price: 15000, thumb: 'Candid Video.avif' }
                 ]
             },
             mehandi: {
                 name: 'Mehandi',
                 img: '654663041_18083966831601910_6151680735575874864_n.jpg',
                 services: [
-                    { id: 'trad_photo', name: 'Traditional Photo', price: 10000 },
-                    { id: 'trad_video', name: 'Traditional Video', price: 10000 },
-                    { id: 'candid_photo', name: 'Candid Photo', price: 15000 },
-                    { id: 'candid_video', name: 'Candid Video', price: 15000 }
+                    { id: 'trad_photo', name: 'Traditional Photo', price: 10000, thumb: 'Traditional camera.jpg' },
+                    { id: 'trad_video', name: 'Traditional Video', price: 10000, thumb: 'Traditional Video.webp' },
+                    { id: 'candid_photo', name: 'Candid Photo', price: 15000, thumb: 'Candid Camera.webp' },
+                    { id: 'candid_video', name: 'Candid Video', price: 15000, thumb: 'Candid Video.avif' }
                 ]
             },
             reception: {
                 name: 'Reception',
                 img: '695789051_18102919540967204_5846810095421264545_n.jpg',
                 services: [
-                    { id: 'trad_photo', name: 'Traditional Photo', price: 10000 },
-                    { id: 'trad_video', name: 'Traditional Video', price: 10000 },
-                    { id: 'candid_photo', name: 'Candid Photo', price: 15000 },
-                    { id: 'candid_video', name: 'Candid Video', price: 15000 }
+                    { id: 'trad_photo', name: 'Traditional Photo', price: 10000, thumb: 'Traditional camera.jpg' },
+                    { id: 'trad_video', name: 'Traditional Video', price: 10000, thumb: 'Traditional Video.webp' },
+                    { id: 'candid_photo', name: 'Candid Photo', price: 15000, thumb: 'Candid Camera.webp' },
+                    { id: 'candid_video', name: 'Candid Video', price: 15000, thumb: 'Candid Video.avif' }
                 ]
             },
             grand_wedding: {
                 name: 'Grand Wedding',
                 img: '572985411_18083469049967204_562853622138040638_n.jpg',
                 services: [
-                    { id: 'trad_photo', name: 'Traditional Photo', price: 15000 },
-                    { id: 'trad_video', name: 'Traditional Video', price: 15000 },
-                    { id: 'candid_photo', name: 'Candid Photo', price: 20000 },
-                    { id: 'candid_video', name: 'Candid Video', price: 20000 },
-                    { id: 'drone', name: 'Drone Coverage', price: 12000 }
+                    { id: 'trad_photo', name: 'Traditional Photo', price: 15000, thumb: 'Traditional camera.jpg' },
+                    { id: 'trad_video', name: 'Traditional Video', price: 15000, thumb: 'Traditional Video.webp' },
+                    { id: 'candid_photo', name: 'Candid Photo', price: 20000, thumb: 'Candid Camera.webp' },
+                    { id: 'candid_video', name: 'Candid Video', price: 20000, thumb: 'Candid Video.avif' },
+                    { id: 'drone', name: 'Drone Coverage', price: 12000, thumb: 'Drone camera.webp' }
                 ]
             },
             vratham: {
                 name: 'Vratham',
                 img: '634520398_18094154743967204_5441340631586413793_n.jpg',
                 services: [
-                    { id: 'trad_photo', name: 'Traditional Photo', price: 8000 },
-                    { id: 'trad_video', name: 'Traditional Video', price: 8000 }
+                    { id: 'trad_photo', name: 'Traditional Photo', price: 8000, thumb: 'Traditional camera.jpg' },
+                    { id: 'trad_video', name: 'Traditional Video', price: 8000, thumb: 'Traditional Video.webp' }
                 ]
             },
             sangeeth: {
                 name: 'Sangeeth',
                 img: '696044466_18103008103967204_1966601098065850134_n.jpg',
                 services: [
-                    { id: 'candid_photo', name: 'Candid Photo', price: 15000 },
-                    { id: 'candid_video', name: 'Candid Video', price: 15000 },
-                    { id: 'trad_photo', name: 'Traditional Photo', price: 10000 },
-                    { id: 'trad_video', name: 'Traditional Video', price: 10000 }
+                    { id: 'candid_photo', name: 'Candid Photo', price: 15000, thumb: 'Candid Camera.webp' },
+                    { id: 'candid_video', name: 'Candid Video', price: 15000, thumb: 'Candid Video.avif' },
+                    { id: 'trad_photo', name: 'Traditional Photo', price: 10000, thumb: 'Traditional camera.jpg' },
+                    { id: 'trad_video', name: 'Traditional Video', price: 10000, thumb: 'Traditional Video.webp' }
                 ]
             },
             pre_wedding: {
                 name: 'Pre-Wedding',
                 img: '655579212_18145380064470216_2840087960424965128_n.jpg',
                 services: [
-                    { id: 'candid_photo', name: 'Candid Photo', price: 15000 },
-                    { id: 'candid_video', name: 'Candid Video', price: 15000 },
-                    { id: 'drone', name: 'Drone Coverage', price: 12000 }
+                    { id: 'candid_photo', name: 'Candid Photo', price: 15000, thumb: 'Candid Camera.webp' },
+                    { id: 'candid_video', name: 'Candid Video', price: 15000, thumb: 'Candid Video.avif' },
+                    { id: 'drone', name: 'Drone Coverage', price: 12000, thumb: 'Drone camera.webp' }
                 ]
             }
         },
@@ -129,10 +129,10 @@
         }
     };
 
-    // 2. Application State
+    // 2. Application State — allows selecting Candid, Traditional, or BOTH
     const state = {
         currentStep: 1,
-        selectedStyle: 'candid',
+        selectedStyles: new Set(['candid', 'traditional']), // Both selectable!
         selectedServices: new Map(),
         selectedAddons: new Set(),
         customerDetails: {
@@ -148,6 +148,15 @@
 
     function formatINR(num) {
         return '₹' + (Number(num) || 0).toLocaleString('en-IN');
+    }
+
+    function getSelectedStyleLabel() {
+        const hasCandid = state.selectedStyles.has('candid');
+        const hasTrad = state.selectedStyles.has('traditional');
+        if (hasCandid && hasTrad) return 'Both Candid & Traditional Photography';
+        if (hasCandid) return 'Candid Photography';
+        if (hasTrad) return 'Traditional Photography';
+        return 'Photography Coverage';
     }
 
     // 3. Inject Clean Minimalist Modal
@@ -198,11 +207,11 @@
 
                 <!-- Scrollable Body -->
                 <div class="q-body">
-                    <!-- Step 1: Style Selection -->
+                    <!-- Step 1: Style Selection (Both Selectable) -->
                     <div class="q-pane active" id="qPane1">
                         <div class="q-title-wrap">
                             <h2 class="q-title">Choose Your Photography Style</h2>
-                            <p class="q-sub">Select how you want your wedding story captured.</p>
+                            <p class="q-sub">Select one or both styles. Most couples choose both for complete coverage.</p>
                         </div>
                         <div class="q-style-grid">
                             <div class="q-style-card selected" data-style="candid">
@@ -213,18 +222,18 @@
                                     <span class="q-style-pill">✓ Selected</span>
                                 </div>
                             </div>
-                            <div class="q-style-card" data-style="traditional">
+                            <div class="q-style-card selected" data-style="traditional">
                                 <img src="${QUOTE_DATA.styles.traditional.img}" alt="Traditional Photography" class="q-style-img">
                                 <div class="q-style-meta">
                                     <h3 class="q-style-name">Traditional Photography</h3>
                                     <p class="q-style-desc">${QUOTE_DATA.styles.traditional.desc}</p>
-                                    <span class="q-style-pill">Select Style</span>
+                                    <span class="q-style-pill">✓ Selected</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Step 2: Ceremonies & Services -->
+                    <!-- Step 2: Ceremonies & Services with Camera Images -->
                     <div class="q-pane" id="qPane2">
                         <div class="q-title-wrap">
                             <h2 class="q-title">Select Your Ceremonies</h2>
@@ -271,7 +280,7 @@
                     <div class="q-pane" id="qPane4">
                         <div class="q-title-wrap">
                             <h2 class="q-title">Where &amp; When Is Your Wedding?</h2>
-                            <p class="q-sub">Share a few details so we can check availability and prepare your quote.</p>
+                            <p class="q-sub">Share a few details so we can check availability and generate your quote.</p>
                         </div>
                         <div class="q-form-wrap">
                             <form id="qForm" novalidate>
@@ -336,7 +345,7 @@
                     </div>
                 </div>
 
-                <!-- Floating Bottom Bar (Always clear & intuitive) -->
+                <!-- Floating Bottom Bar -->
                 <div class="q-footer-bar" id="qFooterBar">
                     <div class="q-footer-summary">
                         <span class="q-footer-total" id="qFooterTotal">&#8377;0</span>
@@ -354,7 +363,7 @@
         return modalOverlay;
     }
 
-    // 4. Render Ceremonies Accordion (Minimal, Non-congested)
+    // 4. Render Ceremonies Accordion with Camera Images
     function renderCeremonies() {
         const container = document.getElementById('qCeremoniesList');
         if (!container) return;
@@ -377,9 +386,12 @@
                     <div class="q-services-grid">
                         ${ceremony.services.map(s => `
                             <button type="button" class="q-service-btn" data-ceremony="${cKey}" data-service="${s.id}">
-                                <div class="q-service-info">
-                                    <span class="q-service-title">${s.name}</span>
-                                    <span class="q-service-price">${formatINR(s.price)}</span>
+                                <div class="q-service-left">
+                                    <img src="${s.thumb}" alt="${s.name}" class="q-service-thumb" loading="lazy">
+                                    <div class="q-service-info">
+                                        <span class="q-service-title">${s.name}</span>
+                                        <span class="q-service-price">${formatINR(s.price)}</span>
+                                    </div>
                                 </div>
                                 <div class="q-service-icon">+</div>
                             </button>
@@ -440,18 +452,20 @@
             });
         });
 
-        // Style selection
+        // Style selection (Both selectable toggle)
         document.querySelectorAll('.q-style-card').forEach(card => {
             card.addEventListener('click', () => {
                 const style = card.getAttribute('data-style');
                 if (style) {
-                    state.selectedStyle = style;
-                    document.querySelectorAll('.q-style-card').forEach(c => {
-                        const isSel = c.getAttribute('data-style') === style;
-                        c.classList.toggle('selected', isSel);
-                        const pill = c.querySelector('.q-style-pill');
-                        if (pill) pill.textContent = isSel ? '✓ Selected' : 'Select Style';
-                    });
+                    if (state.selectedStyles.has(style)) {
+                        // Keep at least one selected
+                        if (state.selectedStyles.size > 1) {
+                            state.selectedStyles.delete(style);
+                        }
+                    } else {
+                        state.selectedStyles.add(style);
+                    }
+                    updateStyleCards();
                     updateUI();
                 }
             });
@@ -517,6 +531,20 @@
         if (dateInput) {
             dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
         }
+
+        updateStyleCards();
+    }
+
+    function updateStyleCards() {
+        document.querySelectorAll('.q-style-card').forEach(card => {
+            const style = card.getAttribute('data-style');
+            const isSel = state.selectedStyles.has(style);
+            card.classList.toggle('selected', isSel);
+            const pill = card.querySelector('.q-style-pill');
+            if (pill) {
+                pill.textContent = isSel ? '✓ Selected' : '+ Select Style';
+            }
+        });
     }
 
     function toggleService(cKey, sId) {
@@ -599,7 +627,7 @@
             if (step === 1) nextBtn.innerHTML = 'Continue to Ceremonies &rarr;';
             else if (step === 2) nextBtn.innerHTML = 'Continue to Add-ons &rarr;';
             else if (step === 3) nextBtn.innerHTML = 'Continue to Details &rarr;';
-            else if (step === 4) nextBtn.innerHTML = 'Calculate Quote &rarr;';
+            else if (step === 4) nextBtn.innerHTML = 'Generate Quote &rarr;';
         }
 
         const dialog = document.querySelector('.quote-modal-dialog');
@@ -703,6 +731,7 @@
     function renderReceipt() {
         const total = calculateTotal();
         const details = state.customerDetails;
+        const styleLabel = getSelectedStyleLabel();
 
         const refEl = document.getElementById('qRefId');
         if (refEl) refEl.textContent = `REFERENCE: ${state.quoteId}`;
@@ -721,6 +750,12 @@
         const body = document.getElementById('qReceiptBody');
         if (body) {
             let rows = '';
+            rows += `
+                <tr style="background: var(--q-sand-light);">
+                    <td><strong>Style:</strong> ${styleLabel}</td>
+                    <td style="color: var(--q-gold);">Included</td>
+                </tr>
+            `;
             state.selectedServices.forEach(s => {
                 rows += `
                     <tr>
@@ -740,8 +775,8 @@
                     `;
                 }
             });
-            if (!rows) {
-                rows = `<tr><td colspan="2" style="text-align: center; color: #888; padding: 14px;">No services selected.</td></tr>`;
+            if (!state.selectedServices.size && !state.selectedAddons.size) {
+                rows += `<tr><td colspan="2" style="text-align: center; color: #888; padding: 14px;">No services selected.</td></tr>`;
             }
             body.innerHTML = rows;
         }
@@ -750,7 +785,7 @@
     function shareWhatsApp() {
         const total = calculateTotal();
         const details = state.customerDetails;
-        const style = QUOTE_DATA.styles[state.selectedStyle]?.name || 'Candid Photography';
+        const styleLabel = getSelectedStyleLabel();
 
         let msg = `*SWAYAMVARA WEDDING PHOTOGRAPHY QUOTATION*\n`;
         msg += `Reference ID: ${state.quoteId}\n`;
@@ -758,7 +793,7 @@
         msg += `*Couple:* ${details.fullName}\n`;
         msg += `*Wedding Date:* ${details.weddingDate}\n`;
         msg += `*Venue:* ${details.venue}\n`;
-        msg += `*Selected Style:* ${style}\n\n`;
+        msg += `*Selected Style:* ${styleLabel}\n\n`;
         msg += `*SERVICES SELECTED:*\n`;
 
         state.selectedServices.forEach(s => {
@@ -786,6 +821,7 @@
             const href = el.getAttribute('href') || '';
             const matches = text.includes('build your quote') ||
                             text.includes('build my quote') ||
+                            text.includes('launch quote builder') ||
                             href.includes('#build-quote') ||
                             href.includes('#quote-builder') ||
                             el.classList.contains('open-quote-modal-btn');
