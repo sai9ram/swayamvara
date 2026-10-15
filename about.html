@@ -874,6 +874,75 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Section 5: Friendly Contact CTA (Say Hello) with Framed Background */
+        .page-cta-section.say-hello-section {
+            position: relative;
+            padding: clamp(90px, 11vw, 150px) 5vw;
+            background: #180409;
+            color: var(--cream-light);
+            text-align: center;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 540px;
+        }
+
+        .say-hello-section .cta-bg-frame-wrap {
+            position: absolute;
+            inset: clamp(10px, 2vw, 24px);
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1.5px solid var(--gold-subtle);
+            box-shadow: 0 24px 70px rgba(20, 4, 8, 0.6), inset 0 0 40px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .say-hello-section .cta-bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: brightness(0.88) contrast(1.05) saturate(1.1);
+            transform: scale(1.02);
+            transition: transform 10s ease;
+        }
+
+        .say-hello-section:hover .cta-bg-img {
+            transform: scale(1.06);
+        }
+
+        .say-hello-section .cta-bg-scrim {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(32, 6, 12, 0.48) 0%, rgba(18, 3, 7, 0.82) 100%),
+                        linear-gradient(180deg, rgba(20, 4, 8, 0.4) 0%, rgba(20, 4, 8, 0.75) 100%);
+            z-index: 2;
+        }
+
+        .say-hello-section .cta-content {
+            position: relative;
+            z-index: 5;
+            max-width: 820px;
+            margin: 0 auto;
+            background: rgba(26, 6, 11, 0.68);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(197, 160, 89, 0.45);
+            border-radius: 10px;
+            padding: clamp(36px, 5vw, 56px) clamp(24px, 4vw, 48px);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        .say-hello-section .cta-title {
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
+        }
+
+        .say-hello-section .cta-desc {
+            color: rgba(251, 247, 240, 0.95);
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
+        }
     </style>
 </head>
 
@@ -1279,13 +1348,29 @@
         </section>
 
         <!-- =============================================================
-             SECTION 5 OF 5: FRIENDLY CONTACT CTA
+             SECTION 5 OF 5: FRIENDLY CONTACT CTA (SAY HELLO)
              ============================================================= -->
-        <section class="page-cta-section" id="contact-cta" aria-label="Contact Us">
+        <section class="page-cta-section say-hello-section" id="contact-cta" aria-label="Contact Us">
+            <!-- Framed Background Image Container with Antique Gold Frame -->
+            <div class="cta-bg-frame-wrap">
+                <div class="corner-notch tl"></div>
+                <div class="corner-notch tr"></div>
+                <div class="corner-notch bl"></div>
+                <div class="corner-notch br"></div>
+                <img src="654663041_18083966831601910_6151680735575874864_n.jpg" class="cta-bg-img"
+                    alt="Royal Wedding Couple Background" loading="lazy">
+                <div class="cta-bg-scrim"></div>
+            </div>
+
             <img src="Rangoli BG.png" class="section-mandala-tr" alt="" aria-hidden="true">
             <img src="Rangoli BG.png" class="section-mandala-bl" alt="" aria-hidden="true">
 
             <div class="cta-content">
+                <div class="corner-notch tl"></div>
+                <div class="corner-notch tr"></div>
+                <div class="corner-notch bl"></div>
+                <div class="corner-notch br"></div>
+
                 <span class="section-eyebrow cta-eyebrow">SAY HELLO</span>
                 <h2 class="cta-title">Let's Talk About Your Wedding!</h2>
                 <p class="cta-desc">
