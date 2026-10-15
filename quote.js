@@ -930,69 +930,7 @@
     }
 
     function printQuotation() {
-        const docEl = document.getElementById('qPrintableDocument');
-        if (!docEl) {
-            window.print();
-            return;
-        }
-
-        const printWin = window.open('', '_blank', 'width=960,height=1100');
-        if (printWin) {
-            const quotationHTML = docEl.outerHTML;
-            printWin.document.open();
-            printWin.document.write(
-                '<!DOCTYPE html>' +
-                '<html lang="en">' +
-                '<head>' +
-                '    <meta charset="UTF-8">' +
-                '    <title>Swayamvara Wedding Photography — Quotation ' + state.quoteId + '</title>' +
-                '    <link rel="preconnect" href="https://fonts.googleapis.com">' +
-                '    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' +
-                '    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">' +
-                '    <link rel="stylesheet" href="quote.css">' +
-                '    <style>' +
-                '        * { box-sizing: border-box; margin: 0; padding: 0; }' +
-                '        body {' +
-                '            font-family: "Plus Jakarta Sans", sans-serif;' +
-                '            background: #ffffff;' +
-                '            color: #1A1A1A;' +
-                '            padding: 24px 32px;' +
-                '            -webkit-print-color-adjust: exact !important;' +
-                '            print-color-adjust: exact !important;' +
-                '        }' +
-                '        .q-quotation-doc {' +
-                '            width: 100%;' +
-                '            max-width: 840px;' +
-                '            margin: 0 auto;' +
-                '            border: 1.5px solid #D4AF37;' +
-                '            border-radius: 8px;' +
-                '            padding: 32px 36px;' +
-                '            background: #ffffff;' +
-                '            box-shadow: none;' +
-                '        }' +
-                '        @page {' +
-                '            size: A4 portrait;' +
-                '            margin: 10mm;' +
-                '        }' +
-                '    </style>' +
-                '</head>' +
-                '<body>' +
-                quotationHTML +
-                '    <script>' +
-                '        window.onload = function() {' +
-                '            window.focus();' +
-                '            setTimeout(function() {' +
-                '                window.print();' +
-                '            }, 400);' +
-                '        };' +
-                '    <\/script>' +
-                '</body>' +
-                '</html>'
-            );
-            printWin.document.close();
-        } else {
-            window.print();
-        }
+        window.print();
     }
 
     function shareWhatsApp() {

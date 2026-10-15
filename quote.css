@@ -1195,9 +1195,60 @@
    PRINT STYLES FOR OFFICIAL BRANDED QUOTATION
    ========================================================================== */
 @media print {
-    /* Hide everything on the page outside the quotation */
-    body > *:not(.quote-modal-overlay),
-    .quote-modal-overlay > *:not(.quote-modal-dialog),
+    /* Reset document and viewport */
+    html, body {
+        background: #ffffff !important;
+        color: #1A1A1A !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Hide the entire website background (header, main content, footer, floating elements, cursor, etc.) */
+    body > *:not(.quote-modal-overlay) {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    /* Reset modal overlay so it is clean, static and not a fixed backdrop */
+    .quote-modal-overlay {
+        position: static !important;
+        inset: auto !important;
+        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        overflow: visible !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+
+    /* Reset modal dialog container */
+    .quote-modal-dialog {
+        position: static !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        transform: none !important;
+        overflow: visible !important;
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    /* Hide modal headers, stepper, footer bar, close buttons, and previous panes */
     .q-modal-header,
     .q-stepper,
     .q-footer-bar,
@@ -1208,44 +1259,78 @@
         visibility: hidden !important;
     }
 
-    body, html {
-        background: #ffffff !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-    }
-
-    .quote-modal-overlay {
-        position: static !important;
-        background: none !important;
-        padding: 0 !important;
-        display: block !important;
-    }
-
-    .quote-modal-dialog {
-        max-width: 100% !important;
-        box-shadow: none !important;
-        border: none !important;
-        border-radius: 0 !important;
-        background: transparent !important;
-        display: block !important;
-    }
-
+    /* Body container for panes */
     .q-body {
         padding: 0 !important;
+        margin: 0 !important;
         max-height: none !important;
         overflow: visible !important;
+        display: block !important;
+        visibility: visible !important;
     }
 
+    /* Explicitly force Step 5 to be visible */
+    #qPane5.q-pane {
+        display: block !important;
+        visibility: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Branded Quotation Document */
     .q-quotation-doc {
-        border: 1.5px solid #D4AF37 !important;
-        box-shadow: none !important;
-        padding: 24px 30px !important;
+        display: block !important;
+        visibility: visible !important;
+        width: 100% !important;
         max-width: 800px !important;
         margin: 0 auto !important;
+        padding: 24px 30px !important;
         background: #ffffff !important;
+        border: 1.5px solid #D4AF37 !important;
+        border-radius: 8px !important;
+        box-shadow: none !important;
         page-break-inside: avoid !important;
+    }
+
+    .q-quotation-doc * {
+        visibility: visible !important;
+    }
+
+    .q-doc-header,
+    .q-doc-total-box,
+    .q-doc-sign-wrap {
+        display: flex !important;
+        visibility: visible !important;
+    }
+
+    .q-doc-client-grid,
+    .q-doc-terms-grid {
+        display: grid !important;
+        visibility: visible !important;
+    }
+
+    .q-doc-table {
+        display: table !important;
+        visibility: visible !important;
+    }
+
+    .q-doc-table thead {
+        display: table-header-group !important;
+    }
+
+    .q-doc-table tbody {
+        display: table-row-group !important;
+    }
+
+    .q-doc-table tr {
+        display: table-row !important;
+        page-break-inside: avoid !important;
+    }
+
+    .q-doc-table th,
+    .q-doc-table td {
+        display: table-cell !important;
+        visibility: visible !important;
     }
 
     @page {
