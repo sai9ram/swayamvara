@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Swayamvara Wedding Photography Hyderabad</title>
-    <meta name="description" content="Meet Vishal and the Swayamvara team. We take natural, happy wedding photos across Hyderabad. No forced poses, just real smiles and joyful memories.">
-    <meta name="keywords" content="about swayamvara wedding photography, vishal wedding photographer hyderabad, candid wedding photographer nizampet">
+    <meta name="description" content="Discover the story and philosophy of Swayamvara Wedding Photography Hyderabad. Natural emotions, candid moments, sacred South Indian rituals, and timeless royal wedding albums.">
+    <meta name="keywords" content="about swayamvara wedding photography, swayamvara weddings hyderabad, candid wedding photography nizampet, traditional wedding photographers telangana">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="Swayamvara Wedding Photography - Vishal">
+    <meta name="author" content="Swayamvara Wedding Photography">
 
     <!-- Open Graph Tags -->
     <meta property="og:locale" content="en_IN">
@@ -38,11 +38,11 @@
         }
 
         .meet-grid {
-            max-width: 1100px;
+            max-width: 1180px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: clamp(36px, 6vw, 70px);
+            grid-template-columns: 0.9fr 1.25fr;
+            gap: clamp(36px, 6vw, 75px);
             align-items: center;
         }
 
@@ -51,42 +51,51 @@
             background: var(--cream-light);
             border: 1.5px solid var(--gold-subtle);
             padding: 12px;
-            box-shadow: 0 20px 50px rgba(100, 29, 45, 0.12);
+            box-shadow: 0 24px 60px rgba(100, 29, 45, 0.14);
             border-radius: 6px;
+            max-width: 440px;
+            margin: 0 auto;
+            width: 100%;
         }
 
+        /* Strict 9:16 aspect ratio */
         .meet-photo-inner {
-            height: clamp(380px, 46vh, 500px);
+            width: 100%;
+            aspect-ratio: 9 / 16;
             overflow: hidden;
             border-radius: 4px;
+            position: relative;
+            background: #20060C;
         }
 
         .meet-photo-inner img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 30%;
             display: block;
-            transition: transform 0.6s ease;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .meet-photo-card:hover img {
-            transform: scale(1.03);
+            transform: scale(1.04);
         }
 
         .meet-badge {
             position: absolute;
             bottom: -16px;
-            right: -16px;
+            right: -12px;
             background: var(--accent-deep);
             color: var(--gold-subtle);
             border: 1px solid var(--gold-subtle);
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 30px;
             font-size: 0.72rem;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
             font-weight: 700;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
         }
 
         .meet-text-block {
@@ -96,7 +105,7 @@
 
         .simple-lead {
             font-family: var(--font-serif);
-            font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+            font-size: clamp(1.35rem, 2.1vw, 1.8rem);
             line-height: 1.45;
             color: var(--accent-deep);
             margin-bottom: 18px;
@@ -107,7 +116,45 @@
             font-size: 1.05rem;
             line-height: 1.8;
             color: rgba(100, 29, 45, 0.88);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+        }
+
+        .swayamvara-values-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 24px 0 28px;
+            padding: 20px 0;
+            border-top: 1px solid rgba(197, 160, 89, 0.3);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        .value-chip {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .value-chip-title {
+            font-family: var(--font-title);
+            font-size: 0.76rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent-deep);
+            font-weight: 700;
+        }
+
+        .value-chip-desc {
+            font-size: 0.86rem;
+            line-height: 1.5;
+            color: rgba(100, 29, 45, 0.8);
+        }
+
+        @media (max-width: 680px) {
+            .swayamvara-values-row {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
         }
 
         .signature-row {
@@ -116,16 +163,8 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 16px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(197, 160, 89, 0.3);
-            margin-top: 10px;
-        }
-
-        .signature-text {
-            font-family: var(--font-script);
-            font-size: 3rem;
-            color: var(--accent-deep);
-            line-height: 1;
+            padding-top: 12px;
+            margin-top: 6px;
         }
 
         /* Section 3: What We Do Best */
@@ -361,43 +400,63 @@
         </section>
 
         <!-- =============================================================
-             SECTION 2 OF 5: MEET VISHAL (SIMPLE & FRIENDLY)
+             SECTION 2 OF 5: THE STORY OF SWAYAMVARA (9:16 FRAMED IMAGE)
              ============================================================= -->
-        <section class="meet-section" id="founder" aria-label="Meet The Photographer">
+        <section class="meet-section" id="story" aria-label="About Swayamvara Wedding Photography">
+            <span id="founder" style="display:none;" aria-hidden="true"></span>
             <img src="Rangoli BG.png" class="section-mandala-tr" alt="" aria-hidden="true">
 
             <div class="meet-grid">
-                <!-- Left: Framed Photo of Vishal -->
+                <!-- Left: Framed 9:16 Photo of Swayamvara Celebrations -->
                 <div class="meet-photo-card">
                     <div class="corner-notch tl"></div>
                     <div class="corner-notch tr"></div>
                     <div class="corner-notch bl"></div>
                     <div class="corner-notch br"></div>
                     <div class="meet-photo-inner">
-                        <img src="601625421_18088845055967204_6523291512231873774_n.jpg" alt="Vishal — Wedding Photographer">
+                        <img src="764775095_18111327352967204_6472677614624491112_n.jpg" alt="Swayamvara Wedding Photography Moments" loading="lazy">
                     </div>
-                    <span class="meet-badge">FOUNDER &bull; VISHAL</span>
+                    <span class="meet-badge">ESTD. 2021 &bull; SWAYAMVARA</span>
                 </div>
 
-                <!-- Right: Short, Simple Story -->
+                <!-- Right: Detailed Content about Swayamvara -->
                 <div class="meet-text-block">
-                    <span class="section-eyebrow">THE PERSON BEHIND THE LENS</span>
-                    <h2 class="section-title">"Hi, I am Vishal!"</h2>
+                    <span class="section-eyebrow">THE HEART BEHIND THE LENS</span>
+                    <h2 class="section-title">The Story of Swayamvara</h2>
                     <p class="simple-lead">
-                        "You enjoy your wedding with your family. I will quietly capture the real happiness."
+                        "Where timeless Indian sacred heritage meets natural, heartfelt wedding memories."
                     </p>
                     <p class="simple-body">
-                        I started Swayamvara in February 2021 in Pragathi Nagar, Hyderabad. I believe wedding photos should feel real—not like a photo studio test.
+                        In our cultural tradition, <strong>Swayamvara</strong> signifies the sacred moment where two souls choose each other freely with unconditional love, respect, and deep devotion. It is more than a single day; it is the harmonious union of two families, generations of traditions, and promises sealed before the sacred fire.
                     </p>
                     <p class="simple-body">
-                        No fake smiles. No tiring poses. Just you and your loved ones having the best time of your life.
+                        Established in Hyderabad in February 2021, Swayamvara was founded with one clear conviction: weddings should be remembered for how they genuinely felt, not how stiffly couples posed. We let your celebrations unfold naturally—preserving the quiet tear during Kanyadaan, the laughter of aunts and cousins, and spontaneous smiles between the bride and groom.
+                    </p>
+                    <p class="simple-body">
+                        From vibrant Haldi and Mehendi rituals to royal Muhurtham ceremonies and high-energy Sangeet nights, our team moves with gentle discretion. We capture every ritual with cultural reverence without interrupting your family or blocking your elders.
                     </p>
 
+                    <!-- Core Brand Values Highlights -->
+                    <div class="swayamvara-values-row">
+                        <div class="value-chip">
+                            <span class="value-chip-title">Candid Emotion</span>
+                            <span class="value-chip-desc">Zero forced posing. Real smiles and joyful tears.</span>
+                        </div>
+                        <div class="value-chip">
+                            <span class="value-chip-title">Ritual Reverence</span>
+                            <span class="value-chip-desc">Every ceremony covered with cultural respect.</span>
+                        </div>
+                        <div class="value-chip">
+                            <span class="value-chip-title">Lifelong Legacy</span>
+                            <span class="value-chip-desc">Handcrafted royal albums and 4K cinema films.</span>
+                        </div>
+                    </div>
+
                     <div class="signature-row">
-                        <span class="signature-text">Vishal</span>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <span class="brand-name" style="font-family: var(--font-title); font-size: 1.25rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-deep); font-weight: 600;">Swayamvara</span>
+                        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
                             <a href="index.html#contact" class="btn-primary">Build Your Quote</a>
-                            <a href="services.html" class="btn-secondary">Explore Packages</a>
+                            <a href="portfolio.html" class="btn-secondary">Explore Wedding Gallery</a>
                         </div>
                     </div>
                 </div>
@@ -530,7 +589,7 @@
                 <span class="section-eyebrow cta-eyebrow">SAY HELLO</span>
                 <h2 class="cta-title">Let's Talk About Your Wedding!</h2>
                 <p class="cta-desc">
-                    Send a quick WhatsApp message to Vishal or call us directly. We are happy to check your date and answer all your questions!
+                    Send a quick WhatsApp message or call our team directly. We are happy to check your dates, answer all your questions, and help you build your custom quote!
                 </p>
 
                 <div class="cta-actions-group">
@@ -626,9 +685,9 @@
                     <h3 class="footer-col-title">CONNECT &amp; STUDIO</h3>
                     <div class="footer-contact-info">
                         <div class="footer-info-group">
-                            <span class="footer-info-label">FOUNDER &amp; PHOTOGRAPHER</span>
+                            <span class="footer-info-label">STUDIO &amp; CREATIVE TEAM</span>
                             <span class="footer-info-val" style="font-size: 1.05rem;">
-                                Vishal &bull; Started Feb 2021
+                                Swayamvara &bull; Estd. Feb 2021
                             </span>
                         </div>
                         <div class="footer-info-group">
