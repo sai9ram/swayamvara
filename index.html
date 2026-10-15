@@ -4893,18 +4893,18 @@
             }
         }
 
-        /* Left Side Footer Artwork - Full Height */
+        /* Left Side Footer Artwork - Scaled Proportionately */
         .footer-left-artwork {
             position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            height: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 15px;
+            height: 55%;
             width: auto;
-            max-width: 45vw;
+            max-width: 25vw;
             object-fit: contain;
             object-position: left center;
-            opacity: 0.32;
+            opacity: 0.26;
             mix-blend-mode: screen;
             z-index: 3;
             pointer-events: none;
@@ -4914,9 +4914,9 @@
 
         @media (max-width: 900px) {
             .footer-left-artwork {
-                height: 70%;
-                max-width: 65vw;
-                opacity: 0.22;
+                height: 40%;
+                max-width: 35vw;
+                opacity: 0.18;
             }
         }
 
