@@ -1,0 +1,12 @@
+{
+  "name": "swayamvara-wedding-photography",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Swayamvara Wedding Photography & Cinema",
+  "scripts": {
+    "start": "node -e \"console.log('Static site ready')\""
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}

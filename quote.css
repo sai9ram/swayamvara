@@ -980,6 +980,35 @@
     font-weight: 700;
 }
 
+.q-email-status {
+    text-align: center;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 30px;
+    margin: 0 auto 18px;
+    max-width: 680px;
+    transition: var(--q-transition);
+}
+
+.q-email-status.sending {
+    background: #FFF8E7;
+    color: #8A6D3B;
+    border: 1px solid #F0C36D;
+}
+
+.q-email-status.success {
+    background: #E8F8F0;
+    color: #1A7F4B;
+    border: 1px solid #A3E0C0;
+}
+
+.q-email-status.info {
+    background: var(--q-sand-light);
+    color: var(--q-maroon);
+    border: 1px solid var(--q-border);
+}
+
 .q-receipt-actions {
     display: flex;
     flex-wrap: wrap;
@@ -1253,6 +1282,7 @@
     .q-stepper,
     .q-footer-bar,
     .q-receipt-actions,
+    .q-email-status,
     .q-close-btn,
     .q-pane:not(#qPane5) {
         display: none !important;

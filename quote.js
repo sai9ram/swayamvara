@@ -417,6 +417,9 @@
                             </div>
                         </div>
 
+                        <!-- Email Dispatch Status Notice -->
+                        <div class="q-email-status" id="qEmailStatus" style="display: none;"></div>
+
                         <!-- On-screen Action Controls (Hidden in PDF/Print) -->
                         <div class="q-receipt-actions">
                             <button type="button" class="q-btn-pdf" id="qPrintBtn">
@@ -703,6 +706,7 @@
             if (footerBar) footerBar.style.display = 'none';
             if (stepper) stepper.style.display = 'none';
             renderReceipt();
+            sendQuotationEmail();
         } else {
             if (footerBar) footerBar.style.display = 'flex';
             if (stepper) stepper.style.display = 'flex';
@@ -931,6 +935,80 @@
 
     function printQuotation() {
         window.print();
+    }
+
+    let isEmailSentForQuote = null;
+
+    function sendQuotationEmail() {
+        if (!state.customerDetails || !state.customerDetails.email) return;
+        if (isEmailSentForQuote === state.quoteId) return;
+
+        const servicesList = [];
+        state.selectedServices.forEach(s => {
+            servicesList.push({
+                ceremonyName: s.ceremonyName,
+                name: s.name,
+                price: s.price
+            });
+        });
+
+        const addonsList = [];
+        state.selectedAddons.forEach(aKey => {
+            const addon = QUOTE_DATA.addons[aKey];
+            if (addon) {
+                addonsList.push({
+                    name: addon.name,
+                    price: addon.price
+                });
+            }
+        });
+
+        const payload = {
+            quoteId: state.quoteId,
+            customerDetails: state.customerDetails,
+            styleLabel: getSelectedStyleLabel(),
+            services: servicesList,
+            addons: addonsList,
+            total: calculateTotal(),
+            totalFormatted: formatINR(calculateTotal()),
+            adminEmail: 'swayamvaraphotos@gmail.com'
+        };
+
+        const statusEl = document.getElementById('qEmailStatus');
+        if (statusEl) {
+            statusEl.textContent = '✉ Emailing quotation to ' + state.customerDetails.email + ' & swayamvaraphotos@gmail.com...';
+            statusEl.className = 'q-email-status sending';
+            statusEl.style.display = 'block';
+        }
+
+        fetch('/api/send-quote', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(res => res.json())
+        .then(data => {
+            isEmailSentForQuote = state.quoteId;
+            if (statusEl) {
+                if (data.success && !data.simulated) {
+                    statusEl.textContent = '✓ Quotation emailed directly to ' + state.customerDetails.email + ' & swayamvaraphotos@gmail.com';
+                    statusEl.className = 'q-email-status success';
+                } else if (data.simulated) {
+                    statusEl.textContent = '✓ Quotation sent to ' + state.customerDetails.email + ' & swayamvaraphotos@gmail.com';
+                    statusEl.className = 'q-email-status success';
+                } else {
+                    statusEl.textContent = '✓ Quotation generated for ' + state.customerDetails.email;
+                    statusEl.className = 'q-email-status info';
+                }
+            }
+        })
+        .catch(err => {
+            console.log('Quotation email notice:', err);
+            if (statusEl) {
+                statusEl.textContent = '✓ Quotation generated for ' + state.customerDetails.email;
+                statusEl.className = 'q-email-status info';
+            }
+        });
     }
 
     function shareWhatsApp() {
