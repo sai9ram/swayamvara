@@ -170,147 +170,429 @@
             margin-top: 6px;
         }
 
-        /* Section 3: Our Promise (Modern Visual Photo Cards) */
+        /* =============================================================
+           SECTION 3: OUR SACRED PROMISE (MODERN EDITORIAL ASYMMETRICAL STAGE)
+           ============================================================= */
         .features-section {
             padding: clamp(80px, 9vw, 130px) 5vw;
             background: var(--wheat-secondary);
             border-top: 1px solid rgba(197, 160, 89, 0.25);
             border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promise-header-group {
             text-align: center;
+            max-width: 820px;
+            margin: 0 auto clamp(40px, 5vw, 64px);
+        }
+
+        /* Asymmetrical 2-Column Interactive Stage */
+        .promise-stage {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: clamp(32px, 5vw, 64px);
+            align-items: start;
             position: relative;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            max-width: 1280px;
-            margin: 50px auto 0;
+        /* Left Column: Interactive Promise Timeline */
+        .promise-timeline-col {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Interactive Promise Item */
+        .promise-item {
+            position: relative;
+            background: var(--cream-light);
+            border: 1px solid rgba(197, 160, 89, 0.35);
+            border-radius: 8px;
+            padding: clamp(22px, 3vw, 30px);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(100, 29, 45, 0.04);
             text-align: left;
         }
 
-        .feature-photo-card {
-            position: relative;
-            aspect-ratio: 3 / 4.1;
-            min-height: 410px;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1.5px solid rgba(197, 160, 89, 0.45);
-            box-shadow: 0 16px 40px rgba(100, 29, 45, 0.12);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background: #20060C;
-            cursor: pointer;
-        }
-
-        .feature-photo-card:hover {
-            transform: translateY(-8px);
+        .promise-item:hover {
             border-color: var(--gold-subtle);
-            box-shadow: 0 24px 55px rgba(100, 29, 45, 0.22);
+            transform: translateX(4px);
+            box-shadow: 0 10px 30px rgba(100, 29, 45, 0.08);
         }
 
-        .feature-card-img-wrap {
+        .promise-item.active {
+            background: #FFFFFF;
+            border-color: var(--accent-deep);
+            box-shadow: 0 14px 40px rgba(100, 29, 45, 0.12);
+            transform: translateX(8px);
+        }
+
+        .promise-item.active::before {
+            content: '';
             position: absolute;
-            inset: 0;
-            overflow: hidden;
-            z-index: 1;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(180deg, var(--gold-subtle) 0%, var(--accent-deep) 100%);
         }
 
-        .feature-card-img-wrap img {
+        /* Item Header */
+        .promise-item-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .promise-step-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .promise-step-num {
+            font-family: var(--font-title);
+            font-size: 0.95rem;
+            letter-spacing: 0.15em;
+            color: var(--accent-deep);
+            font-weight: 700;
+        }
+
+        .promise-item-cat {
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold-subtle);
+            font-weight: 600;
+        }
+
+        .promise-arrow-icon {
+            color: var(--gold-subtle);
+            transition: transform 0.3s ease, color 0.3s ease;
+            opacity: 0.6;
+        }
+
+        .promise-item.active .promise-arrow-icon {
+            transform: rotate(45deg);
+            color: var(--accent-deep);
+            opacity: 1;
+        }
+
+        /* Item Title */
+        .promise-item-title {
+            font-family: var(--font-title);
+            font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+            color: var(--accent-deep);
+            margin: 0 0 10px 0;
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: 0.03em;
+        }
+
+        /* Expandable Description */
+        .promise-item-body {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: var(--body-text);
+            margin: 0 0 14px 0;
+            max-height: 200px;
+            opacity: 1;
+            transition: max-height 0.4s ease, opacity 0.4s ease;
+        }
+
+        /* Feature Chips */
+        .promise-item-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .promise-chip {
+            display: inline-block;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            background: rgba(197, 160, 89, 0.12);
+            color: var(--accent-deep);
+            border: 1px solid rgba(197, 160, 89, 0.35);
+            padding: 4px 11px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .promise-item.active .promise-chip {
+            background: rgba(100, 29, 45, 0.08);
+            border-color: rgba(100, 29, 45, 0.25);
+        }
+
+        /* Mobile Inline Image (Hidden on Desktop) */
+        .promise-mobile-img {
+            display: none;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 14px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        .promise-mobile-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            filter: brightness(0.92) contrast(1.04) saturate(1.1);
         }
 
-        .feature-photo-card:hover .feature-card-img-wrap img {
-            transform: scale(1.08);
+        /* Right Column: Sticky Cinematic Photographic Stage */
+        .promise-display-col {
+            position: sticky;
+            top: 120px;
         }
 
-        /* Top badge */
-        .feature-top-badge {
+        .promise-cinema-frame {
             position: relative;
-            z-index: 3;
-            align-self: flex-start;
-            margin: 16px;
-            background: rgba(26, 6, 11, 0.72);
+            width: 100%;
+            aspect-ratio: 4 / 5.2;
+            min-height: 520px;
+            background: #170409;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1.5px solid rgba(197, 160, 89, 0.5);
+            box-shadow: 0 24px 60px rgba(100, 29, 45, 0.18);
+        }
+
+        /* Cinema Top Badge */
+        .promise-cinema-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .promise-covenant-tag {
+            background: rgba(23, 4, 9, 0.78);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             color: var(--gold-subtle);
             border: 1px solid rgba(197, 160, 89, 0.5);
-            padding: 5px 14px;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.64rem;
+            font-size: 0.66rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             font-weight: 700;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
         }
 
-        /* Bottom Frosted Glass Content Panel */
-        .feature-bottom-panel {
-            position: relative;
-            z-index: 3;
-            background: linear-gradient(180deg, rgba(26, 6, 11, 0.65) 0%, rgba(20, 4, 8, 0.94) 100%);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(197, 160, 89, 0.35);
-            padding: 22px 20px;
-            transition: background 0.3s ease;
-        }
-
-        .feature-photo-card:hover .feature-bottom-panel {
-            background: linear-gradient(180deg, rgba(26, 6, 11, 0.8) 0%, rgba(20, 4, 8, 0.98) 100%);
-        }
-
-        .feature-card-title {
-            font-family: var(--font-title);
-            font-size: 1.05rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+        .promise-slide-counter {
+            background: rgba(23, 4, 9, 0.78);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             color: #FFFFFF;
-            margin-bottom: 8px;
-            font-weight: 600;
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-family: var(--font-title);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+        }
+
+        /* Slides Crossfade Container */
+        .promise-slides-wrap {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .promise-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transform: scale(1.05);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        .promise-slide.active {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+        }
+
+        .promise-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.92) contrast(1.04) saturate(1.08);
+        }
+
+        /* Bottom Frosted Glass Metadata Card */
+        .promise-slide-meta {
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            z-index: 5;
+            background: linear-gradient(180deg, rgba(26, 6, 11, 0.72) 0%, rgba(18, 3, 7, 0.95) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            border-radius: 6px;
+            padding: 16px 20px;
+            color: #FFFFFF;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: left;
+        }
+
+        .promise-meta-label {
+            display: block;
+            font-size: 0.65rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold-subtle);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .promise-meta-title {
+            font-family: var(--font-title);
+            font-size: 0.96rem;
+            color: #FFFFFF;
+            margin: 0;
+            letter-spacing: 0.05em;
+        }
+
+        /* Closing Section Transition Strip */
+        .promise-closing-strip {
+            max-width: 1280px;
+            margin: clamp(48px, 6vw, 72px) auto 0;
+            background: linear-gradient(135deg, #24070F 0%, #170409 100%);
+            border: 1px solid rgba(197, 160, 89, 0.45);
+            border-radius: 10px;
+            padding: clamp(36px, 5vw, 56px) clamp(24px, 4vw, 48px);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(100, 29, 45, 0.16);
+        }
+
+        .promise-closing-strip::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .promise-closing-badge {
+            display: inline-block;
+            font-size: 0.68rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold-subtle);
+            font-weight: 700;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .promise-closing-quote {
+            font-family: var(--font-title);
+            font-size: clamp(1.35rem, 2.5vw, 2.1rem);
+            line-height: 1.35;
+            color: #FFFFFF;
+            max-width: 820px;
+            margin: 0 auto clamp(24px, 3.5vw, 32px);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            position: relative;
+            z-index: 2;
+            font-style: italic;
+        }
+
+        .promise-closing-actions {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
         }
 
-        .feature-card-title svg {
-            color: var(--gold-subtle);
-            opacity: 0.85;
+        .promise-closing-actions .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+        }
+
+        .promise-closing-actions .btn-primary svg {
             transition: transform 0.3s ease;
         }
 
-        .feature-photo-card:hover .feature-card-title svg {
-            transform: translateX(3px);
-            color: #E6CA85;
+        .promise-closing-actions .btn-primary:hover svg {
+            transform: translate(3px, -3px);
         }
 
-        .feature-card-desc {
-            font-size: 0.88rem;
-            line-height: 1.6;
-            color: rgba(251, 247, 240, 0.9);
-            margin: 0;
-            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-        }
-
+        /* Responsive Breakpoints */
         @media (max-width: 1024px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+            .promise-stage {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .promise-display-col {
+                position: relative;
+                top: 0;
+                order: -1;
+            }
+
+            .promise-cinema-frame {
+                aspect-ratio: 16 / 10;
+                min-height: 380px;
             }
         }
 
-        @media (max-width: 580px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 18px;
+        @media (max-width: 680px) {
+            .promise-display-col {
+                display: none; /* Mobile switches to clean integrated accordion cards */
+            }
+
+            .promise-mobile-img {
+                display: block;
+            }
+
+            .promise-item.active {
+                transform: none;
+            }
+
+            .promise-closing-strip {
+                padding: 32px 20px;
+            }
+
+            .promise-closing-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .promise-closing-actions a {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
             }
         }
 
@@ -561,173 +843,202 @@
         </section>
 
         <!-- =============================================================
-             SECTION 3 OF 5: OUR SACRED PROMISE (MODERN EDITORIAL BENTO SHOWCASE)
+             SECTION 3 OF 5: OUR SACRED PROMISE (MODERN ASYMMETRICAL EDITORIAL STAGE)
              ============================================================= -->
-        <section class="features-section" id="features" aria-label="Our Promise to You">
+        <section class="features-section" id="features" aria-label="Our Sacred Promise">
             <img src="Rangoli BG.png" class="section-mandala-bl" alt="" aria-hidden="true">
 
             <div class="promise-header-group">
-                <span class="section-eyebrow">OUR PROMISE</span>
-                <h2 class="section-title">Why Couples Choose Swayamvara</h2>
+                <span class="section-eyebrow">OUR SACRED PROMISE</span>
+                <h2 class="section-title">Preserving What Truly Matters</h2>
                 <div class="gold-divider">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
                         <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
                     </svg>
                 </div>
-                <p class="section-desc">Four sacred commitments that ensure your once-in-a-lifetime wedding is captured with timeless elegance and genuine joy.</p>
+                <p class="section-desc">Four heartfelt commitments ensuring your once-in-a-lifetime celebrations are captured with emotional honesty, cultural reverence, and museum-grade artistry.</p>
             </div>
 
-            <!-- Bento Grid: Left Majestic Hero + Right Story Stack -->
-            <div class="promise-bento-grid">
-                <!-- Left: Majestic Hero Anchor Card -->
-                <div class="promise-hero-card">
-                    <div class="corner-notch tl"></div>
-                    <div class="corner-notch br"></div>
-                    <div class="promise-hero-img-wrap">
-                        <img src="629835153_18094156381967204_2880516111171031160_n.jpg" alt="Joyful candid couple laughter at Swayamvara wedding" loading="lazy">
-                    </div>
-
-                    <div class="promise-hero-top">
-                        <span class="promise-hero-pill">01 • Candid Emotion First</span>
-                        <span class="promise-hero-tag">★ The Swayamvara Way</span>
-                    </div>
-
-                    <div class="promise-hero-bottom">
-                        <span class="promise-hero-category">Unscripted &amp; Heartfelt</span>
-                        <h3 class="promise-hero-title">Zero Awkward Poses. 100% Real Love.</h3>
-                        <p class="promise-hero-desc">
+            <!-- Asymmetrical 2-Column Stage -->
+            <div class="promise-stage">
+                <!-- Left: Interactive Promise Timeline -->
+                <div class="promise-timeline-col" id="promiseTimeline">
+                    <!-- Promise 1 -->
+                    <div class="promise-item active" data-index="0" tabindex="0" role="button" aria-pressed="true">
+                        <div class="corner-notch tl"></div>
+                        <div class="corner-notch br"></div>
+                        <div class="promise-item-header">
+                            <div class="promise-step-indicator">
+                                <span class="promise-step-num">01</span>
+                                <span class="promise-item-cat">CANDID EMOTION FIRST</span>
+                            </div>
+                            <svg class="promise-arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="promise-item-title">Zero Awkward Poses. 100% Genuine Love.</h3>
+                        <p class="promise-item-body">
                             You don't need to be professional models. We guide you gently, keep you laughing, and photograph the unscripted tears, warm embraces, and secret glances just as they naturally happen.
                         </p>
-                        <div class="promise-hero-chips">
-                            <span class="promise-chip">✦ True Candids</span>
-                            <span class="promise-chip">✦ Relaxed &amp; Fun</span>
+                        <div class="promise-item-chips">
+                            <span class="promise-chip">✦ Real Laughter</span>
+                            <span class="promise-chip">✦ Spontaneous Smiles</span>
                             <span class="promise-chip">✦ Zero Stiff Directing</span>
+                        </div>
+                        <div class="promise-mobile-img">
+                            <img src="629835153_18094156381967204_2880516111171031160_n.jpg" alt="Joyful candid couple laughter" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Promise 2 -->
+                    <div class="promise-item" data-index="1" tabindex="0" role="button" aria-pressed="false">
+                        <div class="corner-notch tl"></div>
+                        <div class="corner-notch br"></div>
+                        <div class="promise-item-header">
+                            <div class="promise-step-indicator">
+                                <span class="promise-step-num">02</span>
+                                <span class="promise-item-cat">SACRED CULTURAL REVERENCE</span>
+                            </div>
+                            <svg class="promise-arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="promise-item-title">Respect for Every Ritual &amp; Tradition</h3>
+                        <p class="promise-item-body">
+                            From vibrant Haldi splashes and Mehendi rituals to sacred Jeelakarra Bellam &amp; Mangalsutra moments, we understand each sacred step deeply and photograph respectfully without interrupting family elders.
+                        </p>
+                        <div class="promise-item-chips">
+                            <span class="promise-chip">✦ Jeelakarra Bellam</span>
+                            <span class="promise-chip">✦ Saptapadi Moments</span>
+                            <span class="promise-chip">✦ Cultural Discretion</span>
+                        </div>
+                        <div class="promise-mobile-img">
+                            <img src="648297137_17900861118397165_8994519537232938578_n.jpg" alt="Sacred Telugu wedding rituals" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Promise 3 -->
+                    <div class="promise-item" data-index="2" tabindex="0" role="button" aria-pressed="false">
+                        <div class="corner-notch tl"></div>
+                        <div class="corner-notch br"></div>
+                        <div class="promise-item-header">
+                            <div class="promise-step-indicator">
+                                <span class="promise-step-num">03</span>
+                                <span class="promise-item-cat">CINEMATIC POETRY</span>
+                            </div>
+                            <svg class="promise-arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="promise-item-title">Movie-Grade 4K Films &amp; Drone Splendor</h3>
+                        <p class="promise-item-body">
+                            Experience your wedding like a motion picture. 4K high-speed cinematic lenses, sweeping aerial drone views, and emotional live audio vows woven into a tear-jerking love story film.
+                        </p>
+                        <div class="promise-item-chips">
+                            <span class="promise-chip">✦ 4K Ultra HD</span>
+                            <span class="promise-chip">✦ Cinematic Aerial Drone</span>
+                            <span class="promise-chip">✦ Heartfelt Audio Vows</span>
+                        </div>
+                        <div class="promise-mobile-img">
+                            <img src="609948448_18090306871967204_1300483370148847510_n.jpg" alt="Cinematic couple teaser film" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Promise 4 -->
+                    <div class="promise-item" data-index="3" tabindex="0" role="button" aria-pressed="false">
+                        <div class="corner-notch tl"></div>
+                        <div class="corner-notch br"></div>
+                        <div class="promise-item-header">
+                            <div class="promise-step-indicator">
+                                <span class="promise-step-num">04</span>
+                                <span class="promise-item-cat">ARCHIVAL ROYAL KEEPSAKES</span>
+                            </div>
+                            <svg class="promise-arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="promise-item-title">Handcrafted Heirloom Books for 50+ Years</h3>
+                        <p class="promise-item-body">
+                            Luxurious archival silk pages bound in premium Italian leather and stamped in gleaming 24K gold foil. Created to sit with pride on your family table and be cherished for generations to come.
+                        </p>
+                        <div class="promise-item-chips">
+                            <span class="promise-chip">✦ Italian Leather</span>
+                            <span class="promise-chip">✦ 24K Gold Foil Names</span>
+                            <span class="promise-chip">✦ 50-Year Paper Guarantee</span>
+                        </div>
+                        <div class="promise-mobile-img">
+                            <img src="655579212_18145380064470216_2840087960424965128_n.jpg" alt="Handcrafted royal wedding albums" loading="lazy">
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Editorial Story Stack (3 Distinct Panels) -->
-                <div class="promise-stack">
-                    <!-- Panel 2: Cultural Traditions -->
-                    <div class="promise-panel-card">
+                <!-- Right: Sticky Cinematic Photographic Stage -->
+                <div class="promise-display-col" aria-hidden="true">
+                    <div class="promise-cinema-frame">
                         <div class="corner-notch tl"></div>
                         <div class="corner-notch br"></div>
-                        <div class="promise-panel-img-wrap">
-                            <span class="promise-panel-step">02</span>
-                            <img src="648297137_17900861118397165_8994519537232938578_n.jpg" alt="Sacred South Indian and Telugu wedding rituals" loading="lazy">
-                        </div>
-                        <div class="promise-panel-content">
-                            <span class="promise-panel-category">Cultural Reverence</span>
-                            <h3 class="promise-panel-title">
-                                Respect for Every Tradition
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </h3>
-                            <p class="promise-panel-desc">
-                                From Haldi yellow splashes to sacred Jeelakarra Bellam &amp; Mangalsutra, we know every ritual step and shoot respectfully without disturbing family elders.
-                            </p>
-                            <span class="promise-panel-tag">✦ Telugu &amp; South Indian Heritage</span>
-                        </div>
-                    </div>
 
-                    <!-- Panel 3: Cinema Magic -->
-                    <div class="promise-panel-card">
-                        <div class="corner-notch tl"></div>
-                        <div class="corner-notch br"></div>
-                        <div class="promise-panel-img-wrap">
-                            <span class="promise-panel-step">03</span>
-                            <img src="609948448_18090306871967204_1300483370148847510_n.jpg" alt="Cinematic 4K wedding teaser and drone film" loading="lazy">
+                        <div class="promise-cinema-badge">
+                            <span class="promise-covenant-tag">★ SWAYAMVARA SACRED COVENANT</span>
+                            <span class="promise-slide-counter" id="promiseSlideCounter">01 / 04</span>
                         </div>
-                        <div class="promise-panel-content">
-                            <span class="promise-panel-category">Cinematic Films</span>
-                            <h3 class="promise-panel-title">
-                                Movie-Grade 4K &amp; Drone
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </h3>
-                            <p class="promise-panel-desc">
-                                Feel like cinema stars on your big day. 4K high-speed cameras, sweeping drone views, and crystal-clear audio vows woven into an emotional love film.
-                            </p>
-                            <span class="promise-panel-tag">✦ 4K Ultra HD &amp; Drone Included</span>
-                        </div>
-                    </div>
 
-                    <!-- Panel 4: Royal Heirlooms -->
-                    <div class="promise-panel-card">
-                        <div class="corner-notch tl"></div>
-                        <div class="corner-notch br"></div>
-                        <div class="promise-panel-img-wrap">
-                            <span class="promise-panel-step">04</span>
-                            <img src="655579212_18145380064470216_2840087960424965128_n.jpg" alt="Handcrafted royal Italian leather wedding album" loading="lazy">
-                        </div>
-                        <div class="promise-panel-content">
-                            <span class="promise-panel-category">Royal Keepsakes</span>
-                            <h3 class="promise-panel-title">
-                                Handcrafted Heirloom Books
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </h3>
-                            <p class="promise-panel-desc">
-                                Heavy archival silk pages bound in rich leather with gleaming 24K gold foil names. Built to sit on your coffee table and look stunning for 50+ years.
-                            </p>
-                            <span class="promise-panel-tag">✦ 50-Year Archival Paper Guarantee</span>
+                        <!-- Photographic Crossfade Slides -->
+                        <div class="promise-slides-wrap" id="promiseSlidesWrap">
+                            <div class="promise-slide active" data-slide="0">
+                                <img src="629835153_18094156381967204_2880516111171031160_n.jpg" alt="Joyful candid couple laughter" loading="lazy">
+                                <div class="promise-slide-meta">
+                                    <span class="promise-meta-label">01 • Candid Joy</span>
+                                    <h4 class="promise-meta-title">Unscripted Couple Emotion &amp; Pure Laughter</h4>
+                                </div>
+                            </div>
+                            <div class="promise-slide" data-slide="1">
+                                <img src="648297137_17900861118397165_8994519537232938578_n.jpg" alt="Sacred Telugu wedding rituals" loading="lazy">
+                                <div class="promise-slide-meta">
+                                    <span class="promise-meta-label">02 • Sacred Traditions</span>
+                                    <h4 class="promise-meta-title">Reverent Telugu Muhurtham &amp; Family Rituals</h4>
+                                </div>
+                            </div>
+                            <div class="promise-slide" data-slide="2">
+                                <img src="609948448_18090306871967204_1300483370148847510_n.jpg" alt="Cinematic couple teaser film" loading="lazy">
+                                <div class="promise-slide-meta">
+                                    <span class="promise-meta-label">03 • Cinema Magic</span>
+                                    <h4 class="promise-meta-title">Movie-Style 4K Drone Frames &amp; Vows</h4>
+                                </div>
+                            </div>
+                            <div class="promise-slide" data-slide="3">
+                                <img src="655579212_18145380064470216_2840087960424965128_n.jpg" alt="Handcrafted royal wedding albums" loading="lazy">
+                                <div class="promise-slide-meta">
+                                    <span class="promise-meta-label">04 • Royal Heirloom</span>
+                                    <h4 class="promise-meta-title">Italian Leather Archival Keepsake Albums</h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Bottom Luxury Assurance Ribbon -->
-            <div class="promise-assurance-ribbon">
-                <div class="promise-badges-list">
-                    <div class="promise-badge-item">
-                        <div class="promise-badge-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="promise-badge-text-primary">48-Hr Teasers</span>
-                            <span class="promise-badge-text-sub">Instant shareable photos</span>
-                        </div>
-                    </div>
-
-                    <div class="promise-badge-item">
-                        <div class="promise-badge-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="promise-badge-text-primary">Zero Hidden Fees</span>
-                            <span class="promise-badge-text-sub">Clear all-inclusive quotes</span>
-                        </div>
-                    </div>
-
-                    <div class="promise-badge-item">
-                        <div class="promise-badge-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="promise-badge-text-primary">Full 4-Person Crew</span>
-                            <span class="promise-badge-text-sub">Senior photographers &amp; drone</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="promise-ribbon-actions">
-                    <a href="index.html#contact" class="btn-primary" style="padding: 13px 26px;">Build Your Quote</a>
-                    <a href="portfolio.html" class="btn-secondary" style="padding: 13px 22px;">Explore Gallery</a>
+            <!-- Closing Section Transition Strip -->
+            <div class="promise-closing-strip">
+                <span class="promise-closing-badge">THE SWAYAMVARA PROMISE</span>
+                <blockquote class="promise-closing-quote">
+                    “Because your wedding lasts a day. Your memories deserve a lifetime.”
+                </blockquote>
+                <div class="promise-closing-actions">
+                    <a href="index.html#contact" class="btn-primary">
+                        <span>Let’s Tell Your Story</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/917989304874" target="_blank" rel="noopener" class="btn-secondary">
+                        Build Your Quote on WhatsApp
+                    </a>
                 </div>
             </div>
         </section>
@@ -794,10 +1105,10 @@
                             <path
                                 d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-1.109-.072-.251-.082-.579-.193-.997-.373-1.764-.761-2.909-2.535-2.997-2.653-.088-.118-.718-.956-.718-1.823 0-.867.456-1.293.618-1.47.162-.177.353-.221.471-.221.118 0 .236.001.338.006.109.005.253-.042.394.3.147.357.502 1.221.546 1.31.044.088.073.191.015.309-.059.118-.088.191-.177.294-.088.103-.186.23-.265.309-.089.088-.182.185-.078.363.103.177.458.756.983 1.224.675.602 1.244.788 1.421.876.177.088.279.073.383-.044.103-.118.441-.515.559-.691.118-.177.235-.147.397-.088.162.059 1.029.485 1.205.573.177.088.294.132.338.206.044.074.044.428-.1 0.833z" />
                         </svg>
-                        Build Your Quote
+                        Build Your Quote on WhatsApp
                     </a>
                     <a href="index.html#contact" class="btn-outline-cream">
-                        Build Your Quote &rarr;
+                        Build Your Quote Online &rarr;
                     </a>
                 </div>
 
@@ -953,6 +1264,48 @@
             </div>
         </div>
     </div>
+
+    <!-- OUR PROMISE INTERACTIVE STAGE SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const items = document.querySelectorAll('.promise-item');
+            const slides = document.querySelectorAll('.promise-slide');
+            const counter = document.getElementById('promiseSlideCounter');
+
+            if (!items.length || !slides.length) return;
+
+            function activatePromise(index) {
+                items.forEach((item, i) => {
+                    const isActive = i === index;
+                    item.classList.toggle('active', isActive);
+                    item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+                });
+
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+
+                if (counter) {
+                    counter.textContent = '0' + (index + 1) + ' / 04';
+                }
+            }
+
+            items.forEach((item, index) => {
+                item.addEventListener('mouseenter', function () {
+                    activatePromise(index);
+                });
+                item.addEventListener('click', function () {
+                    activatePromise(index);
+                });
+                item.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        activatePromise(index);
+                    }
+                });
+            });
+        });
+    </script>
 
     <!-- MAIN SCRIPT -->
     <script src="main.js"></script>
