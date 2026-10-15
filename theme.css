@@ -506,7 +506,7 @@ nav.nav-center a.active::after {
     height: 100%;
     object-fit: cover;
     object-position: center 35%;
-    filter: brightness(0.92) contrast(1.04) saturate(1.15);
+    filter: brightness(0.96) contrast(1.03) saturate(1.15);
     transform: scale(1.02);
     transition: transform 10s ease;
 }
@@ -519,8 +519,8 @@ nav.nav-center a.active::after {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 95% 85% at 50% 40%, rgba(20, 4, 8, 0.12) 0%, rgba(26, 6, 11, 0.32) 65%, rgba(26, 6, 11, 0.6) 100%),
-        linear-gradient(180deg, rgba(20, 4, 8, 0.2) 0%, rgba(20, 4, 8, 0.08) 45%, rgba(20, 4, 8, 0.45) 100%);
+        radial-gradient(ellipse 95% 85% at 50% 40%, rgba(20, 4, 8, 0.06) 0%, rgba(26, 6, 11, 0.22) 65%, rgba(26, 6, 11, 0.48) 100%),
+        linear-gradient(180deg, rgba(20, 4, 8, 0.15) 0%, transparent 45%, rgba(20, 4, 8, 0.38) 100%);
     z-index: 2;
 }
 
@@ -531,11 +531,11 @@ nav.nav-center a.active::after {
     margin: 0 auto;
     padding: clamp(32px, 5vw, 48px) clamp(24px, 5vw, 52px);
     border-radius: 8px;
-    background: rgba(26, 6, 11, 0.52);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(197, 160, 89, 0.45);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), inset 0 0 30px rgba(0, 0, 0, 0.25);
+    background: rgba(26, 6, 11, 0.62);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(197, 160, 89, 0.5);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6), inset 0 0 35px rgba(0, 0, 0, 0.3);
 }
 
 .page-hero-banner .section-eyebrow {
