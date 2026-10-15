@@ -302,6 +302,68 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Section 5: Quote CTA with Background Wedding Image */
+        .quote-cta-section {
+            position: relative;
+            overflow: hidden;
+            background: #2D0911;
+            padding: clamp(90px, 11vw, 150px) 5vw;
+            color: #F8F5F0;
+            text-align: center;
+        }
+
+        .quote-cta-section .cta-bg-frame-wrap {
+            position: absolute;
+            inset: clamp(16px, 2.5vw, 36px);
+            border: 1.5px solid rgba(197, 160, 89, 0.55);
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .quote-cta-section .cta-bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: brightness(0.88) contrast(1.05) saturate(1.1);
+            transform: scale(1.01);
+            transition: transform 10s ease;
+        }
+
+        .quote-cta-section:hover .cta-bg-img {
+            transform: scale(1.05);
+        }
+
+        .quote-cta-section .cta-content {
+            position: relative;
+            z-index: 5;
+            max-width: 820px;
+            margin: 0 auto;
+            background: rgba(26, 6, 11, 0.22);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            border: 1px solid rgba(197, 160, 89, 0.45);
+            border-radius: 10px;
+            padding: clamp(36px, 5vw, 56px) clamp(24px, 4vw, 48px);
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.35);
+        }
+
+        .quote-cta-section .cta-eyebrow {
+            color: var(--gold-subtle);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+        }
+
+        .quote-cta-section .cta-title {
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+        }
+
+        .quote-cta-section .cta-desc {
+            color: rgba(248, 245, 240, 0.95);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+        }
     </style>
 </head>
 
@@ -656,11 +718,22 @@
         <!-- =============================================================
              SECTION 5 OF 5: FRIENDLY PRICE QUOTE CTA
              ============================================================= -->
-        <section class="page-cta-section" id="quote-cta" aria-label="Get Free Price Quote">
-            <img src="Rangoli BG.png" class="section-mandala-tr" alt="" aria-hidden="true">
-            <img src="Rangoli BG.png" class="section-mandala-bl" alt="" aria-hidden="true">
+        <section class="page-cta-section quote-cta-section" id="quote-cta" aria-label="Get Free Price Quote">
+            <!-- Framed Background Image Container with Antique Gold Frame -->
+            <div class="cta-bg-frame-wrap">
+                <div class="corner-notch tl"></div>
+                <div class="corner-notch tr"></div>
+                <div class="corner-notch bl"></div>
+                <div class="corner-notch br"></div>
+                <img src="654133454_18040384025685409_7668423551746430989_n.jpg" class="cta-bg-img" alt="Royal Wedding Couple Background" loading="lazy">
+            </div>
 
             <div class="cta-content">
+                <div class="corner-notch tl"></div>
+                <div class="corner-notch tr"></div>
+                <div class="corner-notch bl"></div>
+                <div class="corner-notch br"></div>
+
                 <span class="section-eyebrow cta-eyebrow">FREE PRICE QUOTE</span>
                 <h2 class="cta-title">Tell Us Your Wedding Dates!</h2>
                 <p class="cta-desc">
