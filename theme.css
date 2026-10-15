@@ -475,54 +475,101 @@ nav.nav-center a.active::after {
 }
 
 /* ==========================================================================
-   PAGE HERO BANNER (STANDARDIZED FOR ABOUT, PORTFOLIO, SERVICES)
+   PAGE HERO BANNER WITH LUXURY FRAMED BACKGROUND IMAGE
    ========================================================================== */
 .page-hero-banner {
     position: relative;
-    padding: clamp(140px, 16vh, 200px) 5vw clamp(60px, 8vh, 100px);
+    padding: clamp(150px, 18vh, 210px) 5vw clamp(80px, 10vh, 120px);
     text-align: center;
-    background:
-        radial-gradient(ellipse 70% 60% at 50% 40%, rgba(251, 247, 240, 0.96) 0%, rgba(248, 239, 226, 0.85) 45%, rgba(244, 235, 221, 0.4) 80%, transparent 100%),
-        radial-gradient(ellipse 50% 50% at 5% 50%, rgba(197, 160, 89, 0.15) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 50% at 95% 50%, rgba(197, 160, 89, 0.15) 0%, transparent 70%),
-        linear-gradient(180deg, #FBF6EE 0%, #F5ECDD 50%, #E9DAC4 100%);
     overflow: hidden;
-    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    color: var(--cream-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: clamp(520px, 64vh, 620px);
+    background-color: var(--accent-dark);
+}
+
+/* Framed background container */
+.hero-bg-frame-wrap {
+    position: absolute;
+    inset: clamp(10px, 2vw, 24px);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1.5px solid var(--gold-subtle);
+    box-shadow: 0 24px 70px rgba(20, 4, 8, 0.6), inset 0 0 40px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    filter: brightness(0.55) contrast(1.05) saturate(1.15);
+    transform: scale(1.03);
+    transition: transform 10s ease;
+}
+
+.page-hero-banner:hover .hero-bg-img {
+    transform: scale(1.06);
+}
+
+.hero-bg-scrim {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 70% at 50% 45%, rgba(59, 17, 27, 0.65) 0%, rgba(43, 13, 20, 0.88) 75%, rgba(26, 6, 11, 0.96) 100%),
+        linear-gradient(180deg, rgba(30, 8, 14, 0.5) 0%, rgba(43, 13, 20, 0.8) 100%);
+    z-index: 2;
 }
 
 .page-hero-banner .hero-content-wrap {
     position: relative;
     z-index: 5;
-    max-width: 860px;
+    max-width: 840px;
     margin: 0 auto;
+    padding: 0 16px;
+}
+
+.page-hero-banner .section-eyebrow {
+    color: var(--gold-subtle);
+}
+
+.page-hero-banner .section-eyebrow::before,
+.page-hero-banner .section-eyebrow::after {
+    background: var(--gold-subtle);
 }
 
 .page-hero-banner .hero-page-title {
     font-family: var(--font-title);
-    font-size: clamp(2.6rem, 5.5vw, 4.4rem);
-    font-weight: 500;
+    font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+    font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--accent-deep);
-    line-height: 1.15;
+    color: var(--cream-light);
+    line-height: 1.2;
     margin-bottom: 16px;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
 }
 
 .page-hero-banner .hero-page-tagline {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: clamp(1.25rem, 2.2vw, 1.8rem);
-    color: var(--accent-deep);
-    opacity: 0.9;
-    margin-bottom: 22px;
+    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    color: var(--gold-subtle);
+    margin-bottom: 18px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 .page-hero-banner .hero-page-desc {
-    font-size: clamp(0.95rem, 1.15vw, 1.08rem);
-    line-height: 1.85;
-    color: rgba(100, 29, 45, 0.85);
-    max-width: 720px;
-    margin: 0 auto 30px;
+    font-size: clamp(1.02rem, 1.25vw, 1.18rem);
+    line-height: 1.75;
+    color: rgba(251, 247, 240, 0.92);
+    max-width: 660px;
+    margin: 0 auto 28px;
+    font-weight: 400;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* ==========================================================================

@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Swayamvara Wedding Photography Studio Hyderabad</title>
-    <meta name="description" content="Discover the story and artistic philosophy of Swayamvara Wedding Photography, founded by Vishal in February 2021 in Hyderabad. Specializing in heartfelt candid moments and regal traditional wedding memories.">
-    <meta name="keywords" content="about swayamvara wedding photography, vishal wedding photographer hyderabad, candid wedding photography pragathi nagar, best wedding photographers hyderabad, swayamvara weddings story">
+    <title>About Us | Swayamvara Wedding Photography Hyderabad</title>
+    <meta name="description" content="Meet Vishal and the Swayamvara team. We take natural, happy wedding photos across Hyderabad. No forced poses, just real smiles and joyful memories.">
+    <meta name="keywords" content="about swayamvara wedding photography, vishal wedding photographer hyderabad, candid wedding photographer nizampet">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Swayamvara Wedding Photography - Vishal">
 
     <!-- Open Graph Tags -->
     <meta property="og:locale" content="en_IN">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="About Us | Swayamvara Wedding Photography Studio Hyderabad">
-    <meta property="og:description" content="Preserving Sacred Promises & Timeless Legacies. Learn about our founder Vishal, our creative philosophy, and why 150+ couples trust Swayamvara.">
+    <meta property="og:title" content="About Us | Swayamvara Wedding Photography Hyderabad">
+    <meta property="og:description" content="Real smiles. Happy tears. Beautiful wedding memories you will cherish forever.">
     <meta property="og:url" content="https://swayamvaraweddings.com/about.html">
     <meta property="og:image" content="654133454_18040384025685409_7668423551746430989_n.jpg">
 
@@ -27,322 +27,242 @@
 
     <style>
         /* -------------------------------------------------------------
-           PAGE SPECIFIC STYLES: ABOUT.HTML
+           ABOUT PAGE STYLES - MINIMAL TEXT & STRONG VISUAL HIERARCHY
            ------------------------------------------------------------- */
         
-        /* Section 1: Hero Banner Visual Grid */
-        .about-hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 28px;
-            margin-top: 48px;
-            max-width: 980px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .about-hero-img-card {
-            position: relative;
-            height: 380px;
-            border-radius: 4px;
-            overflow: hidden;
-            border: 1px solid rgba(197, 160, 89, 0.4);
-            box-shadow: 0 20px 48px rgba(100, 29, 45, 0.12);
-        }
-
-        .about-hero-img-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .about-hero-img-card:hover img {
-            transform: scale(1.04);
-        }
-
-        .about-hero-img-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 16px 20px;
-            background: linear-gradient(180deg, transparent 0%, rgba(43, 13, 20, 0.85) 100%);
-            color: var(--cream-light);
-            font-size: 0.8rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-
-        /* Section 2: Founder Story */
-        .founder-section {
-            position: relative;
-            padding: clamp(90px, 10vw, 140px) 5vw;
+        /* Section 2: Meet Vishal */
+        .meet-section {
+            padding: clamp(80px, 9vw, 130px) 5vw;
             background: var(--bg-primary);
-            overflow: hidden;
+            position: relative;
         }
 
-        .founder-container {
-            max-width: 1200px;
+        .meet-grid {
+            max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1.15fr;
-            gap: clamp(40px, 7vw, 90px);
+            grid-template-columns: 1fr 1.2fr;
+            gap: clamp(36px, 6vw, 70px);
             align-items: center;
         }
 
-        .founder-portrait-wrap {
+        .meet-photo-card {
             position: relative;
-        }
-
-        .founder-frame {
-            position: relative;
-            border: 1px solid var(--gold-subtle);
-            padding: 14px;
             background: var(--cream-light);
-            box-shadow: 0 24px 60px rgba(100, 29, 45, 0.12);
+            border: 1.5px solid var(--gold-subtle);
+            padding: 12px;
+            box-shadow: 0 20px 50px rgba(100, 29, 45, 0.12);
+            border-radius: 6px;
         }
 
-        .founder-frame-inner {
-            position: relative;
+        .meet-photo-inner {
+            height: clamp(380px, 46vh, 500px);
             overflow: hidden;
-            height: clamp(420px, 50vh, 560px);
+            border-radius: 4px;
         }
 
-        .founder-frame-inner img {
+        .meet-photo-inner img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.8s ease;
+            transition: transform 0.6s ease;
         }
 
-        .founder-frame:hover img {
+        .meet-photo-card:hover img {
             transform: scale(1.03);
         }
 
-        .founder-badge-floating {
+        .meet-badge {
             position: absolute;
-            bottom: -22px;
-            right: -22px;
+            bottom: -16px;
+            right: -16px;
             background: var(--accent-deep);
             color: var(--gold-subtle);
             border: 1px solid var(--gold-subtle);
-            padding: 14px 24px;
-            border-radius: 4px;
-            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25);
-            font-family: var(--font-title);
+            padding: 10px 20px;
+            border-radius: 30px;
             font-size: 0.72rem;
-            letter-spacing: 0.24em;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
         }
 
-        .founder-text-wrap {
-            position: relative;
-            z-index: 2;
+        .meet-text-block {
+            display: flex;
+            flex-direction: column;
         }
 
-        .founder-lead {
+        .simple-lead {
             font-family: var(--font-serif);
-            font-size: 1.35rem;
-            line-height: 1.6;
+            font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+            line-height: 1.45;
             color: var(--accent-deep);
-            margin-bottom: 24px;
+            margin-bottom: 18px;
             font-weight: 500;
         }
 
-        .founder-bio {
-            font-size: 1.02rem;
-            line-height: 1.85;
-            color: rgba(100, 29, 45, 0.86);
-            margin-bottom: 20px;
+        .simple-body {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: rgba(100, 29, 45, 0.88);
+            margin-bottom: 24px;
         }
 
-        .founder-signature-block {
-            margin-top: 36px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(197, 160, 89, 0.3);
+        .signature-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 16px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(197, 160, 89, 0.3);
+            margin-top: 10px;
         }
 
-        .founder-signature {
+        .signature-text {
             font-family: var(--font-script);
-            font-size: 2.8rem;
+            font-size: 3rem;
             color: var(--accent-deep);
             line-height: 1;
         }
 
-        .founder-title-text {
-            font-family: var(--font-title);
-            font-size: 0.76rem;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--gold-subtle);
-            font-weight: 600;
-        }
-
-        /* Section 3: The Swayamvara Pillars */
-        .pillars-section {
-            position: relative;
-            padding: clamp(90px, 10vw, 130px) 5vw;
+        /* Section 3: What We Do Best */
+        .features-section {
+            padding: clamp(80px, 9vw, 130px) 5vw;
             background: var(--wheat-secondary);
-            border-top: 1px solid rgba(197, 160, 89, 0.2);
-            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-            overflow: hidden;
-        }
-
-        .pillars-header {
+            border-top: 1px solid rgba(197, 160, 89, 0.25);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.25);
             text-align: center;
-            max-width: 780px;
-            margin: 0 auto 60px;
-        }
-
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 28px;
-            max-width: 1260px;
-            margin: 0 auto;
-        }
-
-        .pillar-card {
             position: relative;
-            background: var(--cream-light);
-            border: 1px solid rgba(197, 160, 89, 0.35);
-            padding: 38px 28px;
-            border-radius: 4px;
-            transition: var(--transition-smooth);
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 10px 30px rgba(100, 29, 45, 0.05);
         }
 
-        .pillar-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--gold-subtle);
-            box-shadow: 0 20px 48px rgba(100, 29, 45, 0.12);
-        }
-
-        .pillar-num {
-            font-family: var(--font-serif);
-            font-size: 2.4rem;
-            color: var(--gold-subtle);
-            font-weight: 300;
-            line-height: 1;
-            margin-bottom: 18px;
-            opacity: 0.85;
-        }
-
-        .pillar-title {
-            font-family: var(--font-title);
-            font-size: 1.05rem;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: var(--accent-deep);
-            font-weight: 600;
-            margin-bottom: 14px;
-        }
-
-        .pillar-desc {
-            font-size: 0.92rem;
-            line-height: 1.75;
-            color: rgba(100, 29, 45, 0.82);
-        }
-
-        /* Section 4: Milestones & Accolades */
-        .milestones-section {
-            position: relative;
-            padding: clamp(80px, 9vw, 120px) 5vw;
-            background: var(--bg-primary);
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .milestones-grid {
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 24px;
-            max-width: 1100px;
-            margin: 0 auto 50px;
+            max-width: 1240px;
+            margin: 50px auto 0;
+            text-align: left;
         }
 
-        .milestone-item {
-            padding: 30px 20px;
-            border: 1px solid rgba(197, 160, 89, 0.25);
+        .feature-card {
             background: var(--cream-light);
-            border-radius: 4px;
+            border: 1px solid rgba(197, 160, 89, 0.35);
+            padding: 32px 24px;
+            border-radius: 6px;
+            position: relative;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 24px rgba(100, 29, 45, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold-subtle);
+            box-shadow: 0 18px 40px rgba(100, 29, 45, 0.12);
+        }
+
+        .feature-icon-circle {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(197, 160, 89, 0.15);
+            border: 1px solid var(--gold-subtle);
+            color: var(--accent-deep);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-card-title {
+            font-family: var(--font-title);
+            font-size: 1.05rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent-deep);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-card-desc {
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: rgba(100, 29, 45, 0.85);
+        }
+
+        /* Section 4: Numbers */
+        .stats-section {
+            padding: clamp(75px, 8vw, 120px) 5vw;
+            background: var(--bg-primary);
+            text-align: center;
+            position: relative;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1080px;
+            margin: 44px auto 0;
+        }
+
+        .stat-box {
+            background: var(--cream-light);
+            border: 1px solid rgba(197, 160, 89, 0.35);
+            border-radius: 6px;
+            padding: 32px 18px;
             position: relative;
             transition: var(--transition-smooth);
         }
 
-        .milestone-item:hover {
+        .stat-box:hover {
             transform: translateY(-4px);
             border-color: var(--gold-subtle);
         }
 
-        .milestone-val {
+        .stat-num {
             font-family: var(--font-title);
             font-size: clamp(2.4rem, 4vw, 3.4rem);
             color: var(--accent-deep);
-            font-weight: 600;
+            font-weight: 700;
             line-height: 1;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        .milestone-label {
-            font-family: var(--font-sans);
-            font-size: 0.72rem;
-            letter-spacing: 0.22em;
+        .stat-tag {
+            font-size: 0.76rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--gold-subtle);
             font-weight: 600;
         }
 
-        .quote-banner {
-            max-width: 820px;
-            margin: 0 auto;
-            padding: 36px 40px;
-            background: rgba(251, 247, 240, 0.7);
-            border-left: 3px solid var(--gold-subtle);
-            border-right: 3px solid var(--gold-subtle);
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-size: 1.35rem;
-            color: var(--accent-deep);
-            line-height: 1.6;
-        }
-
-        @media (max-width: 1024px) {
-            .pillars-grid {
+        @media (max-width: 960px) {
+            .meet-grid {
+                grid-template-columns: 1fr;
+            }
+            .meet-badge {
+                right: 8px;
+                bottom: -12px;
+            }
+            .features-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .milestones-grid {
+            .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @media (max-width: 768px) {
-            .about-hero-grid {
+        @media (max-width: 580px) {
+            .features-grid {
                 grid-template-columns: 1fr;
             }
-            .founder-container {
+            .stats-grid {
                 grid-template-columns: 1fr;
-            }
-            .founder-badge-floating {
-                right: 10px;
-                bottom: -15px;
-            }
-            .pillars-grid {
-                grid-template-columns: 1fr;
-            }
-            .milestones-grid {
-                grid-template-columns: 1fr 1fr;
             }
         }
     </style>
@@ -407,93 +327,73 @@
 
     <main>
         <!-- =============================================================
-             SECTION 1 OF 5: HERO BANNER & ARTISTIC ORIGINS
+             SECTION 1 OF 5: HERO BANNER WITH BEAUTIFUL FRAMED BACKGROUND IMAGE
              ============================================================= -->
-        <section class="page-hero-banner" id="hero" aria-label="About Swayamvara Hero">
-            <img src="Rangoli BG.png" class="section-mandala-tr" alt="" aria-hidden="true">
-            <img src="Rangoli BG.png" class="section-mandala-bl" alt="" aria-hidden="true">
+        <section class="page-hero-banner" id="hero" aria-label="About Hero">
+            <!-- Framed Background Image Container with Antique Gold Frame -->
+            <div class="hero-bg-frame-wrap">
+                <div class="corner-notch tl"></div>
+                <div class="corner-notch tr"></div>
+                <div class="corner-notch bl"></div>
+                <div class="corner-notch br"></div>
+                <img src="654133454_18040384025685409_7668423551746430989_n.jpg" class="hero-bg-img" alt="Royal Wedding Couple Background">
+                <div class="hero-bg-scrim"></div>
+            </div>
 
+            <!-- Crisp Hero Text (Easy to understand for everyone) -->
             <div class="hero-content-wrap">
-                <span class="section-eyebrow">PHILOSOPHY &amp; ORIGIN</span>
-                <h1 class="hero-page-title">Preserving Sacred Bonds &amp; Timeless Legacies</h1>
-                <p class="hero-page-tagline">"Where two souls choose each other, eternity begins."</p>
+                <span class="section-eyebrow">ABOUT US</span>
+                <h1 class="hero-page-title">Real Smiles. Real Love.</h1>
+                <p class="hero-page-tagline">"We save your happiest day forever."</p>
                 <p class="hero-page-desc">
-                    In ancient Sanskrit tradition, a <em>Swayamvara</em> was a sacred ceremony where a soul chose their life partner freely, bound only by mutual reverence, love, and sacred vows. Established in February 2021 in Hyderabad, Swayamvara Wedding Photography honors this sublime covenant by preserving raw tears, genuine smiles, and regal wedding rituals as everlasting works of art.
+                    Your wedding is a big day full of joy, laughter, and family love. We take clean, beautiful, natural photos so you can smile every time you look back at them.
                 </p>
 
-                <div class="gold-divider">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-                        <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
-                    </svg>
-                </div>
-
-                <!-- Dual Aesthetic Framed Imagery -->
-                <div class="about-hero-grid">
-                    <div class="about-hero-img-card clickable-photo" data-img="654133454_18040384025685409_7668423551746430989_n.jpg" data-title="Regal Couple Portrait" data-loc="Hyderabad Heritage Palace">
-                        <div class="corner-notch tl"></div>
-                        <div class="corner-notch tr"></div>
-                        <div class="corner-notch bl"></div>
-                        <div class="corner-notch br"></div>
-                        <img src="654133454_18040384025685409_7668423551746430989_n.jpg" alt="Regal Bride and Groom Portrait" loading="eager">
-                        <div class="about-hero-img-caption">Classic Couple Elegance &bull; Heritage Lighting</div>
-                    </div>
-                    <div class="about-hero-img-card clickable-photo" data-img="483580332_18061234117967204_8819667154284543056_n.jpg" data-title="Palace Wedding Grandeur" data-loc="Royal Destination Wedding">
-                        <div class="corner-notch tl"></div>
-                        <div class="corner-notch tr"></div>
-                        <div class="corner-notch bl"></div>
-                        <div class="corner-notch br"></div>
-                        <img src="483580332_18061234117967204_8819667154284543056_n.jpg" alt="Palace Wedding Rituals" loading="eager">
-                        <div class="about-hero-img-caption">The Sacred Vows &bull; Royal Procession</div>
-                    </div>
+                <div class="cta-actions-group" style="margin-bottom: 0;">
+                    <a href="portfolio.html" class="btn-gold">See 51 Photos &rarr;</a>
+                    <a href="#founder" class="btn-outline-cream">Meet Vishal</a>
                 </div>
             </div>
         </section>
 
         <!-- =============================================================
-             SECTION 2 OF 5: THE FOUNDER'S JOURNEY (VISHAL)
+             SECTION 2 OF 5: MEET VISHAL (SIMPLE & FRIENDLY)
              ============================================================= -->
-        <section class="founder-section" id="founder" aria-label="Founder Story">
+        <section class="meet-section" id="founder" aria-label="Meet The Photographer">
             <img src="Rangoli BG.png" class="section-mandala-tr" alt="" aria-hidden="true">
 
-            <div class="founder-container">
-                <!-- Left: Founder Portrait Frame -->
-                <div class="founder-portrait-wrap">
-                    <div class="founder-frame">
-                        <div class="corner-notch tl"></div>
-                        <div class="corner-notch tr"></div>
-                        <div class="corner-notch bl"></div>
-                        <div class="corner-notch br"></div>
-                        <div class="founder-frame-inner">
-                            <img src="601625421_18088845055967204_6523291512231873774_n.jpg" alt="Vishal - Founder & Lead Cinematographer" loading="lazy">
-                        </div>
+            <div class="meet-grid">
+                <!-- Left: Framed Photo of Vishal -->
+                <div class="meet-photo-card">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="meet-photo-inner">
+                        <img src="601625421_18088845055967204_6523291512231873774_n.jpg" alt="Vishal — Wedding Photographer">
                     </div>
-                    <div class="founder-badge-floating">
-                        <span>FOUNDER &bull; LEAD ARTIST</span>
-                    </div>
+                    <span class="meet-badge">FOUNDER &bull; VISHAL</span>
                 </div>
 
-                <!-- Right: Editorial Founder Story -->
-                <div class="founder-text-wrap">
-                    <span class="section-eyebrow">BEHIND THE LENS</span>
-                    <h2 class="section-title">A Lifelong Reverence for Human Emotion</h2>
-                    <p class="founder-lead">
-                        "A great wedding photograph isn't about stiff poses or forced smiles; it's about catching the exact fraction of a second when a father's eye glistens or a couple shares an unspoken whisper."
+                <!-- Right: Short, Simple Story -->
+                <div class="meet-text-block">
+                    <span class="section-eyebrow">THE PERSON BEHIND THE LENS</span>
+                    <h2 class="section-title">"Hi, I am Vishal!"</h2>
+                    <p class="simple-lead">
+                        "You enjoy your wedding with your family. I will quietly capture the real happiness."
                     </p>
-                    <p class="founder-bio">
-                        Founded by Vishal in February 2021 from Pragathi Nagar, Nizampet, Hyderabad, Swayamvara was born out of an intense passion to elevate wedding photography into fine art. Having documented more than 150 royal weddings across Telangana, Andhra Pradesh, Rajasthan, and scenic pan-India destinations, Vishal has cultivated an unobtrusive visual style that allows couples and families to truly live their moments without interference.
+                    <p class="simple-body">
+                        I started Swayamvara in February 2021 in Pragathi Nagar, Hyderabad. I believe wedding photos should feel real—not like a photo studio test.
                     </p>
-                    <p class="founder-bio">
-                        Every wedding film, every candid portrait, and every handcrafted photo album created by Vishal and the Swayamvara team is crafted to evoke the exact same heartbeat, nostalgia, and pride when opened fifty years from now.
+                    <p class="simple-body">
+                        No fake smiles. No tiring poses. Just you and your loved ones having the best time of your life.
                     </p>
 
-                    <div class="founder-signature-block">
-                        <div>
-                            <div class="founder-signature">Vishal</div>
-                            <div class="founder-title-text">FOUNDER &bull; SWAYAMVARA WEDDING PHOTOGRAPHY</div>
-                        </div>
+                    <div class="signature-row">
+                        <span class="signature-text">Vishal</span>
                         <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="portfolio.html" class="btn-primary">View 51 Portfolio Works</a>
-                            <a href="services.html" class="btn-secondary">Our Services</a>
+                            <a href="portfolio.html" class="btn-primary">View Photos</a>
+                            <a href="services.html" class="btn-secondary">Our Packages</a>
                         </div>
                     </div>
                 </div>
@@ -501,146 +401,140 @@
         </section>
 
         <!-- =============================================================
-             SECTION 3 OF 5: THE SWAYAMVARA PILLARS (OUR ETHOS)
+             SECTION 3 OF 5: WHAT WE DO BEST (VISUAL CARDS)
              ============================================================= -->
-        <section class="pillars-section" id="philosophy" aria-label="Our Creative Pillars">
+        <section class="features-section" id="features" aria-label="What We Do Best">
             <img src="Rangoli BG.png" class="section-mandala-bl" alt="" aria-hidden="true">
 
-            <div class="pillars-header">
-                <span class="section-eyebrow">OUR CREATIVE CODE</span>
-                <h2 class="section-title">The Four Pillars of Swayamvara</h2>
-                <div class="gold-divider">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-                        <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
-                    </svg>
-                </div>
-                <p class="section-desc">
-                    Every wedding is an irreplaceable tapestry of heritage, family bonds, and sacred rituals. These core principles guide each frame we record.
-                </p>
+            <span class="section-eyebrow">OUR PROMISE</span>
+            <h2 class="section-title">Why Couples Love Us</h2>
+            <div class="gold-divider">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                </svg>
             </div>
+            <p class="section-desc">Four simple things that make your wedding photos look magical.</p>
 
-            <div class="pillars-grid">
-                <!-- Pillar 1 -->
-                <div class="pillar-card">
+            <div class="features-grid">
+                <!-- Card 1 -->
+                <div class="feature-card">
                     <div class="corner-notch tl"></div>
-                    <div class="corner-notch tr"></div>
-                    <div class="corner-notch bl"></div>
                     <div class="corner-notch br"></div>
-                    <span class="pillar-num">01</span>
-                    <h3 class="pillar-title">Soulful Candid Intimacy</h3>
-                    <p class="pillar-desc">
-                        We blend into the celebration like family. No stiff posing or invasive setups—only spontaneous happiness, joyful tears, and real laughter captured as it unfolds naturally.
-                    </p>
+                    <div class="feature-icon-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                            <line x1="9" y1="9" x2="9.01" y2="9"/>
+                            <line x1="15" y1="9" x2="15.01" y2="9"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title">Natural Smiles</h3>
+                    <p class="feature-card-desc">No stiff posing. We capture real laughter, happy tears, and spontaneous hugs.</p>
                 </div>
 
-                <!-- Pillar 2 -->
-                <div class="pillar-card">
+                <!-- Card 2 -->
+                <div class="feature-card">
                     <div class="corner-notch tl"></div>
-                    <div class="corner-notch tr"></div>
-                    <div class="corner-notch bl"></div>
                     <div class="corner-notch br"></div>
-                    <span class="pillar-num">02</span>
-                    <h3 class="pillar-title">Cultural Reverence</h3>
-                    <p class="pillar-desc">
-                        From the sacred gold threads of Mangalsutra to Haldi ceremonies and Saptapadi steps, we understand the deep spiritual significance of Indian rituals and honor them with pristine detail.
-                    </p>
+                    <div class="feature-icon-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3 7h7l-5.5 4.5 2 7.5-6.5-5-6.5 5 2-7.5-5.5-4.5h7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title">Traditional Rituals</h3>
+                    <p class="feature-card-desc">Every ceremony—from Haldi and Mehendi to Mangalsutra—captured with care.</p>
                 </div>
 
-                <!-- Pillar 3 -->
-                <div class="pillar-card">
+                <!-- Card 3 -->
+                <div class="feature-card">
                     <div class="corner-notch tl"></div>
-                    <div class="corner-notch tr"></div>
-                    <div class="corner-notch bl"></div>
                     <div class="corner-notch br"></div>
-                    <span class="pillar-num">03</span>
-                    <h3 class="pillar-title">Cinematic Color Craft</h3>
-                    <p class="pillar-desc">
-                        Our master color grading preserves natural glowing skin tones, rich Kanjeevaram silks, and golden mandap ambers, delivering timeless film aesthetics that never look dated.
-                    </p>
+                    <div class="feature-icon-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="23 7 16 12 23 17 23 7"/>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title">Movie-Style Videos</h3>
+                    <p class="feature-card-desc">4K drone shots and sweet music that make your wedding feel like a movie.</p>
                 </div>
 
-                <!-- Pillar 4 -->
-                <div class="pillar-card">
+                <!-- Card 4 -->
+                <div class="feature-card">
                     <div class="corner-notch tl"></div>
-                    <div class="corner-notch tr"></div>
-                    <div class="corner-notch bl"></div>
                     <div class="corner-notch br"></div>
-                    <span class="pillar-num">04</span>
-                    <h3 class="pillar-title">Heirloom Preservation</h3>
-                    <p class="pillar-desc">
-                        Your memories deserve more than digital folders. We design bespoke, handcrafted flush-mount albums bound in luxury Italian leather and archival silk pages built to endure generations.
-                    </p>
+                    <div class="feature-icon-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title">Royal Photo Books</h3>
+                    <p class="feature-card-desc">Handmade thick photo books in rich leather and gold that last for decades.</p>
                 </div>
             </div>
         </section>
 
         <!-- =============================================================
-             SECTION 4 OF 5: MILESTONES & COMMUNITY REPUTATION
+             SECTION 4 OF 5: NUMBERS & TRUST
              ============================================================= -->
-        <section class="milestones-section" id="milestones" aria-label="Studio Milestones">
-            <span class="section-eyebrow">EXPERIENCE &amp; TRUST</span>
-            <h2 class="section-title">Milestones That Speak For Our Dedication</h2>
+        <section class="stats-section" id="stats" aria-label="Our Numbers">
+            <span class="section-eyebrow">OUR MILESTONES</span>
+            <h2 class="section-title">Trusted by 150+ Happy Couples</h2>
             <div class="gold-divider">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
                     <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
                 </svg>
             </div>
 
-            <div class="milestones-grid">
-                <div class="milestone-item">
+            <div class="stats-grid">
+                <div class="stat-box">
                     <div class="corner-notch tl"></div>
                     <div class="corner-notch br"></div>
-                    <div class="milestone-val">150+</div>
-                    <div class="milestone-label">Sacred Weddings Documented</div>
+                    <div class="stat-num">150+</div>
+                    <div class="stat-tag">Weddings Done</div>
                 </div>
-                <div class="milestone-item">
+                <div class="stat-box">
                     <div class="corner-notch tl"></div>
                     <div class="corner-notch br"></div>
-                    <div class="milestone-val">5.0 ★</div>
-                    <div class="milestone-label">Perfect Google Couple Rating</div>
+                    <div class="stat-num">5.0 ★</div>
+                    <div class="stat-tag">Google Rating</div>
                 </div>
-                <div class="milestone-item">
+                <div class="stat-box">
                     <div class="corner-notch tl"></div>
                     <div class="corner-notch br"></div>
-                    <div class="milestone-val">25+</div>
-                    <div class="milestone-label">Destination Cities Covered</div>
+                    <div class="stat-num">25+</div>
+                    <div class="stat-tag">Cities Covered</div>
                 </div>
-                <div class="milestone-item">
+                <div class="stat-box">
                     <div class="corner-notch tl"></div>
                     <div class="corner-notch br"></div>
-                    <div class="milestone-val">Feb 2021</div>
-                    <div class="milestone-label">Founded by Vishal in Hyderabad</div>
-                </div>
-            </div>
-
-            <div class="quote-banner">
-                "Photography is the pause button of life. When Vishal and his team photographed our wedding rituals, they didn't just take pictures—they captured the heartbeat of our families."
-                <div style="font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 14px; color: var(--gold-subtle); font-style: normal; font-weight: 600;">
-                    &mdash; Harika &amp; Karthik, Hyderabad
+                    <div class="stat-num">4+ Yrs</div>
+                    <div class="stat-tag">Started Feb 2021</div>
                 </div>
             </div>
         </section>
 
         <!-- =============================================================
-             SECTION 5 OF 5: LUXURY CALL TO ACTION
+             SECTION 5 OF 5: FRIENDLY CONTACT CTA
              ============================================================= -->
-        <section class="page-cta-section" id="contact-cta" aria-label="Book Your Wedding Story">
+        <section class="page-cta-section" id="contact-cta" aria-label="Contact Us">
             <img src="Rangoli BG.png" class="section-mandala-tr" alt="" aria-hidden="true">
             <img src="Rangoli BG.png" class="section-mandala-bl" alt="" aria-hidden="true">
 
             <div class="cta-content">
-                <span class="section-eyebrow cta-eyebrow">THE NEXT CHAPTER</span>
-                <h2 class="cta-title">Let Us Immortalize Your Wedding Day</h2>
+                <span class="section-eyebrow cta-eyebrow">SAY HELLO</span>
+                <h2 class="cta-title">Let's Talk About Your Wedding!</h2>
                 <p class="cta-desc">
-                    Your wedding is a once-in-a-lifetime milestone. Connect directly with Vishal and our team to discuss your dates, schedule a friendly consultation, and receive a customized quote.
+                    Send a quick WhatsApp message to Vishal or call us directly. We are happy to check your date and answer all your questions!
                 </p>
 
                 <div class="cta-actions-group">
-                    <a href="https://wa.me/917989304874?text=Hello%20Vishal,%20I%20would%20like%20to%20inquire%20about%20wedding%20photography%20packages%20for%20our%20wedding." class="btn-gold" target="_blank" rel="noopener">
+                    <a href="https://wa.me/917989304874?text=Hello%20Vishal,%20I%20would%20like%20to%20know%20about%20wedding%20photography%20packages." class="btn-gold" target="_blank" rel="noopener">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-1.109-.072-.251-.082-.579-.193-.997-.373-1.764-.761-2.909-2.535-2.997-2.653-.088-.118-.718-.956-.718-1.823 0-.867.456-1.293.618-1.47.162-.177.353-.221.471-.221.118 0 .236.001.338.006.109.005.253-.042.394.3.147.357.502 1.221.546 1.31.044.088.073.191.015.309-.059.118-.088.191-.177.294-.088.103-.186.23-.265.309-.089.088-.182.185-.078.363.103.177.458.756.983 1.224.675.602 1.244.788 1.421.876.177.088.279.073.383-.044.103-.118.441-.515.559-.691.118-.177.235-.147.397-.088.162.059 1.029.485 1.205.573.177.088.294.132.338.206.044.074.044.428-.1 0.833z"/>
                         </svg>
-                        WhatsApp Consultation
+                        WhatsApp with Vishal
                     </a>
                     <a href="tel:+917989304874" class="btn-outline-cream">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -652,16 +546,15 @@
 
                 <div class="cta-quick-contacts">
                     <span>Studio: Pragathi Nagar, Nizampet, Hyderabad</span>
-                    <a href="mailto:swayamvaraphotos@gmail.com">swayamvaraphotos@gmail.com</a>
-                    <a href="portfolio.html">View 51 Portfolio Frames &rarr;</a>
-                    <a href="services.html">Explore All Services &rarr;</a>
+                    <a href="portfolio.html">View 51 Photos &rarr;</a>
+                    <a href="services.html">See Our Packages &rarr;</a>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- =============================================================
-         FOOTER (IDENTICAL TO INDEX.HTML)
+         FOOTER
          ============================================================= -->
     <footer class="site-footer" id="footer" aria-label="Footer">
         <div class="footer-wave-wrap" aria-hidden="true">
