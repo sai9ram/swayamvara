@@ -12,12 +12,12 @@
             candid: {
                 name: 'Candid Photography',
                 desc: 'Natural emotions, unscripted laughter & heartfelt moments.',
-                img: '609948448_18090306871967204_1300483370148847510_n.jpg'
+                img: 'Candid Camera.webp'
             },
             traditional: {
                 name: 'Traditional Photography',
                 desc: 'Classic portraits, family pictures & sacred cultural rituals.',
-                img: '634111725_18094156954967204_6789918060777664108_n.jpg'
+                img: 'Traditional camera.jpg'
             }
         },
         ceremonies: {
