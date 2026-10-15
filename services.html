@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Photography Services & Packages in Hyderabad | Swayamvara</title>
+    <meta name="description" content="Explore luxury wedding photography and cinematography services in Hyderabad by Swayamvara. Candid photography, pre-wedding shoots, traditional rituals, drone films, and handcrafted heirloom albums.">
+    <meta name="keywords" content="wedding photography services hyderabad, candid photography packages hyderabad, pre wedding shoot hyderabad, wedding cinematography hyderabad, wedding album design nizampet">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Swayamvara Wedding Photography - Vishal">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wedding Photography Services & Packages in Hyderabad | Swayamvara">
+    <meta property="og:description" content="Curated experiences for every sacred ceremony. Candid photography, pre-wedding shoots, 4K wedding films, and artisanal photo albums.">
+    <meta property="og:url" content="https://swayamvaraweddings.com/services.html">
+    <meta property="og:image" content="656744394_18110845420691493_5919477262661427915_n.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23641D2D'/%3E%3Ccircle cx='50' cy='50' r='42' stroke='%23C5A059' stroke-width='1.5' stroke-dasharray='3 3' fill='none'/%3E%3Cg stroke='%23FBF7F0' stroke-width='1.8' fill='%23C5A059' fill-opacity='0.25'%3E%3Cpath d='M50 14 C58 30, 62 40, 50 50 C38 40, 42 30, 50 14 Z'/%3E%3Cpath d='M50 86 C58 70, 62 60, 50 50 C38 60, 42 70, 50 86 Z'/%3E%3Cpath d='M14 50 C30 58, 40 62, 50 50 C40 38, 30 42, 14 50 Z'/%3E%3Cpath d='M86 50 C70 58, 60 62, 50 50 C60 38, 70 42, 86 50 Z'/%3E%3Cpath d='M24 24 C40 32, 48 44, 50 50 C44 48, 32 40, 24 24 Z'/%3E%3Cpath d='M76 24 C60 32, 52 44, 50 50 C56 48, 68 40, 76 24 Z'/%3E%3Cpath d='M24 76 C40 68, 48 56, 50 50 C44 52, 32 60, 24 76 Z'/%3E%3Cpath d='M76 76 C60 68, 52 56, 50 50 C56 52, 68 60, 76 76 Z'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='8' fill='%23C5A059'/%3E%3Ccircle cx='50' cy='50' r='3.5' fill='%23641D2D'/%3E%3C/svg%3E">
+
+    <!-- Unified Stylesheet -->
+    <link rel="stylesheet" href="theme.css">
+
+    <style>
+        /* -------------------------------------------------------------
+           PAGE SPECIFIC STYLES: SERVICES.HTML
+           ------------------------------------------------------------- */
+        
+        /* Section 2: Core Services Cards */
+        .services-list-section {
+            position: relative;
+            padding: clamp(90px, 10vw, 140px) 5vw;
+            background: var(--bg-primary);
+            overflow: hidden;
+        }
+
+        .services-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(70px, 8vw, 110px);
+        }
+
+        .service-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(40px, 6vw, 80px);
+            align-items: center;
+        }
+
+        .service-row.reverse {
+            direction: rtl;
+        }
+
+        .service-row.reverse > * {
+            direction: ltr;
+        }
+
+        .service-media-card {
+            position: relative;
+            border: 1px solid var(--gold-subtle);
+            padding: 14px;
+            background: var(--cream-light);
+            box-shadow: 0 20px 48px rgba(100, 29, 45, 0.1);
+            border-radius: 4px;
+        }
+
+        .service-img-wrap {
+            position: relative;
+            height: clamp(340px, 45vh, 480px);
+            overflow: hidden;
+            border-radius: 2px;
+        }
+
+        .service-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .service-media-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .service-badge-tag {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            background: rgba(43, 13, 20, 0.85);
+            color: var(--gold-subtle);
+            padding: 6px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            font-size: 0.68rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            font-weight: 600;
+            backdrop-filter: blur(8px);
+        }
+
+        .service-content-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-idx {
+            font-family: var(--font-title);
+            font-size: 0.88rem;
+            color: var(--gold-subtle);
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .service-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+            line-height: 1.2;
+            color: var(--accent-deep);
+            margin-bottom: 18px;
+            font-weight: 400;
+        }
+
+        .service-desc {
+            font-size: 1.02rem;
+            line-height: 1.85;
+            color: rgba(100, 29, 45, 0.88);
+            margin-bottom: 24px;
+        }
+
+        .service-features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .service-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: var(--accent-deep);
+            font-weight: 500;
+        }
+
+        .service-feature-item svg {
+            color: var(--gold-subtle);
+            flex-shrink: 0;
+        }
+
+        /* Section 3: Heirloom Albums & Physical Craftsmanship */
+        .albums-section {
+            position: relative;
+            padding: clamp(90px, 10vw, 130px) 5vw;
+            background: var(--wheat-secondary);
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            overflow: hidden;
+        }
+
+        .albums-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .albums-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+            text-align: left;
+        }
+
+        .album-card {
+            background: var(--cream-light);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 4px;
+            padding: 34px 28px;
+            position: relative;
+            box-shadow: 0 12px 32px rgba(100, 29, 45, 0.06);
+            transition: var(--transition-smooth);
+        }
+
+        .album-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold-subtle);
+            box-shadow: 0 20px 48px rgba(100, 29, 45, 0.12);
+        }
+
+        .album-icon {
+            color: var(--gold-subtle);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .album-card-title {
+            font-family: var(--font-title);
+            font-size: 1.1rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent-deep);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .album-card-desc {
+            font-size: 0.94rem;
+            line-height: 1.75;
+            color: rgba(100, 29, 45, 0.85);
+        }
+
+        /* Section 4: The 4-Step Process */
+        .process-section {
+            position: relative;
+            padding: clamp(90px, 10vw, 130px) 5vw;
+            background: var(--bg-primary);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1220px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+
+        .process-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-subtle), transparent);
+            z-index: 1;
+        }
+
+        .process-step {
+            position: relative;
+            z-index: 2;
+            padding: 0 16px;
+        }
+
+        .step-circle {
+            width: 74px;
+            height: 74px;
+            border-radius: 50%;
+            background: var(--cream-light);
+            border: 1.5px solid var(--gold-subtle);
+            color: var(--accent-deep);
+            font-family: var(--font-title);
+            font-size: 1.35rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            box-shadow: 0 8px 24px rgba(100, 29, 45, 0.1);
+            transition: var(--transition-smooth);
+        }
+
+        .process-step:hover .step-circle {
+            background: var(--accent-deep);
+            color: var(--cream-light);
+            transform: scale(1.08);
+        }
+
+        .step-title {
+            font-family: var(--font-title);
+            font-size: 0.95rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent-deep);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .step-desc {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: rgba(100, 29, 45, 0.82);
+        }
+
+        @media (max-width: 1024px) {
+            .albums-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 48px;
+            }
+            .process-grid::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .service-row,
+            .service-row.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SITE HEADER NAVIGATION -->
+    <header class="site-header">
+        <a href="index.html" class="brand-logo">
+            <span class="brand-name">Swayamvara</span>
+            <span class="brand-sub">Wedding Photography</span>
+        </a>
+
+        <nav class="nav-center">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <div class="nav-cta">
+            <a href="index.html#contact">Get Your Quote</a>
+        </div>
+
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="3" y1="7" x2="21" y2="7"></line>
+                <line x1="7" y1="17" x2="21" y2="17"></line>
+            </svg>
+        </button>
+    </header>
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div class="mobile-drawer-overlay">
+        <div class="mobile-drawer">
+            <div class="mobile-drawer-header">
+                <div class="brand-logo">
+                    <span class="brand-name">Swayamvara</span>
+                    <span class="brand-sub">Wedding Photography</span>
+                </div>
+                <button class="mobile-drawer-close" aria-label="Close Menu">&times;</button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+            <div style="margin-bottom: 24px;">
+                <a href="index.html#contact" class="btn-primary" style="width: 100%;">Get Your Quote</a>
+            </div>
+            <div class="mobile-drawer-contact">
+                <a href="tel:+917989304874">Phone: +91 79893 04874</a>
+                <a href="mailto:swayamvaraphotos@gmail.com">Email: swayamvaraphotos@gmail.com</a>
+                <span style="font-size: 0.72rem; opacity: 0.7;">Pragathi Nagar, Nizampet, Hyderabad</span>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- =============================================================
+             SECTION 1 OF 5: HERO BANNER
+             ============================================================= -->
+        <section class="page-hero-banner" id="hero" aria-label="Services Hero">
+            <img src="Rangoli BG.png" class="section-mandala-tr" alt="" aria-hidden="true">
+            <img src="Rangoli BG.png" class="section-mandala-bl" alt="" aria-hidden="true">
+
+            <div class="hero-content-wrap">
+                <span class="section-eyebrow">BESPOKE OFFERINGS &amp; CRAFTSMANSHIP</span>
+                <h1 class="hero-page-title">Curated Experiences for Every Sacred Ceremony</h1>
+                <p class="hero-page-tagline">"From intimate pre-wedding dawns to grand multi-day royal celebrations."</p>
+                <p class="hero-page-desc">
+                    Every wedding is distinct. Whether you require complete dual-crew cinematic coverage across Hyderabad, a scenic pre-wedding session in heritage resorts, or handcrafted flush-mount albums, we tailor our photography packages to fit your timeline with total transparency and zero hidden fees.
+                </p>
+
+                <div class="gold-divider">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                        <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                    </svg>
+                </div>
+
+                <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
+                    <a href="#core-services" class="btn-primary">Explore Services</a>
+                    <a href="portfolio.html" class="btn-secondary">View 51 Portfolio Frames</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================================
+             SECTION 2 OF 5: CORE WEDDING SERVICES (4 LUXURY BLOCKS)
+             ============================================================= -->
+        <section class="services-list-section" id="core-services" aria-label="Core Services">
+            <img src="Rangoli BG.png" class="section-mandala-tr" alt="" aria-hidden="true">
+
+            <div class="services-container">
+                <!-- Service 1: Candid Wedding Photography -->
+                <div class="service-row">
+                    <div class="service-media-card clickable-photo" data-img="656744394_18110845420691493_5919477262661427915_n.jpg" data-title="Candid Wedding Moments" data-loc="Hyderabad Mandap">
+                        <div class="corner-notch tl"></div>
+                        <div class="corner-notch tr"></div>
+                        <div class="corner-notch bl"></div>
+                        <div class="corner-notch br"></div>
+                        <span class="service-badge-tag">MOST POPULAR</span>
+                        <div class="service-img-wrap">
+                            <img src="656744394_18110845420691493_5919477262661427915_n.jpg" alt="Candid Wedding Photography Hyderabad" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="service-content-card">
+                        <span class="service-idx">SERVICE 01</span>
+                        <h2 class="service-title">Candid Wedding Photography</h2>
+                        <p class="service-desc">
+                            We document unscripted intimacy, real tears of kanyadaan, and spontaneous laughter between family members. With dual photographers capturing complementary angles simultaneously, no fleeting expression goes unnoticed.
+                        </p>
+                        <ul class="service-features-list">
+                            <li class="service-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Discreet, non-intrusive shooting style that lets you be present</span>
+                            </li>
+                            <li class="service-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Master natural-light and ambient mandap flash techniques</span>
+                            </li>
+                            <li class="service-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>All high-resolution delivered images individually color-graded</span>
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="https://wa.me/917989304874?text=Hi%20Vishal,%20I%20am%20interested%20in%20Candid%20Wedding%20Photography." class="btn-primary" target="_blank" rel="noopener">Inquire Candid Package</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: Pre-Wedding & Couple Portraits (Reversed) -->
+                <div class="service-row reverse">
+                    <div class="service-media-card clickable-photo" data-img="634111725_18094156954967204_6789918060777664108_n.jpg" data-title="Pre-Wedding Couple Shoot" data-loc="Scenic Heritage Setting">
+                        <div class="corner-notch tl"></div>
+                        <div class="corner-notch tr"></div>
+                        <div class="corner-notch bl"></div>
+                        <div class="corner-notch br"></div>
+                        <span class="service-badge-tag">ROMANTIC ESSENCE</span>
+                        <div class="service-img-wrap">
+                            <img src="634111725_18094156954967204_6789918060777664108_n.jpg" alt="Pre-Wedding Shoot Hyderabad" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="service-content-card">
+                        <span class="service-idx">SERVICE 02</span>
+                        <h2 class="service-title">Pre-Wedding &amp; Couple Shoots</h2>
+                        <p class="service-desc">
+                            A relaxed, cinematic prelude to your wedding day. We guide you through scenic landscapes, historic forts, or lakeside mornings around Hyderabad, easing camera shyness and creating timeless editorial portraits.
+                        </p>
+                        <ul class="service-features-list">
+                            <li class="service-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Curated outdoor and heritage location scouting across Hyderabad</span>
+                            </li>
+                            <li class="service-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Styling and moodboard consultation tailored to your chemistry</span>
+                            </li>
+                            <li class="service-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Includes short 60-second vertical cinematic save-the-date reel</span>
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="https://wa.me/917989304874?text=Hi%20Vishal,%20I%20would%20like%20details%20on%20Pre-Wedding%20Shoots." class="btn-primary" target="_blank" rel="noopener">Book Pre-Wedding Session</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Traditional Rituals & Ceremony Coverage -->
+                <div class="service-row">
+                    <div class="service-media-card clickable-photo" data-img="490031830_18223850140292129_1234053158942004427_n.jpg" data-title="Traditional Ceremonies & Rituals" data-loc="Sacred Mantras & Fire">
+                        <div class="corner-notch tl"></div>
+                        <div class="corner-notch tr"></div>
+                        <div class="corner-notch bl"></div>
+                        <div class="corner-notch br"></div>
+                        <span class="service-badge-tag">SACRED HERITAGE</span>
+                        <div class="service-img-wrap">
+                            <img src="490031830_18223850140292129_1234053158942004427_n.jpg" alt="Traditional Wedding Ceremonies" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="service-content-card">
+                        <span class="service-idx">SERVICE 03</span>
+                        <h2 class="service-title">Traditional Rituals &amp; Ceremonies</h2>
+                        <p class="service-desc">
+                            Indian weddings are rich with sacred rituals that demand deep cultural respect. We cover Haldi, Mehendi, Sangeet, Pellikuthuru, Muhurtham, and Reception with thorough attention to family elders, auspicious timings, and group portraits.
+                        </p>
+                        <ul class="service-features-list">
+                            <li class="service-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Zero missed moments: Jeelakarra Bellam, Mangalsutra, Saptapadi</span>
+                            </li>
+                            <li class="service-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Polite and organized family group portraits stage coordination</span>
+                            </li>
+                            <li class="service-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>High-power studio lighting for crystal-clear clarity in banquet halls</span>
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="https://wa.me/917989304874?text=Hi%20Vishal,%20I%20need%20full%20traditional%20ritual%20wedding%20coverage." class="btn-primary" target="_blank" rel="noopener">Inquire Rituals Coverage</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4: Cinematic Wedding Films & 4K Drone (Reversed) -->
+                <div class="service-row reverse">
+                    <div class="service-media-card clickable-photo" data-img="572985411_18083469049967204_562853622138040638_n.jpg" data-title="Cinematic Wedding Films" data-loc="4K Drone & Cinema Cameras">
+                        <div class="corner-notch tl"></div>
+                        <div class="corner-notch tr"></div>
+                        <div class="corner-notch bl"></div>
+                        <div class="corner-notch br"></div>
+                        <span class="service-badge-tag">CINEMATIC CINEMA</span>
+                        <div class="service-img-wrap">
+                            <img src="572985411_18083469049967204_562853622138040638_n.jpg" alt="Wedding Films Hyderabad" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="service-content-card">
+                        <span class="service-idx">SERVICE 04</span>
+                        <h2 class="service-title">Cinematic Films &amp; 4K Drone</h2>
+                        <p class="service-desc">
+                            We don't make ordinary wedding videos; we craft bespoke romantic cinema. Using full-frame cinema cameras, gimbal stabilizers, licensed musical scores, and 4K aerial drone sweeps, your wedding becomes a movie you will watch every anniversary.
+                        </p>
+                        <ul class="service-features-list">
+                            <li class="service-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>3 to 5 minute cinematic trailer + 35-45 minute feature film</span>
+                            </li>
+                            <li class="service-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Dedicated sound engineer capturing crystal clear vows and mantras</span>
+                            </li>
+                            <li class="service-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Aerial 4K drone cinematography capturing grand venue architecture</span>
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="https://wa.me/917989304874?text=Hi%20Vishal,%20tell%20me%20more%20about%20your%20Cinematic%20Wedding%20Films." class="btn-primary" target="_blank" rel="noopener">Inquire Film Packages</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================================
+             SECTION 3 OF 5: ARTISANAL HEIRLOOM ALBUMS & DELIVERABLES
+             ============================================================= -->
+        <section class="albums-section" id="albums" aria-label="Heirloom Albums">
+            <img src="Rangoli BG.png" class="section-mandala-bl" alt="" aria-hidden="true">
+
+            <div class="albums-container">
+                <span class="section-eyebrow">HEIRLOOM PHYSICAL ARCHIVES</span>
+                <h2 class="section-title">Tangible Memories Handcrafted For Generations</h2>
+                <div class="gold-divider">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                        <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                    </svg>
+                </div>
+                <p class="section-desc">
+                    A digital file can easily be forgotten on a hard drive, but a luxury handcrafted wedding book is an heirloom held in hands, passed down with love, pride, and nostalgia.
+                </p>
+
+                <div class="albums-grid">
+                    <!-- Album Detail 1 -->
+                    <div class="album-card">
+                        <div class="corner-notch tl"></div>
+                        <div class="corner-notch br"></div>
+                        <div class="album-icon">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="album-card-title">Flush-Mount Layflat Spreads</h3>
+                        <p class="album-card-desc">
+                            Pages open seamlessly flat at 180° with zero gutter distortion. Panoramic wide-angle wedding shots spread gracefully across dual pages without any center cut.
+                        </p>
+                    </div>
+
+                    <!-- Album Detail 2 -->
+                    <div class="album-card">
+                        <div class="corner-notch tl"></div>
+                        <div class="corner-notch br"></div>
+                        <div class="album-icon">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="album-card-title">Italian Leather &amp; Silk Covers</h3>
+                        <p class="album-card-desc">
+                            Personalized covers crafted with hand-stitched Tuscan leather or raw Banarasi silk, customized with deep gold-foil embossing of the couple's names and wedding date.
+                        </p>
+                    </div>
+
+                    <!-- Album Detail 3 -->
+                    <div class="album-card">
+                        <div class="corner-notch tl"></div>
+                        <div class="corner-notch br"></div>
+                        <div class="album-icon">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                        </div>
+                        <h3 class="album-card-title">Keepsake Box &amp; Cloud Gallery</h3>
+                        <p class="album-card-desc">
+                            Delivered inside a custom engraved velvet-lined wooden keepsake box alongside a private online gallery with full-resolution cloud storage for friends and family worldwide.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================================
+             SECTION 4 OF 5: THE 4-STEP SWAYAMVARA EXPERIENCE
+             ============================================================= -->
+        <section class="process-section" id="process" aria-label="Our Process">
+            <span class="section-eyebrow">SEAMLESS JOURNEY</span>
+            <h2 class="section-title">How We Craft Your Wedding Masterpiece</h2>
+            <div class="gold-divider">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                </svg>
+            </div>
+            <p class="section-desc">
+                From our first conversation to delivering your final handcrafted album, we make the entire process comfortable, joyful, and completely stress-free.
+            </p>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-circle">01</div>
+                    <h3 class="step-title">Vision &amp; Dates</h3>
+                    <p class="step-desc">
+                        We sit down over coffee or a video call to discuss your timeline, key rituals, venue layout, and lock your wedding dates.
+                    </p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">02</div>
+                    <h3 class="step-title">Pre-Wedding Shoot</h3>
+                    <p class="step-desc">
+                        A fun, informal shoot allowing you to get completely comfortable in front of Vishal's lens before the grand rush of the wedding.
+                    </p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">03</div>
+                    <h3 class="step-title">The Sacred Days</h3>
+                    <p class="step-desc">
+                        Our dual crew arrives early, coordinating smoothly with your families to capture both spontaneous moments and traditional rituals.
+                    </p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">04</div>
+                    <h3 class="step-title">Heirloom Delivery</h3>
+                    <p class="step-desc">
+                        Teaser photos within 2 weeks, full high-res edited gallery in 4 weeks, followed by your custom printed luxury photobook.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================================
+             SECTION 5 OF 5: CUSTOM QUOTE & AVAILABILITY CTA
+             ============================================================= -->
+        <section class="page-cta-section" id="quote-cta" aria-label="Request Quote">
+            <img src="Rangoli BG.png" class="section-mandala-tr" alt="" aria-hidden="true">
+            <img src="Rangoli BG.png" class="section-mandala-bl" alt="" aria-hidden="true">
+
+            <div class="cta-content">
+                <span class="section-eyebrow cta-eyebrow">RESERVE YOUR DATES</span>
+                <h2 class="cta-title">Receive a Transparent, Tailored Wedding Quote</h2>
+                <p class="cta-desc">
+                    Popular wedding dates in Hyderabad book up 3 to 6 months in advance. Reach out today with your event dates, locations, and requirements to check our availability.
+                </p>
+
+                <div class="cta-actions-group">
+                    <a href="https://wa.me/917989304874?text=Hi%20Vishal,%20I%20would%20like%20to%20get%20a%20price%20quote%20for%20my%20wedding%20photography." class="btn-gold" target="_blank" rel="noopener">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-1.109-.072-.251-.082-.579-.193-.997-.373-1.764-.761-2.909-2.535-2.997-2.653-.088-.118-.718-.956-.718-1.823 0-.867.456-1.293.618-1.47.162-.177.353-.221.471-.221.118 0 .236.001.338.006.109.005.253-.042.394.3.147.357.502 1.221.546 1.31.044.088.073.191.015.309-.059.118-.088.191-.177.294-.088.103-.186.23-.265.309-.089.088-.182.185-.078.363.103.177.458.756.983 1.224.675.602 1.244.788 1.421.876.177.088.279.073.383-.044.103-.118.441-.515.559-.691.118-.177.235-.147.397-.088.162.059 1.029.485 1.205.573.177.088.294.132.338.206.044.074.044.428-.1 0.833z"/>
+                        </svg>
+                        Get Free Price Quote on WhatsApp
+                    </a>
+                    <a href="tel:+917989304874" class="btn-outline-cream">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Direct Call: +91 79893 04874
+                    </a>
+                </div>
+
+                <div class="cta-quick-contacts">
+                    <span>Studio: Pragathi Nagar, Nizampet, Hyderabad</span>
+                    <a href="mailto:swayamvaraphotos@gmail.com">swayamvaraphotos@gmail.com</a>
+                    <a href="portfolio.html">View Full Portfolio &rarr;</a>
+                    <a href="about.html">Read About Founder Vishal &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =============================================================
+         FOOTER (IDENTICAL TO INDEX.HTML)
+         ============================================================= -->
+    <footer class="site-footer" id="footer" aria-label="Footer">
+        <div class="footer-wave-wrap" aria-hidden="true">
+            <svg class="footer-wave-svg" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M0,32 C320,85 580,10 840,60 C1100,105 1300,25 1440,42" stroke="#C5A059" stroke-width="2.5" stroke-opacity="0.45" fill="none" />
+                <path d="M0,35 C320,88 580,13 840,63 C1100,108 1300,28 1440,45 L1440,90 L0,90 Z" fill="#3B111B" />
+            </svg>
+        </div>
+
+        <img src="Footer Background image-Picsart-BackgroundRemover.jpg" class="footer-left-artwork" alt="" aria-hidden="true">
+        <img src="Sita_Rama_Artwork.jpg" class="footer-divine-artwork" alt="" aria-hidden="true">
+        <img src="Rangoli BG.png" class="footer-mandala-tr" alt="" aria-hidden="true">
+        <img src="Rangoli BG.png" class="footer-mandala-bl" alt="" aria-hidden="true">
+
+        <div class="footer-top-badge" aria-hidden="true">
+            <span></span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+            </svg>
+            <span></span>
+        </div>
+
+        <svg class="footer-arch-bg" viewBox="0 0 500 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M250 40 C140 40, 50 140, 50 260 V560 H450 V260 C450 140, 360 40, 250 40 Z" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3" />
+            <path d="M250 65 C160 65, 75 155, 75 265 V540 H425 V265 C425 155, 340 65, 250 65 Z" stroke="currentColor" stroke-width="1" />
+            <path d="M250 90 C220 120, 180 150, 120 180 V520 H380 V180 C320 150, 280 120, 250 90 Z" stroke="currentColor" stroke-width="0.8" />
+            <circle cx="250" cy="25" r="8" stroke="currentColor" stroke-width="1" />
+            <path d="M250 5 V17" stroke="currentColor" stroke-width="1.2" />
+        </svg>
+
+        <div class="footer-container">
+            <div class="footer-brand-block">
+                <h2 class="footer-brand-title">Swayamvara</h2>
+                <p class="footer-brand-sub">BEST WEDDING PHOTOGRAPHY STUDIO IN HYDERABAD</p>
+            </div>
+
+            <div class="footer-grid">
+                <!-- Col 1 -->
+                <div class="footer-col">
+                    <h3 class="footer-col-title">NAVIGATION</h3>
+                    <ul class="footer-links-list">
+                        <li class="footer-link-item"><a href="index.html">HOME</a></li>
+                        <li class="footer-link-item"><a href="about.html">ABOUT</a></li>
+                        <li class="footer-link-item"><a href="portfolio.html">PORTFOLIO</a></li>
+                        <li class="footer-link-item"><a href="services.html">SERVICES</a></li>
+                        <li class="footer-link-item"><a href="index.html#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="footer-col">
+                    <h3 class="footer-col-title">SOCIAL MEDIA</h3>
+                    <ul class="footer-links-list">
+                        <li class="footer-link-item">
+                            <a href="https://www.instagram.com/swayamvara_weddings" target="_blank" rel="noopener">INSTAGRAM (@swayamvara_weddings)</a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="https://wa.me/917989304874" target="_blank" rel="noopener">WHATSAPP DIRECT</a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="mailto:swayamvaraphotos@gmail.com">EMAIL US</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="footer-col">
+                    <h3 class="footer-col-title">CONNECT &amp; STUDIO</h3>
+                    <div class="footer-contact-info">
+                        <div class="footer-info-group">
+                            <span class="footer-info-label">FOUNDER &amp; PHOTOGRAPHER</span>
+                            <span class="footer-info-val" style="font-size: 1.05rem;">
+                                Vishal &bull; Started Feb 2021
+                            </span>
+                        </div>
+                        <div class="footer-info-group">
+                            <span class="footer-info-label">EMAIL ADDRESS</span>
+                            <span class="footer-info-val">
+                                <a href="mailto:swayamvaraphotos@gmail.com">swayamvaraphotos@gmail.com</a>
+                            </span>
+                        </div>
+                        <div class="footer-info-group">
+                            <span class="footer-info-label">CALL / WHATSAPP</span>
+                            <span class="footer-info-val">
+                                <a href="tel:+917989304874">+91 79893 04874</a>
+                            </span>
+                        </div>
+                        <div class="footer-info-group">
+                            <span class="footer-info-label">OUR STUDIO ADDRESS</span>
+                            <span class="footer-info-val" style="font-size: 0.88rem; line-height: 1.45; color: rgba(244, 235, 221, 0.9);">
+                                Villa 52, THIRU SANKALP VILLAS, Beside Siri Balaji Towers, Pragathi Nagar, Nizampet, Hyderabad, Telangana 500054
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom-row">
+                <p class="footer-copy-text">
+                    &copy; SWAYAMVARA &mdash; BEAUTIFUL WEDDING PHOTOS, TREASURED FOR LIFE.
+                    <span class="footer-crafted-by" style="margin-left: 12px; color: var(--gold-subtle); letter-spacing: 0.2em;">
+                        &bull; Crafted with love by <a href="https://www.theupliv.com" target="_blank" rel="noopener" style="color: #FBF7F0; font-weight: 600; text-decoration: none; border-bottom: 1px dotted var(--gold-subtle);">"UPliv"</a>
+                    </span>
+                </p>
+                <a href="#" class="footer-back-top" aria-label="Back to top">
+                    <span>BACK TO TOP</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 19V5M5 12l7-7 7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- EXPANDED PHOTO LIGHTBOX MODAL -->
+    <div class="photo-lightbox" id="photoLightbox" role="dialog" aria-modal="true" aria-label="Photo Preview">
+        <div class="lightbox-card">
+            <button class="lightbox-close-btn" id="lightboxClose" aria-label="Close preview">&times;</button>
+            <button class="lightbox-nav-btn prev" id="lightboxPrev" aria-label="Previous">&larr;</button>
+            <button class="lightbox-nav-btn next" id="lightboxNext" aria-label="Next">&rarr;</button>
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" src="" alt="Expanded wedding photograph">
+            </div>
+            <div class="lightbox-content">
+                <h3 class="lightbox-title" id="lightboxTitle"></h3>
+                <p class="lightbox-loc" id="lightboxLoc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN SCRIPT -->
+    <script src="main.js"></script>
+</body>
+</html>

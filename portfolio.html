@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Photography Portfolio | Swayamvara Hyderabad</title>
+    <meta name="description" content="Explore our complete wedding photography portfolio featuring 51 curated moments from Hyderabad and royal destination weddings. Candid moments, pre-wedding romance, and sacred rituals.">
+    <meta name="keywords" content="wedding photography portfolio hyderabad, candid wedding photos hyderabad, pre wedding shoot gallery, luxury wedding photography albums">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Swayamvara Wedding Photography - Vishal">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wedding Photography Portfolio | Swayamvara Hyderabad">
+    <meta property="og:description" content="Fifty-One Frames of Pure Celebration. Browse our complete wedding photography gallery.">
+    <meta property="og:url" content="https://swayamvaraweddings.com/portfolio.html">
+    <meta property="og:image" content="654133454_18040384025685409_7668423551746430989_n.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23641D2D'/%3E%3Ccircle cx='50' cy='50' r='42' stroke='%23C5A059' stroke-width='1.5' stroke-dasharray='3 3' fill='none'/%3E%3Cg stroke='%23FBF7F0' stroke-width='1.8' fill='%23C5A059' fill-opacity='0.25'%3E%3Cpath d='M50 14 C58 30, 62 40, 50 50 C38 40, 42 30, 50 14 Z'/%3E%3Cpath d='M50 86 C58 70, 62 60, 50 50 C38 60, 42 70, 50 86 Z'/%3E%3Cpath d='M14 50 C30 58, 40 62, 50 50 C40 38, 30 42, 14 50 Z'/%3E%3Cpath d='M86 50 C70 58, 60 62, 50 50 C60 38, 70 42, 86 50 Z'/%3E%3Cpath d='M24 24 C40 32, 48 44, 50 50 C44 48, 32 40, 24 24 Z'/%3E%3Cpath d='M76 24 C60 32, 52 44, 50 50 C56 48, 68 40, 76 24 Z'/%3E%3Cpath d='M24 76 C40 68, 48 56, 50 50 C44 52, 32 60, 24 76 Z'/%3E%3Cpath d='M76 76 C60 68, 52 56, 50 50 C56 52, 68 60, 76 76 Z'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='8' fill='%23C5A059'/%3E%3Ccircle cx='50' cy='50' r='3.5' fill='%23641D2D'/%3E%3C/svg%3E">
+
+    <!-- Unified Stylesheet -->
+    <link rel="stylesheet" href="theme.css">
+
+    <style>
+        /* -------------------------------------------------------------
+           PAGE SPECIFIC STYLES: PORTFOLIO.HTML
+           ------------------------------------------------------------- */
+
+        /* Section 2: Interactive Filter Toolbar */
+        .filter-toolbar-section {
+            position: sticky;
+            top: 78px;
+            z-index: 40;
+            background: rgba(244, 235, 221, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 16px 5vw;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tabs-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-tab-btn {
+            background: transparent;
+            border: 1px solid rgba(100, 29, 45, 0.3);
+            border-radius: 30px;
+            padding: 8px 20px;
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent-deep);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .filter-tab-btn:hover,
+        .filter-tab-btn.active {
+            background: var(--accent-deep);
+            color: var(--cream-light);
+            border-color: var(--accent-deep);
+            box-shadow: 0 4px 14px rgba(100, 29, 45, 0.15);
+        }
+
+        .filter-counter-badge {
+            font-size: 0.76rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-subtle);
+            font-weight: 600;
+        }
+
+        /* Section 3: The Complete Photo Gallery (51 Images) */
+        .portfolio-gallery-section {
+            position: relative;
+            padding: clamp(40px, 6vw, 80px) 5vw clamp(80px, 8vw, 120px);
+            background: var(--bg-primary);
+            overflow: hidden;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 28px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .gallery-item-card {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            background: var(--cream-light);
+            border: 1px solid rgba(197, 160, 89, 0.35);
+            box-shadow: 0 10px 28px rgba(100, 29, 45, 0.08);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            aspect-ratio: 4 / 5;
+        }
+
+        .gallery-item-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold-subtle);
+            box-shadow: 0 24px 50px rgba(100, 29, 45, 0.2);
+        }
+
+        .gallery-card-img-wrap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #2B0D14;
+        }
+
+        .gallery-card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+        }
+
+        .gallery-item-card:hover .gallery-card-img-wrap img {
+            transform: scale(1.06);
+            filter: brightness(1.04);
+        }
+
+        .gallery-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(43, 13, 20, 0.1) 0%, rgba(43, 13, 20, 0) 40%, rgba(43, 13, 20, 0.88) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px 20px;
+            opacity: 0.95;
+            transition: opacity 0.35s ease;
+            z-index: 2;
+        }
+
+        .gallery-cat-badge {
+            align-self: flex-start;
+            background: rgba(197, 160, 89, 0.9);
+            color: var(--accent-dark);
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+        }
+
+        .gallery-card-title {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--cream-light);
+            font-weight: 500;
+            line-height: 1.25;
+            margin-bottom: 4px;
+        }
+
+        .gallery-card-loc {
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold-subtle);
+            font-weight: 500;
+        }
+
+        /* Section 4: Couples' Words / Testimonials */
+        .portfolio-testimonials-section {
+            position: relative;
+            padding: clamp(90px, 10vw, 130px) 5vw;
+            background: var(--wheat-secondary);
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1220px;
+            margin: 50px auto 0;
+            text-align: left;
+        }
+
+        .testi-card {
+            background: var(--cream-light);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 4px;
+            padding: 36px 30px;
+            position: relative;
+            box-shadow: 0 10px 28px rgba(100, 29, 45, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .testi-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold-subtle);
+            box-shadow: 0 18px 42px rgba(100, 29, 45, 0.12);
+        }
+
+        .testi-quote-mark {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            color: var(--gold-subtle);
+            line-height: 0.8;
+            margin-bottom: 12px;
+            opacity: 0.6;
+        }
+
+        .testi-text {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: rgba(100, 29, 45, 0.88);
+            margin-bottom: 22px;
+            font-style: italic;
+        }
+
+        .testi-author {
+            font-family: var(--font-title);
+            font-size: 0.88rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent-deep);
+            font-weight: 600;
+        }
+
+        .testi-venue {
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-subtle);
+            margin-top: 4px;
+        }
+
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .filter-toolbar-section {
+                top: 68px;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SITE HEADER NAVIGATION -->
+    <header class="site-header">
+        <a href="index.html" class="brand-logo">
+            <span class="brand-name">Swayamvara</span>
+            <span class="brand-sub">Wedding Photography</span>
+        </a>
+
+        <nav class="nav-center">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="services.html">Services</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <div class="nav-cta">
+            <a href="index.html#contact">Get Your Quote</a>
+        </div>
+
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="3" y1="7" x2="21" y2="7"></line>
+                <line x1="7" y1="17" x2="21" y2="17"></line>
+            </svg>
+        </button>
+    </header>
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div class="mobile-drawer-overlay">
+        <div class="mobile-drawer">
+            <div class="mobile-drawer-header">
+                <div class="brand-logo">
+                    <span class="brand-name">Swayamvara</span>
+                    <span class="brand-sub">Wedding Photography</span>
+                </div>
+                <button class="mobile-drawer-close" aria-label="Close Menu">&times;</button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="portfolio.html" class="active">Portfolio</a>
+                <a href="services.html">Services</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+            <div style="margin-bottom: 24px;">
+                <a href="index.html#contact" class="btn-primary" style="width: 100%;">Get Your Quote</a>
+            </div>
+            <div class="mobile-drawer-contact">
+                <a href="tel:+917989304874">Phone: +91 79893 04874</a>
+                <a href="mailto:swayamvaraphotos@gmail.com">Email: swayamvaraphotos@gmail.com</a>
+                <span style="font-size: 0.72rem; opacity: 0.7;">Pragathi Nagar, Nizampet, Hyderabad</span>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- =============================================================
+             SECTION 1 OF 5: HERO BANNER
+             ============================================================= -->
+        <section class="page-hero-banner" id="hero" aria-label="Portfolio Hero">
+            <img src="Rangoli BG.png" class="section-mandala-tr" alt="" aria-hidden="true">
+            <img src="Rangoli BG.png" class="section-mandala-bl" alt="" aria-hidden="true">
+
+            <div class="hero-content-wrap">
+                <span class="section-eyebrow">VISUAL ARCHIVE &amp; COMPLETE GALLERY</span>
+                <h1 class="hero-page-title">The Complete Wedding Anthology</h1>
+                <p class="hero-page-tagline">"Fifty-one frames of unfiltered joy, sacred rituals, and everlasting promises."</p>
+                <p class="hero-page-desc">
+                    Welcome to the complete visual archive of Swayamvara Wedding Photography. Every photograph shown below was captured by Vishal and our Hyderabad team across royal mandaps, heritage lake shores, intimate Haldi ceremonies, and luxury destination celebrations. Click any image to view in high resolution.
+                </p>
+
+                <div class="gold-divider">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                        <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================================
+             SECTION 2 OF 5: INTERACTIVE FILTER TOOLBAR
+             ============================================================= -->
+        <section class="filter-toolbar-section" id="filters" aria-label="Gallery Filters">
+            <div class="filter-tabs-group">
+                <button class="filter-tab-btn active" data-filter="all">All Works (51)</button>
+                <button class="filter-tab-btn" data-filter="candid">Candid Moments</button>
+                <button class="filter-tab-btn" data-filter="rituals">Sacred Rituals</button>
+                <button class="filter-tab-btn" data-filter="prewedding">Pre-Wedding</button>
+                <button class="filter-tab-btn" data-filter="portraits">Regal Portraits</button>
+            </div>
+            <div class="filter-counter-badge">
+                <span>Showing </span><span id="activeFilterCount">51</span><span> Master Photographs</span>
+            </div>
+        </section>
+
+        <!-- =============================================================
+             SECTION 3 OF 5: COMPLETE 51-PHOTO GALLERY
+             ============================================================= -->
+        <section class="portfolio-gallery-section" id="gallery" aria-label="All 51 Wedding Photographs">
+            <div class="gallery-grid">
+                <!-- Image 1: Royal Mandap Procession -->
+                <div class="gallery-item-card" data-category="rituals" data-img="483580332_18061234117967204_8819667154284543056_n.jpg" data-title="Royal Mandap Procession" data-loc="Hyderabad Royal Palace">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="483580332_18061234117967204_8819667154284543056_n.jpg" alt="Royal Mandap Procession" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">Royal Mandap Procession</h3>
+                        <p class="gallery-card-loc">Hyderabad Royal Palace</p>
+                    </div>
+                </div>
+                <!-- Image 2: Sacred Vows & Saptapadi -->
+                <div class="gallery-item-card" data-category="rituals" data-img="490031830_18223850140292129_1234053158942004427_n.jpg" data-title="Sacred Vows & Saptapadi" data-loc="Pragathi Nagar Mandap">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="490031830_18223850140292129_1234053158942004427_n.jpg" alt="Sacred Vows & Saptapadi" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">Sacred Vows & Saptapadi</h3>
+                        <p class="gallery-card-loc">Pragathi Nagar Mandap</p>
+                    </div>
+                </div>
+                <!-- Image 3: Stolen Glances of Love -->
+                <div class="gallery-item-card" data-category="candid" data-img="490120221_18223740940292129_3564393969964415204_n.jpg" data-title="Stolen Glances of Love" data-loc="Golkonda Resort">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="490120221_18223740940292129_3564393969964415204_n.jpg" alt="Stolen Glances of Love" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">CANDID</span>
+                        <h3 class="gallery-card-title">Stolen Glances of Love</h3>
+                        <p class="gallery-card-loc">Golkonda Resort</p>
+                    </div>
+                </div>
+                <!-- Image 4: Joyful Haldi Showers -->
+                <div class="gallery-item-card" data-category="rituals" data-img="490169992_18223850158292129_3445272594546190202_n.jpg" data-title="Joyful Haldi Showers" data-loc="Traditional Ceremony, Hyderabad">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="490169992_18223850158292129_3445272594546190202_n.jpg" alt="Joyful Haldi Showers" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">Joyful Haldi Showers</h3>
+                        <p class="gallery-card-loc">Traditional Ceremony, Hyderabad</p>
+                    </div>
+                </div>
+                <!-- Image 5: Regal Bride in Kanjeevaram -->
+                <div class="gallery-item-card" data-category="portraits" data-img="491505012_18064652374967204_1171644279762775076_n.jpg" data-title="Regal Bride in Kanjeevaram" data-loc="Taj Falaknuma Palace">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="491505012_18064652374967204_1171644279762775076_n.jpg" alt="Regal Bride in Kanjeevaram" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PORTRAITS</span>
+                        <h3 class="gallery-card-title">Regal Bride in Kanjeevaram</h3>
+                        <p class="gallery-card-loc">Taj Falaknuma Palace</p>
+                    </div>
+                </div>
+                <!-- Image 6: Golden Hour Romantic Walk -->
+                <div class="gallery-item-card" data-category="prewedding" data-img="515703858_18367596142180913_3542475070663514821_n.jpg" data-title="Golden Hour Romantic Walk" data-loc="Gandipet Lake, Hyderabad">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="515703858_18367596142180913_3542475070663514821_n.jpg" alt="Golden Hour Romantic Walk" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PREWEDDING</span>
+                        <h3 class="gallery-card-title">Golden Hour Romantic Walk</h3>
+                        <p class="gallery-card-loc">Gandipet Lake, Hyderabad</p>
+                    </div>
+                </div>
+                <!-- Image 7: Tears of Kanyadaan -->
+                <div class="gallery-item-card" data-category="candid" data-img="558990364_18080395507967204_382997042559289761_n.jpg" data-title="Tears of Kanyadaan" data-loc="Heritage Courtyard">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="558990364_18080395507967204_382997042559289761_n.jpg" alt="Tears of Kanyadaan" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">CANDID</span>
+                        <h3 class="gallery-card-title">Tears of Kanyadaan</h3>
+                        <p class="gallery-card-loc">Heritage Courtyard</p>
+                    </div>
+                </div>
+                <!-- Image 8: The Varmala Triumph -->
+                <div class="gallery-item-card" data-category="rituals" data-img="559180561_18080395498967204_6756496830407803271_n.jpg" data-title="The Varmala Triumph" data-loc="Secunderabad Grand Hall">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="559180561_18080395498967204_6756496830407803271_n.jpg" alt="The Varmala Triumph" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">The Varmala Triumph</h3>
+                        <p class="gallery-card-loc">Secunderabad Grand Hall</p>
+                    </div>
+                </div>
+                <!-- Image 9: Laughter in the Mandap -->
+                <div class="gallery-item-card" data-category="candid" data-img="572900385_18083386771967204_4933992170849967498_n.jpg" data-title="Laughter in the Mandap" data-loc="Nizampet Wedding Hall">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="572900385_18083386771967204_4933992170849967498_n.jpg" alt="Laughter in the Mandap" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">CANDID</span>
+                        <h3 class="gallery-card-title">Laughter in the Mandap</h3>
+                        <p class="gallery-card-loc">Nizampet Wedding Hall</p>
+                    </div>
+                </div>
+                <!-- Image 10: Royal Groom Majesty -->
+                <div class="gallery-item-card" data-category="portraits" data-img="572985411_18083469049967204_562853622138040638_n.jpg" data-title="Royal Groom Majesty" data-loc="Heritage Haveli">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="572985411_18083469049967204_562853622138040638_n.jpg" alt="Royal Groom Majesty" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PORTRAITS</span>
+                        <h3 class="gallery-card-title">Royal Groom Majesty</h3>
+                        <p class="gallery-card-loc">Heritage Haveli</p>
+                    </div>
+                </div>
+                <!-- Image 11: Pre-Wedding Sunset Whispers -->
+                <div class="gallery-item-card" data-category="prewedding" data-img="588646419_18087283498967204_1583724846243070542_n.jpg" data-title="Pre-Wedding Sunset Whispers" data-loc="Ananthagiri Hills">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="588646419_18087283498967204_1583724846243070542_n.jpg" alt="Pre-Wedding Sunset Whispers" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PREWEDDING</span>
+                        <h3 class="gallery-card-title">Pre-Wedding Sunset Whispers</h3>
+                        <p class="gallery-card-loc">Ananthagiri Hills</p>
+                    </div>
+                </div>
+                <!-- Image 12: Sacred Mangalsutra Blessing -->
+                <div class="gallery-item-card" data-category="rituals" data-img="589178317_860278966542882_2872662828069377701_n.jpg" data-title="Sacred Mangalsutra Blessing" data-loc="Muhurtham Ceremony">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="589178317_860278966542882_2872662828069377701_n.jpg" alt="Sacred Mangalsutra Blessing" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">Sacred Mangalsutra Blessing</h3>
+                        <p class="gallery-card-loc">Muhurtham Ceremony</p>
+                    </div>
+                </div>
+                <!-- Image 13: Spontaneous Bridal Joy -->
+                <div class="gallery-item-card" data-category="candid" data-img="601104753_18088330816967204_6050546257599805495_n.jpg" data-title="Spontaneous Bridal Joy" data-loc="Bridal Suite, Hyderabad">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="601104753_18088330816967204_6050546257599805495_n.jpg" alt="Spontaneous Bridal Joy" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">CANDID</span>
+                        <h3 class="gallery-card-title">Spontaneous Bridal Joy</h3>
+                        <p class="gallery-card-loc">Bridal Suite, Hyderabad</p>
+                    </div>
+                </div>
+                <!-- Image 14: Under the Floral Canopy -->
+                <div class="gallery-item-card" data-category="rituals" data-img="601625421_18088845055967204_6523291512231873774_n.jpg" data-title="Under the Floral Canopy" data-loc="Pellikuthuru Celebration">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="601625421_18088845055967204_6523291512231873774_n.jpg" alt="Under the Floral Canopy" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">Under the Floral Canopy</h3>
+                        <p class="gallery-card-loc">Pellikuthuru Celebration</p>
+                    </div>
+                </div>
+                <!-- Image 15: Intimate Dusk Silhouette -->
+                <div class="gallery-item-card" data-category="prewedding" data-img="609948448_18090306871967204_1300483370148847510_n.jpg" data-title="Intimate Dusk Silhouette" data-loc="Heritage Fort Lake">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="609948448_18090306871967204_1300483370148847510_n.jpg" alt="Intimate Dusk Silhouette" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PREWEDDING</span>
+                        <h3 class="gallery-card-title">Intimate Dusk Silhouette</h3>
+                        <p class="gallery-card-loc">Heritage Fort Lake</p>
+                    </div>
+                </div>
+                <!-- Image 16: Elegance in Silk & Gold -->
+                <div class="gallery-item-card" data-category="portraits" data-img="617568948_17979147029959717_2329724131961180240_n.webp" data-title="Elegance in Silk & Gold" data-loc="Banjara Hills Wedding">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="617568948_17979147029959717_2329724131961180240_n.webp" alt="Elegance in Silk & Gold" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PORTRAITS</span>
+                        <h3 class="gallery-card-title">Elegance in Silk & Gold</h3>
+                        <p class="gallery-card-loc">Banjara Hills Wedding</p>
+                    </div>
+                </div>
+                <!-- Image 17: Dancing with the Stars -->
+                <div class="gallery-item-card" data-category="candid" data-img="620317395_18053473958409722_7164257990352205398_n.jpg" data-title="Dancing with the Stars" data-loc="Sangeet Night Celebration">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="620317395_18053473958409722_7164257990352205398_n.jpg" alt="Dancing with the Stars" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">CANDID</span>
+                        <h3 class="gallery-card-title">Dancing with the Stars</h3>
+                        <p class="gallery-card-loc">Sangeet Night Celebration</p>
+                    </div>
+                </div>
+                <!-- Image 18: Blessings of Elders -->
+                <div class="gallery-item-card" data-category="rituals" data-img="620317395_18053473958409722_7164257990352205398_n.webp" data-title="Blessings of Elders" data-loc="Traditional South Indian Muhurtham">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="620317395_18053473958409722_7164257990352205398_n.webp" alt="Blessings of Elders" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">Blessings of Elders</h3>
+                        <p class="gallery-card-loc">Traditional South Indian Muhurtham</p>
+                    </div>
+                </div>
+                <!-- Image 19: A Promise of Forever -->
+                <div class="gallery-item-card" data-category="prewedding" data-img="621829770_18085461035126499_5689806598605301436_n.webp" data-title="A Promise of Forever" data-loc="Destination Palace Lawn">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="621829770_18085461035126499_5689806598605301436_n.webp" alt="A Promise of Forever" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PREWEDDING</span>
+                        <h3 class="gallery-card-title">A Promise of Forever</h3>
+                        <p class="gallery-card-loc">Destination Palace Lawn</p>
+                    </div>
+                </div>
+                <!-- Image 20: The Regal Maharani Look -->
+                <div class="gallery-item-card" data-category="portraits" data-img="624026256_18057203804352186_5561581573421863628_n.webp" data-title="The Regal Maharani Look" data-loc="Palace Suite, Rajasthan">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="624026256_18057203804352186_5561581573421863628_n.webp" alt="The Regal Maharani Look" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PORTRAITS</span>
+                        <h3 class="gallery-card-title">The Regal Maharani Look</h3>
+                        <p class="gallery-card-loc">Palace Suite, Rajasthan</p>
+                    </div>
+                </div>
+                <!-- Image 21: Jeelakarra Bellam Moment -->
+                <div class="gallery-item-card" data-category="rituals" data-img="627541499_18312294562254376_7295613415810448020_n.jpg" data-title="Jeelakarra Bellam Moment" data-loc="Auspicious Muhurtham Hour">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="627541499_18312294562254376_7295613415810448020_n.jpg" alt="Jeelakarra Bellam Moment" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">Jeelakarra Bellam Moment</h3>
+                        <p class="gallery-card-loc">Auspicious Muhurtham Hour</p>
+                    </div>
+                </div>
+                <!-- Image 22: Giggles Across the Mandap -->
+                <div class="gallery-item-card" data-category="candid" data-img="629835153_18094156381967204_2880516111171031160_n.jpg" data-title="Giggles Across the Mandap" data-loc="Grand Ballroom">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="629835153_18094156381967204_2880516111171031160_n.jpg" alt="Giggles Across the Mandap" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">CANDID</span>
+                        <h3 class="gallery-card-title">Giggles Across the Mandap</h3>
+                        <p class="gallery-card-loc">Grand Ballroom</p>
+                    </div>
+                </div>
+                <!-- Image 23: A Walk into Eternity -->
+                <div class="gallery-item-card" data-category="prewedding" data-img="634111725_18094156954967204_6789918060777664108_n.jpg" data-title="A Walk into Eternity" data-loc="Palace Courtyard">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="634111725_18094156954967204_6789918060777664108_n.jpg" alt="A Walk into Eternity" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PREWEDDING</span>
+                        <h3 class="gallery-card-title">A Walk into Eternity</h3>
+                        <p class="gallery-card-loc">Palace Courtyard</p>
+                    </div>
+                </div>
+                <!-- Image 24: Royal Portrait of Togetherness -->
+                <div class="gallery-item-card" data-category="portraits" data-img="634520398_18094154743967204_5441340631586413793_n.jpg" data-title="Royal Portrait of Togetherness" data-loc="Jubilee Hills, Hyderabad">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="634520398_18094154743967204_5441340631586413793_n.jpg" alt="Royal Portrait of Togetherness" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PORTRAITS</span>
+                        <h3 class="gallery-card-title">Royal Portrait of Togetherness</h3>
+                        <p class="gallery-card-loc">Jubilee Hills, Hyderabad</p>
+                    </div>
+                </div>
+                <!-- Image 25: Sacred Agni Pradakshina -->
+                <div class="gallery-item-card" data-category="rituals" data-img="648297137_17900861118397165_8994519537232938578_n.jpg" data-title="Sacred Agni Pradakshina" data-loc="Saat Phere Ceremony">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="648297137_17900861118397165_8994519537232938578_n.jpg" alt="Sacred Agni Pradakshina" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">Sacred Agni Pradakshina</h3>
+                        <p class="gallery-card-loc">Saat Phere Ceremony</p>
+                    </div>
+                </div>
+                <!-- Image 26: Unfiltered Happiness -->
+                <div class="gallery-item-card" data-category="candid" data-img="649217820_17876305497413900_190827038339169959_n.jpg" data-title="Unfiltered Happiness" data-loc="Haldi Celebration">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="649217820_17876305497413900_190827038339169959_n.jpg" alt="Unfiltered Happiness" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">CANDID</span>
+                        <h3 class="gallery-card-title">Unfiltered Happiness</h3>
+                        <p class="gallery-card-loc">Haldi Celebration</p>
+                    </div>
+                </div>
+                <!-- Image 27: Whispered Vows -->
+                <div class="gallery-item-card" data-category="prewedding" data-img="649224271_17936090148161384_1548357089514220750_n.jpg" data-title="Whispered Vows" data-loc="Scenic Hillside Retreat">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="649224271_17936090148161384_1548357089514220750_n.jpg" alt="Whispered Vows" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PREWEDDING</span>
+                        <h3 class="gallery-card-title">Whispered Vows</h3>
+                        <p class="gallery-card-loc">Scenic Hillside Retreat</p>
+                    </div>
+                </div>
+                <!-- Image 28: The Radiant Smile -->
+                <div class="gallery-item-card" data-category="portraits" data-img="652369335_17935613736035356_8515373101810282062_n.jpg" data-title="The Radiant Smile" data-loc="Bridal Elegance">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="652369335_17935613736035356_8515373101810282062_n.jpg" alt="The Radiant Smile" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PORTRAITS</span>
+                        <h3 class="gallery-card-title">The Radiant Smile</h3>
+                        <p class="gallery-card-loc">Bridal Elegance</p>
+                    </div>
+                </div>
+                <!-- Image 29: Sindoor Dan Sanctity -->
+                <div class="gallery-item-card" data-category="rituals" data-img="653996531_18061191608380728_168673783010089141_n.jpg" data-title="Sindoor Dan Sanctity" data-loc="Temple Wedding, Hyderabad">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="653996531_18061191608380728_168673783010089141_n.jpg" alt="Sindoor Dan Sanctity" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">Sindoor Dan Sanctity</h3>
+                        <p class="gallery-card-loc">Temple Wedding, Hyderabad</p>
+                    </div>
+                </div>
+                <!-- Image 30: Family Warmth & Cheers -->
+                <div class="gallery-item-card" data-category="candid" data-img="654133454_18040384025685409_7668423551746430989_n.jpg" data-title="Family Warmth & Cheers" data-loc="Reception Evening">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="654133454_18040384025685409_7668423551746430989_n.jpg" alt="Family Warmth & Cheers" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">CANDID</span>
+                        <h3 class="gallery-card-title">Family Warmth & Cheers</h3>
+                        <p class="gallery-card-loc">Reception Evening</p>
+                    </div>
+                </div>
+                <!-- Image 31: Lakeside Romance -->
+                <div class="gallery-item-card" data-category="prewedding" data-img="654620390_18089550533335175_632383676172421790_n.jpg" data-title="Lakeside Romance" data-loc="Serene Hyderabad Waters">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="654620390_18089550533335175_632383676172421790_n.jpg" alt="Lakeside Romance" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PREWEDDING</span>
+                        <h3 class="gallery-card-title">Lakeside Romance</h3>
+                        <p class="gallery-card-loc">Serene Hyderabad Waters</p>
+                    </div>
+                </div>
+                <!-- Image 32: Timeless Regal Demeanor -->
+                <div class="gallery-item-card" data-category="portraits" data-img="654663041_18083966831601910_6151680735575874864_n.jpg" data-title="Timeless Regal Demeanor" data-loc="Luxury Destination Palace">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="654663041_18083966831601910_6151680735575874864_n.jpg" alt="Timeless Regal Demeanor" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PORTRAITS</span>
+                        <h3 class="gallery-card-title">Timeless Regal Demeanor</h3>
+                        <p class="gallery-card-loc">Luxury Destination Palace</p>
+                    </div>
+                </div>
+                <!-- Image 33: The First Dance -->
+                <div class="gallery-item-card" data-category="candid" data-img="654990268_18076523210149042_524526476239052513_n.jpg" data-title="The First Dance" data-loc="Cocktail & Sangeet Night">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="654990268_18076523210149042_524526476239052513_n.jpg" alt="The First Dance" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">CANDID</span>
+                        <h3 class="gallery-card-title">The First Dance</h3>
+                        <p class="gallery-card-loc">Cocktail & Sangeet Night</p>
+                    </div>
+                </div>
+                <!-- Image 34: Talambralu Joyous Cascade -->
+                <div class="gallery-item-card" data-category="rituals" data-img="655216404_18079805354098754_2681450708436118616_n.jpg" data-title="Talambralu Joyous Cascade" data-loc="Sacred Pearl Shower">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="655216404_18079805354098754_2681450708436118616_n.jpg" alt="Talambralu Joyous Cascade" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">Talambralu Joyous Cascade</h3>
+                        <p class="gallery-card-loc">Sacred Pearl Shower</p>
+                    </div>
+                </div>
+                <!-- Image 35: Golden Dawn Serenade -->
+                <div class="gallery-item-card" data-category="prewedding" data-img="655235182_18010630082691504_1617885020554202764_n.jpg" data-title="Golden Dawn Serenade" data-loc="Heritage Villa Gardens">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="655235182_18010630082691504_1617885020554202764_n.jpg" alt="Golden Dawn Serenade" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PREWEDDING</span>
+                        <h3 class="gallery-card-title">Golden Dawn Serenade</h3>
+                        <p class="gallery-card-loc">Heritage Villa Gardens</p>
+                    </div>
+                </div>
+                <!-- Image 36: Poised in Heritage Splendor -->
+                <div class="gallery-item-card" data-category="portraits" data-img="655579212_18145380064470216_2840087960424965128_n.jpg" data-title="Poised in Heritage Splendor" data-loc="Royal Hallway">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="655579212_18145380064470216_2840087960424965128_n.jpg" alt="Poised in Heritage Splendor" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PORTRAITS</span>
+                        <h3 class="gallery-card-title">Poised in Heritage Splendor</h3>
+                        <p class="gallery-card-loc">Royal Hallway</p>
+                    </div>
+                </div>
+                <!-- Image 37: Sisterly Tears and Hugs -->
+                <div class="gallery-item-card" data-category="candid" data-img="655610223_18124880890601234_5446684186304653476_n.jpg" data-title="Sisterly Tears and Hugs" data-loc="Vidaai Farewell">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="655610223_18124880890601234_5446684186304653476_n.jpg" alt="Sisterly Tears and Hugs" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">CANDID</span>
+                        <h3 class="gallery-card-title">Sisterly Tears and Hugs</h3>
+                        <p class="gallery-card-loc">Vidaai Farewell</p>
+                    </div>
+                </div>
+                <!-- Image 38: The Ring in the Water Pot -->
+                <div class="gallery-item-card" data-category="rituals" data-img="655967249_17983565009967916_6952739598407733796_n.jpg" data-title="The Ring in the Water Pot" data-loc="Post-Wedding Games">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="655967249_17983565009967916_6952739598407733796_n.jpg" alt="The Ring in the Water Pot" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">The Ring in the Water Pot</h3>
+                        <p class="gallery-card-loc">Post-Wedding Games</p>
+                    </div>
+                </div>
+                <!-- Image 39: Embracing Tomorrow -->
+                <div class="gallery-item-card" data-category="prewedding" data-img="656288025_18068483510293870_3850044794346344697_n.jpg" data-title="Embracing Tomorrow" data-loc="Outdoor Heritage Shoot">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="656288025_18068483510293870_3850044794346344697_n.jpg" alt="Embracing Tomorrow" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PREWEDDING</span>
+                        <h3 class="gallery-card-title">Embracing Tomorrow</h3>
+                        <p class="gallery-card-loc">Outdoor Heritage Shoot</p>
+                    </div>
+                </div>
+                <!-- Image 40: Majestic Couple Silhouette -->
+                <div class="gallery-item-card" data-category="portraits" data-img="656540600_18208901608326048_2097719531973202019_n.jpg" data-title="Majestic Couple Silhouette" data-loc="Palace Archways">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="656540600_18208901608326048_2097719531973202019_n.jpg" alt="Majestic Couple Silhouette" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PORTRAITS</span>
+                        <h3 class="gallery-card-title">Majestic Couple Silhouette</h3>
+                        <p class="gallery-card-loc">Palace Archways</p>
+                    </div>
+                </div>
+                <!-- Image 41: Bursting Into Laughter -->
+                <div class="gallery-item-card" data-category="candid" data-img="656744394_18110845420691493_5919477262661427915_n.jpg" data-title="Bursting Into Laughter" data-loc="Mehendi Afternoon">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="656744394_18110845420691493_5919477262661427915_n.jpg" alt="Bursting Into Laughter" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">CANDID</span>
+                        <h3 class="gallery-card-title">Bursting Into Laughter</h3>
+                        <p class="gallery-card-loc">Mehendi Afternoon</p>
+                    </div>
+                </div>
+                <!-- Image 42: The Garland Exchange -->
+                <div class="gallery-item-card" data-category="rituals" data-img="659591409_17937275598037718_7958117177837114645_n.jpg" data-title="The Garland Exchange" data-loc="Open Air Mandap">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="659591409_17937275598037718_7958117177837114645_n.jpg" alt="The Garland Exchange" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">The Garland Exchange</h3>
+                        <p class="gallery-card-loc">Open Air Mandap</p>
+                    </div>
+                </div>
+                <!-- Image 43: Sunlit Love Story -->
+                <div class="gallery-item-card" data-category="prewedding" data-img="662295033_18079190039624455_8492653592132889474_n.jpg" data-title="Sunlit Love Story" data-loc="Rustic Meadow">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="662295033_18079190039624455_8492653592132889474_n.jpg" alt="Sunlit Love Story" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PREWEDDING</span>
+                        <h3 class="gallery-card-title">Sunlit Love Story</h3>
+                        <p class="gallery-card-loc">Rustic Meadow</p>
+                    </div>
+                </div>
+                <!-- Image 44: Regal Grace & Confidence -->
+                <div class="gallery-item-card" data-category="portraits" data-img="681515817_912914895139084_8487751188989224250_n.jpg" data-title="Regal Grace & Confidence" data-loc="Royal Suite">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="681515817_912914895139084_8487751188989224250_n.jpg" alt="Regal Grace & Confidence" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PORTRAITS</span>
+                        <h3 class="gallery-card-title">Regal Grace & Confidence</h3>
+                        <p class="gallery-card-loc">Royal Suite</p>
+                    </div>
+                </div>
+                <!-- Image 45: Candid Gaze Across the Hall -->
+                <div class="gallery-item-card" data-category="candid" data-img="693332250_18102857485967204_2397967688616533484_n.jpg" data-title="Candid Gaze Across the Hall" data-loc="Wedding Reception">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="693332250_18102857485967204_2397967688616533484_n.jpg" alt="Candid Gaze Across the Hall" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">CANDID</span>
+                        <h3 class="gallery-card-title">Candid Gaze Across the Hall</h3>
+                        <p class="gallery-card-loc">Wedding Reception</p>
+                    </div>
+                </div>
+                <!-- Image 46: Sacred Fire Reflection -->
+                <div class="gallery-item-card" data-category="rituals" data-img="695789051_18102919540967204_5846810095421264545_n.jpg" data-title="Sacred Fire Reflection" data-loc="Holy Havan Fire">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="695789051_18102919540967204_5846810095421264545_n.jpg" alt="Sacred Fire Reflection" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">Sacred Fire Reflection</h3>
+                        <p class="gallery-card-loc">Holy Havan Fire</p>
+                    </div>
+                </div>
+                <!-- Image 47: Gentle Stolen Touch -->
+                <div class="gallery-item-card" data-category="prewedding" data-img="696044466_18103008103967204_1966601098065850134_n.jpg" data-title="Gentle Stolen Touch" data-loc="Palace Corridors">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="696044466_18103008103967204_1966601098065850134_n.jpg" alt="Gentle Stolen Touch" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PREWEDDING</span>
+                        <h3 class="gallery-card-title">Gentle Stolen Touch</h3>
+                        <p class="gallery-card-loc">Palace Corridors</p>
+                    </div>
+                </div>
+                <!-- Image 48: The Queen of the Day -->
+                <div class="gallery-item-card" data-category="portraits" data-img="754159662_18110280460967204_6900577281064696144_n.jpg" data-title="The Queen of the Day" data-loc="Bridal Jewels & Flora">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="754159662_18110280460967204_6900577281064696144_n.jpg" alt="The Queen of the Day" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">PORTRAITS</span>
+                        <h3 class="gallery-card-title">The Queen of the Day</h3>
+                        <p class="gallery-card-loc">Bridal Jewels & Flora</p>
+                    </div>
+                </div>
+                <!-- Image 49: Pure Euphoric Celebrations -->
+                <div class="gallery-item-card" data-category="candid" data-img="764775095_18111327352967204_6472677614624491112_n.jpg" data-title="Pure Euphoric Celebrations" data-loc="Baraat Procession">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="764775095_18111327352967204_6472677614624491112_n.jpg" alt="Pure Euphoric Celebrations" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">CANDID</span>
+                        <h3 class="gallery-card-title">Pure Euphoric Celebrations</h3>
+                        <p class="gallery-card-loc">Baraat Procession</p>
+                    </div>
+                </div>
+                <!-- Image 50: Eternal Knot Tied -->
+                <div class="gallery-item-card" data-category="rituals" data-img="794946813_18114475327967204_13082711883148658_n.jpg" data-title="Eternal Knot Tied" data-loc="Mangalsutra Dharana">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="794946813_18114475327967204_13082711883148658_n.jpg" alt="Eternal Knot Tied" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">RITUALS</span>
+                        <h3 class="gallery-card-title">Eternal Knot Tied</h3>
+                        <p class="gallery-card-loc">Mangalsutra Dharana</p>
+                    </div>
+                </div>
+                <!-- Image 51: Heartfelt Goodbye & Blessings -->
+                <div class="gallery-item-card" data-category="candid" data-img="813406529_18115655971967204_7398080520420181322_n.jpg" data-title="Heartfelt Goodbye & Blessings" data-loc="Vidaai Ceremony">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch tr"></div>
+                    <div class="corner-notch bl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="gallery-card-img-wrap">
+                        <img src="813406529_18115655971967204_7398080520420181322_n.jpg" alt="Heartfelt Goodbye & Blessings" loading="lazy">
+                    </div>
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-cat-badge">CANDID</span>
+                        <h3 class="gallery-card-title">Heartfelt Goodbye & Blessings</h3>
+                        <p class="gallery-card-loc">Vidaai Ceremony</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================================
+             SECTION 4 OF 5: COUPLES' WORDS & TESTIMONIALS
+             ============================================================= -->
+        <section class="portfolio-testimonials-section" id="testimonials" aria-label="Couples Testimonials">
+            <img src="Rangoli BG.png" class="section-mandala-tr" alt="" aria-hidden="true">
+
+            <span class="section-eyebrow">HEARTFELT PRAISE</span>
+            <h2 class="section-title">Words from Our Swayamvara Couples</h2>
+            <div class="gold-divider">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                </svg>
+            </div>
+            <p class="section-desc">
+                The greatest reward for our work is seeing tears of happiness when our brides and grooms look back upon their wedding gallery.
+            </p>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testi-card">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="testi-quote-mark">&ldquo;</div>
+                    <p class="testi-text">
+                        "Vishal and his crew were the calmest presence during our three-day wedding in Hyderabad. They caught micro-expressions between me and my parents that we will treasure for the rest of our lives. The photo album is pure luxury!"
+                    </p>
+                    <div class="testi-author">Divya &amp; Sravan</div>
+                    <div class="testi-venue">Novotel HICC &bull; Hyderabad</div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testi-card">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="testi-quote-mark">&ldquo;</div>
+                    <p class="testi-text">
+                        "We were both extremely shy about posing for photos. Vishal's pre-wedding shoot changed everything! On our wedding day, we didn't even notice the cameras, yet the candid shots look like stills from a royal movie."
+                    </p>
+                    <div class="testi-author">Pooja &amp; Vikram</div>
+                    <div class="testi-venue">Heritage Resort &bull; Pragathi Nagar</div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testi-card">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+                    <div class="testi-quote-mark">&ldquo;</div>
+                    <p class="testi-text">
+                        "The color grading is simply magnificent! Our Kanjeevaram sarees and the gold mandap glowed with natural warmth without looking over-processed. Swayamvara is without doubt the best wedding photography studio in Hyderabad."
+                    </p>
+                    <div class="testi-author">Ananya &amp; Rohit</div>
+                    <div class="testi-venue">Taj Krishna &bull; Hyderabad</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================================
+             SECTION 5 OF 5: LUXURY CALL TO ACTION
+             ============================================================= -->
+        <section class="page-cta-section" id="contact-cta" aria-label="Book Your Dates">
+            <img src="Rangoli BG.png" class="section-mandala-tr" alt="" aria-hidden="true">
+            <img src="Rangoli BG.png" class="section-mandala-bl" alt="" aria-hidden="true">
+
+            <div class="cta-content">
+                <span class="section-eyebrow cta-eyebrow">YOUR STORY AWAITS</span>
+                <h2 class="cta-title">Ready for Frames You Will Treasure Forever?</h2>
+                <p class="cta-desc">
+                    Tell us about your wedding dreams, ceremony dates, and venue. We would be honored to document your union with timeless elegance.
+                </p>
+
+                <div class="cta-actions-group">
+                    <a href="https://wa.me/917989304874?text=Hi%20Vishal,%20I%20love%20the%20Swayamvara%20Portfolio%20and%20would%20like%20to%20check%20availability." class="btn-gold" target="_blank" rel="noopener">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-1.109-.072-.251-.082-.579-.193-.997-.373-1.764-.761-2.909-2.535-2.997-2.653-.088-.118-.718-.956-.718-1.823 0-.867.456-1.293.618-1.47.162-.177.353-.221.471-.221.118 0 .236.001.338.006.109.005.253-.042.394.3.147.357.502 1.221.546 1.31.044.088.073.191.015.309-.059.118-.088.191-.177.294-.088.103-.186.23-.265.309-.089.088-.182.185-.078.363.103.177.458.756.983 1.224.675.602 1.244.788 1.421.876.177.088.279.073.383-.044.103-.118.441-.515.559-.691.118-.177.235-.147.397-.088.162.059 1.029.485 1.205.573.177.088.294.132.338.206.044.074.044.428-.1 0.833z"/>
+                        </svg>
+                        WhatsApp Consultation
+                    </a>
+                    <a href="tel:+917989304874" class="btn-outline-cream">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Call: +91 79893 04874
+                    </a>
+                </div>
+
+                <div class="cta-quick-contacts">
+                    <span>Studio: Pragathi Nagar, Nizampet, Hyderabad</span>
+                    <a href="mailto:swayamvaraphotos@gmail.com">swayamvaraphotos@gmail.com</a>
+                    <a href="services.html">Explore Our Services &rarr;</a>
+                    <a href="about.html">About Founder Vishal &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =============================================================
+         FOOTER (IDENTICAL TO INDEX.HTML)
+         ============================================================= -->
+    <footer class="site-footer" id="footer" aria-label="Footer">
+        <div class="footer-wave-wrap" aria-hidden="true">
+            <svg class="footer-wave-svg" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M0,32 C320,85 580,10 840,60 C1100,105 1300,25 1440,42" stroke="#C5A059" stroke-width="2.5" stroke-opacity="0.45" fill="none" />
+                <path d="M0,35 C320,88 580,13 840,63 C1100,108 1300,28 1440,45 L1440,90 L0,90 Z" fill="#3B111B" />
+            </svg>
+        </div>
+
+        <img src="Footer Background image-Picsart-BackgroundRemover.jpg" class="footer-left-artwork" alt="" aria-hidden="true">
+        <img src="Sita_Rama_Artwork.jpg" class="footer-divine-artwork" alt="" aria-hidden="true">
+        <img src="Rangoli BG.png" class="footer-mandala-tr" alt="" aria-hidden="true">
+        <img src="Rangoli BG.png" class="footer-mandala-bl" alt="" aria-hidden="true">
+
+        <div class="footer-top-badge" aria-hidden="true">
+            <span></span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+            </svg>
+            <span></span>
+        </div>
+
+        <svg class="footer-arch-bg" viewBox="0 0 500 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M250 40 C140 40, 50 140, 50 260 V560 H450 V260 C450 140, 360 40, 250 40 Z" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3" />
+            <path d="M250 65 C160 65, 75 155, 75 265 V540 H425 V265 C425 155, 340 65, 250 65 Z" stroke="currentColor" stroke-width="1" />
+            <path d="M250 90 C220 120, 180 150, 120 180 V520 H380 V180 C320 150, 280 120, 250 90 Z" stroke="currentColor" stroke-width="0.8" />
+            <circle cx="250" cy="25" r="8" stroke="currentColor" stroke-width="1" />
+            <path d="M250 5 V17" stroke="currentColor" stroke-width="1.2" />
+        </svg>
+
+        <div class="footer-container">
+            <div class="footer-brand-block">
+                <h2 class="footer-brand-title">Swayamvara</h2>
+                <p class="footer-brand-sub">BEST WEDDING PHOTOGRAPHY STUDIO IN HYDERABAD</p>
+            </div>
+
+            <div class="footer-grid">
+                <!-- Col 1 -->
+                <div class="footer-col">
+                    <h3 class="footer-col-title">NAVIGATION</h3>
+                    <ul class="footer-links-list">
+                        <li class="footer-link-item"><a href="index.html">HOME</a></li>
+                        <li class="footer-link-item"><a href="about.html">ABOUT</a></li>
+                        <li class="footer-link-item"><a href="portfolio.html">PORTFOLIO</a></li>
+                        <li class="footer-link-item"><a href="services.html">SERVICES</a></li>
+                        <li class="footer-link-item"><a href="index.html#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="footer-col">
+                    <h3 class="footer-col-title">SOCIAL MEDIA</h3>
+                    <ul class="footer-links-list">
+                        <li class="footer-link-item">
+                            <a href="https://www.instagram.com/swayamvara_weddings" target="_blank" rel="noopener">INSTAGRAM (@swayamvara_weddings)</a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="https://wa.me/917989304874" target="_blank" rel="noopener">WHATSAPP DIRECT</a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="mailto:swayamvaraphotos@gmail.com">EMAIL US</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="footer-col">
+                    <h3 class="footer-col-title">CONNECT &amp; STUDIO</h3>
+                    <div class="footer-contact-info">
+                        <div class="footer-info-group">
+                            <span class="footer-info-label">FOUNDER &amp; PHOTOGRAPHER</span>
+                            <span class="footer-info-val" style="font-size: 1.05rem;">
+                                Vishal &bull; Started Feb 2021
+                            </span>
+                        </div>
+                        <div class="footer-info-group">
+                            <span class="footer-info-label">EMAIL ADDRESS</span>
+                            <span class="footer-info-val">
+                                <a href="mailto:swayamvaraphotos@gmail.com">swayamvaraphotos@gmail.com</a>
+                            </span>
+                        </div>
+                        <div class="footer-info-group">
+                            <span class="footer-info-label">CALL / WHATSAPP</span>
+                            <span class="footer-info-val">
+                                <a href="tel:+917989304874">+91 79893 04874</a>
+                            </span>
+                        </div>
+                        <div class="footer-info-group">
+                            <span class="footer-info-label">OUR STUDIO ADDRESS</span>
+                            <span class="footer-info-val" style="font-size: 0.88rem; line-height: 1.45; color: rgba(244, 235, 221, 0.9);">
+                                Villa 52, THIRU SANKALP VILLAS, Beside Siri Balaji Towers, Pragathi Nagar, Nizampet, Hyderabad, Telangana 500054
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom-row">
+                <p class="footer-copy-text">
+                    &copy; SWAYAMVARA &mdash; BEAUTIFUL WEDDING PHOTOS, TREASURED FOR LIFE.
+                    <span class="footer-crafted-by" style="margin-left: 12px; color: var(--gold-subtle); letter-spacing: 0.2em;">
+                        &bull; Crafted with love by <a href="https://www.theupliv.com" target="_blank" rel="noopener" style="color: #FBF7F0; font-weight: 600; text-decoration: none; border-bottom: 1px dotted var(--gold-subtle);">"UPliv"</a>
+                    </span>
+                </p>
+                <a href="#" class="footer-back-top" aria-label="Back to top">
+                    <span>BACK TO TOP</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 19V5M5 12l7-7 7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- EXPANDED PHOTO LIGHTBOX MODAL -->
+    <div class="photo-lightbox" id="photoLightbox" role="dialog" aria-modal="true" aria-label="Photo Preview">
+        <div class="lightbox-card">
+            <button class="lightbox-close-btn" id="lightboxClose" aria-label="Close preview">&times;</button>
+            <button class="lightbox-nav-btn prev" id="lightboxPrev" aria-label="Previous">&larr;</button>
+            <button class="lightbox-nav-btn next" id="lightboxNext" aria-label="Next">&rarr;</button>
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" src="" alt="Expanded wedding photograph">
+            </div>
+            <div class="lightbox-content">
+                <h3 class="lightbox-title" id="lightboxTitle"></h3>
+                <p class="lightbox-loc" id="lightboxLoc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN SCRIPT -->
+    <script src="main.js"></script>
+</body>
+</html>

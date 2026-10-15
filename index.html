@@ -199,6 +199,9 @@
         href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Cinzel:wght@400;500;600&display=swap"
         rel="stylesheet">
 
+    <!-- Unified Theme Stylesheet -->
+    <link rel="stylesheet" href="theme.css">
+
     <style>
         /* -------------------------------------------------------------
        PALETTE & DESIGN TOKENS
@@ -5037,15 +5040,16 @@
 
     <!-- TOP MINIMAL NAVIGATION -->
     <header class="site-header">
-        <a href="#" class="brand-logo">
+        <a href="index.html" class="brand-logo">
             <span class="brand-name">Swayamvara</span>
             <span class="brand-sub">Wedding Photography</span>
         </a>
 
         <nav class="nav-center">
-            <a href="#about">About</a>
-            <a href="#stories">Portfolio</a>
-            <a href="#weddings">Services</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="services.html">Services</a>
             <a href="#contact">Contact</a>
         </nav>
 
@@ -5060,6 +5064,34 @@
             </svg>
         </button>
     </header>
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div class="mobile-drawer-overlay">
+        <div class="mobile-drawer">
+            <div class="mobile-drawer-header">
+                <div class="brand-logo">
+                    <span class="brand-name">Swayamvara</span>
+                    <span class="brand-sub">Wedding Photography</span>
+                </div>
+                <button class="mobile-drawer-close" aria-label="Close Menu">&times;</button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="services.html">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div style="margin-bottom: 24px;">
+                <a href="#contact" class="btn-primary" style="width: 100%; text-align: center;">Get Your Quote</a>
+            </div>
+            <div class="mobile-drawer-contact">
+                <a href="tel:+917989304874">Phone: +91 79893 04874</a>
+                <a href="mailto:swayamvaraphotos@gmail.com">Email: swayamvaraphotos@gmail.com</a>
+                <span style="font-size: 0.72rem; opacity: 0.7;">Pragathi Nagar, Nizampet, Hyderabad</span>
+            </div>
+        </div>
+    </div>
 
     <!-- HERO CONTENT & 3D PHOTO ORBIT -->
     <main class="hero-section">
@@ -5550,10 +5582,16 @@
                     </div>
                 </div>
 
-                <a href="#contact" class="bi-link">
-                    Get Your Quote
-                    <span class="arrow">→</span>
-                </a>
+                <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+                    <a href="about.html" class="bi-link" style="font-weight: 600;">
+                        Read Our Full Story &amp; Philosophy
+                        <span class="arrow">&rarr;</span>
+                    </a>
+                    <a href="#contact" class="bi-link" style="opacity: 0.85;">
+                        Get Your Quote
+                        <span class="arrow">&rarr;</span>
+                    </a>
+                </div>
 
             </div>
 
@@ -5734,8 +5772,14 @@
 
         </div>
 
-        <!-- CTA Button -->
-        <div class="portfolio-cta-wrap" id="portfolioCta">
+        <!-- CTA Button Group -->
+        <div class="portfolio-cta-wrap" id="portfolioCta" style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <a href="portfolio.html" class="portfolio-cta-btn" style="background: var(--accent-deep); color: var(--cream-light); border-color: var(--accent-deep);">
+                <span>Explore Full Portfolio (51 Works)</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
             <a href="#contact" class="portfolio-cta-btn">
                 <span>Get Your Quote</span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -5931,6 +5975,22 @@
                         </span>
                     </div>
                 </div>
+            </div>
+
+            <!-- Services Section CTA Group -->
+            <div style="text-align: center; margin-top: 48px; position: relative; z-index: 5; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                <a href="services.html" class="portfolio-cta-btn" style="background: var(--accent-deep); color: var(--cream-light); border-color: var(--accent-deep);">
+                    <span>Explore All Services &amp; Packages</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="#contact" class="portfolio-cta-btn">
+                    <span>Get Your Quote</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
             </div>
 
         </div>
@@ -6933,9 +6993,10 @@
                 <div class="footer-col">
                     <h3 class="footer-col-title">NAVIGATION</h3>
                     <ul class="footer-links-list">
-                        <li class="footer-link-item"><a href="#about">ABOUT</a></li>
-                        <li class="footer-link-item"><a href="#stories">PORTFOLIO</a></li>
-                        <li class="footer-link-item"><a href="#weddings">SERVICES</a></li>
+                        <li class="footer-link-item"><a href="index.html">HOME</a></li>
+                        <li class="footer-link-item"><a href="about.html">ABOUT</a></li>
+                        <li class="footer-link-item"><a href="portfolio.html">PORTFOLIO</a></li>
+                        <li class="footer-link-item"><a href="services.html">SERVICES</a></li>
                         <li class="footer-link-item"><a href="#contact">CONTACT</a></li>
                     </ul>
                 </div>
@@ -7890,6 +7951,9 @@
             observer.observe(enquirySection);
         })();
     </script>
+
+    <!-- Unified Interactive Script -->
+    <script src="main.js"></script>
 </body>
 
 </html>
