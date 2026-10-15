@@ -576,72 +576,210 @@
             right: 14px;
         }
 
-        /* SECTION 4: WORDS OF LOVE / REVIEWS */
+                /* SECTION: WORDS OF LOVE / AUTO-SCROLLING MARQUEE REVIEWS */
         .portfolio-testimonials-section {
-            padding: clamp(80px, 9vw, 130px) 5vw;
+            padding: clamp(80px, 9vw, 130px) 0;
             background: var(--ivory-warm);
             border-bottom: 1px solid rgba(196, 163, 107, 0.28);
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: clamp(24px, 3.5vw, 40px);
-            max-width: 1300px;
-            margin: 48px auto 0;
-            text-align: left;
+        .portfolio-testimonials-section .section-title,
+        .portfolio-testimonials-section .section-eyebrow,
+        .portfolio-testimonials-section .section-desc,
+        .portfolio-testimonials-section .gold-divider {
+            padding: 0 5vw;
         }
 
-        .testi-card {
+        .testimonials-marquee-wrap {
+            margin-top: clamp(40px, 5vw, 65px);
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding: 20px 0 35px;
+            /* Soft gradient fades on left and right edges */
+            mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+        }
+
+        .testimonials-marquee-track {
+            display: flex;
+            gap: clamp(22px, 2.5vw, 36px);
+            width: max-content;
+            animation: scrollReviewsMarquee 48s linear infinite;
+            will-change: transform;
+        }
+
+        .testimonials-marquee-wrap:hover .testimonials-marquee-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollReviewsMarquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .testimonials-marquee-track {
+                animation: none;
+                overflow-x: auto;
+            }
+        }
+
+        /* Review Card with Couple Photograph */
+        .testi-card-v2 {
             background: #FFFFFF;
-            padding: clamp(28px, 3.6vw, 42px);
-            border-radius: 6px;
-            border: 1.5px solid rgba(196, 163, 107, 0.35);
-            box-shadow: 0 10px 28px rgba(88, 29, 43, 0.06);
+            width: clamp(340px, 32vw, 420px);
+            flex-shrink: 0;
+            border-radius: 8px;
+            border: 1.5px solid rgba(196, 163, 107, 0.38);
+            box-shadow: 0 14px 34px rgba(88, 29, 43, 0.08);
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            padding: clamp(26px, 3vw, 36px);
+            text-align: left;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
         }
 
-        .testi-card:hover {
-            transform: translateY(-5px);
+        .testi-card-v2:hover {
+            transform: translateY(-8px);
             border-color: var(--gold-champagne);
-            box-shadow: 0 18px 45px rgba(88, 29, 43, 0.12);
+            box-shadow: 0 24px 55px rgba(88, 29, 43, 0.16);
         }
 
-        .testi-stars {
+        /* Couple Header in Card */
+        .testi-couple-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(196, 163, 107, 0.22);
+        }
+
+        .testi-couple-avatar-wrap {
+            position: relative;
+            width: 66px;
+            height: 66px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid var(--gold-champagne);
+            box-shadow: 0 6px 18px rgba(88, 29, 43, 0.18);
+            background: #180409;
+        }
+
+        .testi-couple-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.96) contrast(1.04);
+            transition: transform 0.5s ease;
+        }
+
+        .testi-card-v2:hover .testi-couple-avatar {
+            transform: scale(1.12);
+        }
+
+        .testi-header-meta {
+            flex: 1;
+        }
+
+        .testi-tag-badge {
+            font-size: 0.62rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--gold-champagne);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .testi-stars-gold {
             color: #C4A36B;
-            font-size: 1.15rem;
-            letter-spacing: 3px;
-            margin-bottom: 14px;
+            font-size: 1.05rem;
+            letter-spacing: 2.5px;
+            line-height: 1;
         }
 
-        .testi-text {
+        .testi-quote-body {
             font-family: var(--font-title);
-            font-size: clamp(1.05rem, 1.25vw, 1.18rem);
+            font-size: clamp(1.02rem, 1.25vw, 1.15rem);
             line-height: 1.68;
             color: var(--charcoal-rich);
             font-style: italic;
-            margin: 0 0 20px 0;
+            margin: 0 0 24px 0;
+            opacity: 0.92;
+            flex-grow: 1;
         }
 
-        .testi-author {
-            font-size: 0.76rem;
-            letter-spacing: 0.2em;
+        .testi-footer-author {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(196, 163, 107, 0.18);
+            padding-top: 14px;
+        }
+
+        .testi-names-block {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .testi-names-title {
+            font-size: 0.78rem;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
             font-weight: 700;
             color: var(--maroon-deep);
         }
 
-        .testi-venue {
+        .testi-venue-label {
             font-size: 0.72rem;
             color: #7A6F68;
-            letter-spacing: 0.06em;
-            margin-top: 2px;
+            letter-spacing: 0.05em;
+        }
+
+        .testi-verified-icon {
+            color: var(--gold-champagne);
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+        }
+
+        .marquee-pause-hint {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.68rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #7A6F68;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+
+        .marquee-pause-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold-champagne);
+            animation: pulseDot 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 0.4; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.2); }
         }
 
         /* SECTION 5: CLOSING CTA (DEEP MAROON) */
@@ -3198,7 +3336,7 @@
         </section>
 
         <!-- =============================================================
-             SECTION 3: WORDS OF LOVE / REVIEWS
+             SECTION 3: WORDS OF LOVE / AUTO-SCROLLING MARQUEE REVIEWS
              ============================================================= -->
         <section class="portfolio-testimonials-section" id="reviews" aria-label="Words of Love">
             <span class="section-eyebrow">WORDS OF LOVE</span>
@@ -3208,41 +3346,561 @@
                     <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
                 </svg>
             </div>
-            <p class="section-desc">Real stories from Hyderabad brides and grooms whose happiest day we preserved.</p>
+            <p class="section-desc">Real stories from brides and grooms whose happiest day was preserved forever.</p>
 
-            <div class="testimonials-grid">
-                <div class="testi-card">
+            <!-- Auto-Scrolling Marquee Track Container -->
+            <div class="testimonials-marquee-wrap" aria-label="Testimonials carousel">
+                <div class="testimonials-marquee-track">
+                <div class="testi-card-v2">
                     <div class="corner-notch tl"></div>
                     <div class="corner-notch br"></div>
-                    <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="testi-text">
-                        "The Swayamvara team blended into our wedding like family. They captured tears of joy from my father that I will cherish forever. Zero stiff poses—just pure, authentic emotion."
-                    </p>
-                    <div class="testi-author">SNEHA &amp; ROHIT</div>
-                    <div class="testi-venue">Golkonda Resorts, Hyderabad</div>
-                </div>
 
-                <div class="testi-card">
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="629835153_18094156381967204_2880516111171031160_n.jpg" alt="SNEHA & ROHIT Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; RESORT WEDDING</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;The Swayamvara team blended into our wedding like family. They captured tears of joy from my father that I will cherish forever. Zero stiff poses—just pure, authentic emotion.&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">SNEHA & ROHIT</span>
+                            <span class="testi-venue-label">Golkonda Resorts, Hyderabad</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card-v2">
                     <div class="corner-notch tl"></div>
                     <div class="corner-notch br"></div>
-                    <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="testi-text">
-                        "Our wedding album feels like a royal heirloom book. The 4K cinema film brought tears to all our relatives abroad. Truly the best wedding photography investment we made."
-                    </p>
-                    <div class="testi-author">ANANYA &amp; ARJUN</div>
-                    <div class="testi-venue">Taj Falaknuma, Hyderabad</div>
-                </div>
 
-                <div class="testi-card">
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="693332250_18102857485967204_2397967688616533484_n.jpg" alt="ANANYA & ARJUN Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; PALACE WEDDING</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;Our wedding album feels like a royal heirloom book. The 4K cinema film brought tears to all our relatives abroad. Truly the best wedding photography investment we made.&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">ANANYA & ARJUN</span>
+                            <span class="testi-venue-label">Taj Falaknuma, Hyderabad</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card-v2">
                     <div class="corner-notch tl"></div>
                     <div class="corner-notch br"></div>
-                    <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="testi-text">
-                        "Every Telugu ceremony was covered with extreme cultural reverence. They never blocked elders, yet every sacred ritual was framed like high-fashion art. Outstanding team!"
+
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="648297137_17900861118397165_8994519537232938578_n.jpg" alt="POOJA & VIKRAM Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; SACRED TELUGU RITES</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;Every Telugu ceremony was covered with extreme cultural reverence. They never blocked elders, yet every sacred ritual was framed like high-fashion art. Outstanding team!&rdquo;
                     </p>
-                    <div class="testi-author">POOJA &amp; VIKRAM</div>
-                    <div class="testi-venue">Novotel HICC, Hyderabad</div>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">POOJA & VIKRAM</span>
+                            <span class="testi-venue-label">Novotel HICC, Hyderabad</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
+                <div class="testi-card-v2">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="695789051_18102919540967204_5846810095421264545_n.jpg" alt="MEERA & KABIR Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; DESTINATION WEDDING</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;From our sunset boat pheras to the midnight sangeet, Swayamvara handled the palace lighting with breathtaking cinematic mastery. We couldn't be happier!&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">MEERA & KABIR</span>
+                            <span class="testi-venue-label">Taj Lake Palace, Udaipur</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card-v2">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="696044466_18103008103967204_1966601098065850134_n.jpg" alt="RIA & ROHAN Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; BEACH CELEBRATION</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;The candid moments on the beach were spontaneous and effortless. No awkward posing—they made us feel completely relaxed while capturing magazine-worthy frames.&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">RIA & ROHAN</span>
+                            <span class="testi-venue-label">Taj Exotica, Goa</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card-v2">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="754159662_18110280460967204_6900577281064696144_n.jpg" alt="PRIYA & VIKRAM Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; HERITAGE WEDDING</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;The attention to jewellery details, my mother's heirloom saree, and the raw emotions during the Jeelakarra Bellam was simply unmatched. Truly luxury storytellers.&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">PRIYA & VIKRAM</span>
+                            <span class="testi-venue-label">ITC Kohenur, Hyderabad</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card-v2">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="764775095_18111327352967204_6472677614624491112_n.jpg" alt="DEVIKA & SAMAR Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; BACKWATER WEDDING</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;Their team traveled with us to Kerala and captured our backwater celebrations with sheer artistry. The drone footage and color grading look like a feature film.&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">DEVIKA & SAMAR</span>
+                            <span class="testi-venue-label">Kumarakom Lake Resort, Kerala</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card-v2">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="652369335_17935613736035356_8515373101810282062_n.jpg" alt="SAMYUKTHA & KARTHIK Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; GRAND CELEBRATION</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;Handling a 1,200-guest grand wedding without missing intimate, personal couple glances is a superpower. Swayamvara delivered our preview gallery in record time!&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">SAMYUKTHA & KARTHIK</span>
+                            <span class="testi-venue-label">Ramoji Film City, Hyderabad</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card-v2">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="629835153_18094156381967204_2880516111171031160_n.jpg" alt="SNEHA & ROHIT Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; RESORT WEDDING</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;The Swayamvara team blended into our wedding like family. They captured tears of joy from my father that I will cherish forever. Zero stiff poses—just pure, authentic emotion.&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">SNEHA & ROHIT</span>
+                            <span class="testi-venue-label">Golkonda Resorts, Hyderabad</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card-v2">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="693332250_18102857485967204_2397967688616533484_n.jpg" alt="ANANYA & ARJUN Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; PALACE WEDDING</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;Our wedding album feels like a royal heirloom book. The 4K cinema film brought tears to all our relatives abroad. Truly the best wedding photography investment we made.&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">ANANYA & ARJUN</span>
+                            <span class="testi-venue-label">Taj Falaknuma, Hyderabad</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card-v2">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="648297137_17900861118397165_8994519537232938578_n.jpg" alt="POOJA & VIKRAM Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; SACRED TELUGU RITES</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;Every Telugu ceremony was covered with extreme cultural reverence. They never blocked elders, yet every sacred ritual was framed like high-fashion art. Outstanding team!&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">POOJA & VIKRAM</span>
+                            <span class="testi-venue-label">Novotel HICC, Hyderabad</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card-v2">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="695789051_18102919540967204_5846810095421264545_n.jpg" alt="MEERA & KABIR Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; DESTINATION WEDDING</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;From our sunset boat pheras to the midnight sangeet, Swayamvara handled the palace lighting with breathtaking cinematic mastery. We couldn't be happier!&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">MEERA & KABIR</span>
+                            <span class="testi-venue-label">Taj Lake Palace, Udaipur</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card-v2">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="696044466_18103008103967204_1966601098065850134_n.jpg" alt="RIA & ROHAN Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; BEACH CELEBRATION</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;The candid moments on the beach were spontaneous and effortless. No awkward posing—they made us feel completely relaxed while capturing magazine-worthy frames.&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">RIA & ROHAN</span>
+                            <span class="testi-venue-label">Taj Exotica, Goa</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card-v2">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="754159662_18110280460967204_6900577281064696144_n.jpg" alt="PRIYA & VIKRAM Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; HERITAGE WEDDING</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;The attention to jewellery details, my mother's heirloom saree, and the raw emotions during the Jeelakarra Bellam was simply unmatched. Truly luxury storytellers.&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">PRIYA & VIKRAM</span>
+                            <span class="testi-venue-label">ITC Kohenur, Hyderabad</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card-v2">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="764775095_18111327352967204_6472677614624491112_n.jpg" alt="DEVIKA & SAMAR Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; BACKWATER WEDDING</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;Their team traveled with us to Kerala and captured our backwater celebrations with sheer artistry. The drone footage and color grading look like a feature film.&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">DEVIKA & SAMAR</span>
+                            <span class="testi-venue-label">Kumarakom Lake Resort, Kerala</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card-v2">
+                    <div class="corner-notch tl"></div>
+                    <div class="corner-notch br"></div>
+
+                    <!-- Couple Header with Photo -->
+                    <div class="testi-couple-header">
+                        <div class="testi-couple-avatar-wrap">
+                            <img src="652369335_17935613736035356_8515373101810282062_n.jpg" alt="SAMYUKTHA & KARTHIK Wedding Photograph" class="testi-couple-avatar" loading="lazy">
+                        </div>
+                        <div class="testi-header-meta">
+                            <span class="testi-tag-badge">&bull; GRAND CELEBRATION</span>
+                            <div class="testi-stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Body -->
+                    <p class="testi-quote-body">
+                        &ldquo;Handling a 1,200-guest grand wedding without missing intimate, personal couple glances is a superpower. Swayamvara delivered our preview gallery in record time!&rdquo;
+                    </p>
+
+                    <!-- Author Details -->
+                    <div class="testi-footer-author">
+                        <div class="testi-names-block">
+                            <span class="testi-names-title">SAMYUKTHA & KARTHIK</span>
+                            <span class="testi-venue-label">Ramoji Film City, Hyderabad</span>
+                        </div>
+                        <div class="testi-verified-icon" title="Verified Swayamvara Wedding">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="marquee-pause-hint" aria-hidden="true">
+                <span class="marquee-pause-dot"></span>
+                <span>HOVER ANY STORY TO PAUSE AUTO-SCROLL &bull; DRAG OR SWIPE ON TOUCH</span>
             </div>
         </section>
 
