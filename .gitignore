@@ -1,4 +1,4 @@
 .vercel
 *.bak
-
-.vercel
+.env
+__pycache__/
