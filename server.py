@@ -227,9 +227,9 @@ def send_smtp_email(payload):
         print(f"                       Total: {payload.get('totalFormatted', 'INR 0')}")
         print("                       (To send real live emails via direct Python SMTP, run server with GMAIL_APP_PASSWORD='...')")
         return {
-            "success": True,
+            "success": False,
             "simulated": True,
-            "message": f"Quotation recorded directly for {customer_email} and {admin_email}."
+            "message": f"Quotation recorded directly for {customer_email} and {admin_email}. Gmail App Password missing."
         }
 
     # Direct SMTP dispatch using Python's standard smtplib

@@ -994,10 +994,10 @@
                     statusEl.textContent = '✓ Quotation emailed directly to ' + state.customerDetails.email + ' & swayamvaraphotos@gmail.com';
                     statusEl.className = 'q-email-status success';
                 } else if (data.simulated) {
-                    statusEl.textContent = '✓ Quotation sent to ' + state.customerDetails.email + ' & swayamvaraphotos@gmail.com';
-                    statusEl.className = 'q-email-status success';
+                    statusEl.textContent = 'ℹ Quotation generated! Live email delivery requires Gmail App Password configuration in Vercel. Download PDF or share via WhatsApp below.';
+                    statusEl.className = 'q-email-status info';
                 } else {
-                    statusEl.textContent = '✓ Quotation generated for ' + state.customerDetails.email;
+                    statusEl.textContent = '✓ Quotation generated for ' + state.customerDetails.email + '. Download PDF or share via WhatsApp below.';
                     statusEl.className = 'q-email-status info';
                 }
             }
@@ -1005,7 +1005,7 @@
         .catch(err => {
             console.log('Quotation email notice:', err);
             if (statusEl) {
-                statusEl.textContent = '✓ Quotation generated for ' + state.customerDetails.email;
+                statusEl.textContent = '✓ Quotation generated for ' + state.customerDetails.email + '. Download PDF or share via WhatsApp below.';
                 statusEl.className = 'q-email-status info';
             }
         });

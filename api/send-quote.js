@@ -38,13 +38,13 @@ module.exports = async (req, res) => {
         const gmailUser = process.env.GMAIL_USER || 'swayamvaraphotos@gmail.com';
         const gmailPass = process.env.GMAIL_APP_PASSWORD || '';
 
-        // If GMAIL_APP_PASSWORD is not configured yet, return a graceful response so UI continues seamlessly
+        // If GMAIL_APP_PASSWORD is not configured yet, return clear simulated status
         if (!gmailPass) {
             console.log(`[Quotation Generated] Ref: ${quoteId} | Customer: ${customerDetails.email} | Admin: ${adminEmail}`);
             return res.status(200).json({
-                success: true,
+                success: false,
                 simulated: true,
-                message: `Quotation recorded for ${customerDetails.email} and ${adminEmail}. Set GMAIL_APP_PASSWORD in Vercel to activate live automated SMTP sending.`
+                message: `Quotation recorded for ${customerDetails.email} and ${adminEmail}. GMAIL_APP_PASSWORD is not configured in Vercel environment variables.`
             });
         }
 
