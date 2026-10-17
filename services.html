@@ -289,18 +289,54 @@
             .service-row.reverse {
                 grid-template-columns: 1fr;
                 direction: ltr;
+                gap: 28px;
             }
             .albums-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+                margin-top: 36px;
             }
             .process-steps-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+                margin-top: 36px;
             }
         }
 
-        @media (max-width: 540px) {
+        @media (max-width: 600px) {
+            .services-section,
+            .albums-section,
+            .process-section {
+                padding: 60px 5vw;
+                overflow: hidden;
+            }
+
+            .services-container {
+                gap: 50px;
+            }
+
+            .service-photo-inner {
+                height: 260px;
+            }
+
+            .service-heading {
+                font-size: 1.8rem;
+            }
+
+            .service-simple-text {
+                font-size: 0.95rem;
+            }
+
             .process-steps-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .quote-cta-section {
+                padding: 70px 4vw;
+            }
+
+            .quote-cta-section .cta-content {
+                padding: 32px 18px;
             }
         }
 

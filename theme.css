@@ -35,16 +35,20 @@ html {
     scroll-behavior: smooth;
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 body {
     width: 100%;
+    max-width: 100vw;
     min-height: 100vh;
     background-color: var(--bg-primary);
     color: var(--accent-deep);
     font-family: var(--font-sans);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -1189,7 +1193,7 @@ nav.nav-center a.active::after {
 
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 40px;
         text-align: center;
     }
 
@@ -1201,5 +1205,64 @@ nav.nav-center a.active::after {
         flex-direction: column;
         text-align: center;
         gap: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    header.site-header {
+        padding: 16px 4vw;
+    }
+
+    .brand-logo .brand-name {
+        font-size: 1.15rem;
+        letter-spacing: 0.22em;
+    }
+
+    .brand-logo .brand-sub {
+        font-size: 0.52rem;
+        letter-spacing: 0.24em;
+    }
+
+    .site-footer {
+        padding: 70px 4vw 36px;
+        overflow: hidden;
+    }
+
+    .footer-mandala-tr,
+    .footer-mandala-bl {
+        display: none;
+    }
+
+    .section-mandala-tr,
+    .section-mandala-bl {
+        display: none;
+    }
+
+    .footer-arch-bg {
+        width: 100%;
+        max-width: 100vw;
+        height: auto;
+        opacity: 0.04;
+    }
+
+    .btn-gold,
+    .btn-outline-cream,
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 340px;
+        padding: 13px 22px;
+        font-size: 0.74rem;
+        letter-spacing: 0.16em;
+    }
+
+    .cta-actions-group {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .gold-divider {
+        max-width: 180px;
     }
 }
