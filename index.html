@@ -4147,30 +4147,43 @@
             font-weight: 400;
         }
 
-        /* Interactive Couple Navigation Strip */
+        /* Interactive Couple Navigation Strip — Single Row on Desktop and Mobile */
         .testi-couples-strip {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: clamp(12px, 2vw, 24px);
-            max-width: 980px;
-            margin: 0 auto clamp(36px, 4vw, 54px);
+            flex-wrap: nowrap;
+            gap: clamp(8px, 1.3vw, 16px);
+            max-width: 1260px;
+            width: 100%;
+            margin: 0 auto clamp(28px, 3.5vw, 48px);
             position: relative;
             z-index: 4;
-            flex-wrap: wrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 8px 12px 14px;
+        }
+
+        .testi-couples-strip::-webkit-scrollbar {
+            display: none;
         }
 
         .testi-couple-pill {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 8px 18px 8px 10px;
+            gap: 10px;
+            padding: 7px 16px 7px 8px;
             background: rgba(251, 247, 240, 0.6);
             border: 1px solid rgba(100, 29, 45, 0.15);
             border-radius: 40px;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             user-select: none;
+            flex-shrink: 0;
+            white-space: nowrap;
         }
 
         .testi-couple-pill:hover {
@@ -4475,6 +4488,34 @@
         }
 
         @media (max-width: 900px) {
+            .testi-couples-strip {
+                justify-content: flex-start;
+                gap: 10px;
+                padding: 6px 16px 14px;
+                margin-bottom: 24px;
+                scroll-snap-type: x mandatory;
+            }
+
+            .testi-couple-pill {
+                padding: 6px 14px 6px 8px;
+                gap: 8px;
+                scroll-snap-align: center;
+            }
+
+            .testi-pill-thumb {
+                width: 32px;
+                height: 32px;
+            }
+
+            .testi-pill-names {
+                font-size: 0.65rem;
+                letter-spacing: 0.1em;
+            }
+
+            .testi-pill-loc {
+                font-size: 0.54rem;
+            }
+
             .testimonial-slide {
                 grid-template-columns: 1fr;
                 gap: 28px;
@@ -8050,6 +8091,9 @@
                 pills.forEach((pill, i) => {
                     if (i === currentIndex) {
                         pill.classList.add('active');
+                        if (typeof pill.scrollIntoView === 'function') {
+                            pill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                        }
                     } else {
                         pill.classList.remove('active');
                     }
