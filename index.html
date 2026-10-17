@@ -4489,17 +4489,15 @@
 
         @media (max-width: 900px) {
             .testi-couples-strip {
-                justify-content: flex-start;
-                gap: 10px;
-                padding: 6px 16px 14px;
+                justify-content: center;
+                gap: 8px;
+                padding: 6px 12px 14px;
                 margin-bottom: 24px;
-                scroll-snap-type: x mandatory;
             }
 
             .testi-couple-pill {
-                padding: 6px 14px 6px 8px;
-                gap: 8px;
-                scroll-snap-align: center;
+                padding: 6px 11px 6px 7px;
+                gap: 7px;
             }
 
             .testi-pill-thumb {
@@ -8007,9 +8005,6 @@
                 pills.forEach((pill, i) => {
                     if (i === currentIndex) {
                         pill.classList.add('active');
-                        if (typeof pill.scrollIntoView === 'function') {
-                            pill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-                        }
                     } else {
                         pill.classList.remove('active');
                     }
