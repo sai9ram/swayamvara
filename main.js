@@ -39,9 +39,11 @@
 
     if (mobileBtn) {
         mobileBtn.addEventListener('click', openMobileDrawer);
+        mobileBtn.addEventListener('touchend', openMobileDrawer, { passive: true });
     }
     if (drawerClose) {
         drawerClose.addEventListener('click', closeMobileDrawer);
+        drawerClose.addEventListener('touchend', closeMobileDrawer, { passive: true });
     }
     if (drawerOverlay) {
         drawerOverlay.addEventListener('click', (e) => {

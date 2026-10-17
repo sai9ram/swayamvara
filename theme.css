@@ -185,8 +185,16 @@ nav.nav-center a.active::after {
     border: none;
     color: var(--accent-deep);
     cursor: pointer;
-    padding: 8px;
-    z-index: 110;
+    padding: 10px;
+    z-index: 120;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.mobile-menu-btn svg {
+    display: block;
+    pointer-events: none;
 }
 
 /* ==========================================================================

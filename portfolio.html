@@ -4184,28 +4184,42 @@
                 }
             }, { passive: true });
 
-            // Mobile Navigation Drawer
+            // Mobile Navigation Drawer (Handled by main.js with fallback safety)
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const mobileDrawerClose = document.querySelector('.mobile-drawer-close');
             const mobileDrawerOverlay = document.querySelector('.mobile-drawer-overlay');
-            const mobileDrawerLinks = document.querySelectorAll('.mobile-nav-links a');
 
-            function toggleDrawer() {
-                mobileDrawerOverlay.classList.toggle('active');
-                document.body.style.overflow = mobileDrawerOverlay.classList.contains('active') ? 'hidden' : '';
+            function openDrawer(e) {
+                if (e) e.stopPropagation();
+                if (mobileDrawerOverlay) {
+                    mobileDrawerOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
             }
 
-            if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleDrawer);
-            if (mobileDrawerClose) mobileDrawerClose.addEventListener('click', toggleDrawer);
+            function closeDrawer(e) {
+                if (e) e.stopPropagation();
+                if (mobileDrawerOverlay) {
+                    mobileDrawerOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', openDrawer);
+                mobileMenuBtn.addEventListener('touchend', openDrawer, { passive: true });
+            }
+            if (mobileDrawerClose) {
+                mobileDrawerClose.addEventListener('click', closeDrawer);
+                mobileDrawerClose.addEventListener('touchend', closeDrawer, { passive: true });
+            }
             if (mobileDrawerOverlay) {
                 mobileDrawerOverlay.addEventListener('click', (e) => {
-                    if (e.target === mobileDrawerOverlay) toggleDrawer();
+                    if (e.target === mobileDrawerOverlay) closeDrawer(e);
                 });
             }
-            mobileDrawerLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (mobileDrawerOverlay.classList.contains('active')) toggleDrawer();
-                });
+            document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+                link.addEventListener('click', closeDrawer);
             });
 
             // Custom Desktop Cursor Follower
