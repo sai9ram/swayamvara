@@ -4184,44 +4184,6 @@
                 }
             }, { passive: true });
 
-            // Mobile Navigation Drawer (Handled by main.js with fallback safety)
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const mobileDrawerClose = document.querySelector('.mobile-drawer-close');
-            const mobileDrawerOverlay = document.querySelector('.mobile-drawer-overlay');
-
-            function openDrawer(e) {
-                if (e) e.stopPropagation();
-                if (mobileDrawerOverlay) {
-                    mobileDrawerOverlay.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                }
-            }
-
-            function closeDrawer(e) {
-                if (e) e.stopPropagation();
-                if (mobileDrawerOverlay) {
-                    mobileDrawerOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            }
-
-            if (mobileMenuBtn) {
-                mobileMenuBtn.addEventListener('click', openDrawer);
-                mobileMenuBtn.addEventListener('touchend', openDrawer, { passive: true });
-            }
-            if (mobileDrawerClose) {
-                mobileDrawerClose.addEventListener('click', closeDrawer);
-                mobileDrawerClose.addEventListener('touchend', closeDrawer, { passive: true });
-            }
-            if (mobileDrawerOverlay) {
-                mobileDrawerOverlay.addEventListener('click', (e) => {
-                    if (e.target === mobileDrawerOverlay) closeDrawer(e);
-                });
-            }
-            document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-                link.addEventListener('click', closeDrawer);
-            });
-
             // Custom Desktop Cursor Follower
             const cursor = document.getElementById('portfolioCursor');
             const isTouch = window.matchMedia('(pointer: coarse)').matches;

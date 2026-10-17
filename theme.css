@@ -187,9 +187,8 @@ nav.nav-center a.active::after {
     cursor: pointer;
     padding: 10px;
     z-index: 120;
-    pointer-events: auto;
-    -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-menu-btn svg {

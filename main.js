@@ -19,44 +19,54 @@
     }
 
     // 2. Mobile Drawer Navigation
-    const mobileBtn = document.querySelector('.mobile-menu-btn');
-    const drawerOverlay = document.querySelector('.mobile-drawer-overlay');
-    const drawerClose = document.querySelector('.mobile-drawer-close');
+    function initMobileDrawer() {
+        const mobileBtns = document.querySelectorAll('.mobile-menu-btn');
+        const drawerOverlay = document.querySelector('.mobile-drawer-overlay');
+        const drawerCloseBtns = document.querySelectorAll('.mobile-drawer-close');
 
-    function openMobileDrawer() {
-        if (drawerOverlay) {
-            drawerOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-    }
-
-    function closeMobileDrawer() {
-        if (drawerOverlay) {
-            drawerOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    }
-
-    if (mobileBtn) {
-        mobileBtn.addEventListener('click', openMobileDrawer);
-        mobileBtn.addEventListener('touchend', openMobileDrawer, { passive: true });
-    }
-    if (drawerClose) {
-        drawerClose.addEventListener('click', closeMobileDrawer);
-        drawerClose.addEventListener('touchend', closeMobileDrawer, { passive: true });
-    }
-    if (drawerOverlay) {
-        drawerOverlay.addEventListener('click', (e) => {
-            if (e.target === drawerOverlay) {
-                closeMobileDrawer();
+        function openMobileDrawer(e) {
+            if (e) e.preventDefault();
+            if (drawerOverlay) {
+                drawerOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
             }
+        }
+
+        function closeMobileDrawer(e) {
+            if (e) e.preventDefault();
+            if (drawerOverlay) {
+                drawerOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        mobileBtns.forEach(btn => {
+            btn.addEventListener('click', openMobileDrawer);
+        });
+
+        drawerCloseBtns.forEach(btn => {
+            btn.addEventListener('click', closeMobileDrawer);
+        });
+
+        if (drawerOverlay) {
+            drawerOverlay.addEventListener('click', (e) => {
+                if (e.target === drawerOverlay) {
+                    closeMobileDrawer(e);
+                }
+            });
+        }
+
+        // Close mobile drawer on link click
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', closeMobileDrawer);
         });
     }
 
-    // Close mobile drawer on link click
-    document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-        link.addEventListener('click', closeMobileDrawer);
-    });
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileDrawer);
+    } else {
+        initMobileDrawer();
+    }
 
     // 3. Back to Top Smooth Scroll
     document.querySelectorAll('.footer-back-top').forEach(btn => {
