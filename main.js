@@ -56,9 +56,14 @@
             });
         }
 
-        // Close mobile drawer on link click
+        // Close mobile drawer on link click without preventing navigation
         document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-            link.addEventListener('click', closeMobileDrawer);
+            link.addEventListener('click', () => {
+                if (drawerOverlay) {
+                    drawerOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
         });
     }
 
