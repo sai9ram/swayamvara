@@ -1,0 +1,26 @@
+# robots.txt for https://www.swayamvaraweddings.in/
+User-agent: *
+Allow: /
+Allow: /about.html
+Allow: /portfolio.html
+Allow: /services.html
+Allow: /quote.html
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.avif$
+
+# Security Disallow: Protect backend functions, server files, and source code
+Disallow: /api/
+Disallow: /server.py
+Disallow: /*.py$
+Disallow: /*.json$
+Disallow: /*.bak$
+Disallow: /*.env*
+Disallow: /package*
+Disallow: /.*
+
+# Sitemap
+Sitemap: https://www.swayamvaraweddings.in/sitemap.xml

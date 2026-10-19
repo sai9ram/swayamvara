@@ -261,11 +261,25 @@ def send_smtp_email(payload):
 
 class SwayamvaraHandler(SimpleHTTPRequestHandler):
     def end_headers(self):
-        # Allow cross-origin and prevent caching issues during development
+        # Enterprise security headers
+        self.send_header('X-Content-Type-Options', 'nosniff')
+        self.send_header('X-Frame-Options', 'SAMEORIGIN')
+        self.send_header('Referrer-Policy', 'strict-origin-when-cross-origin')
         self.send_header('Access-Control-Allow-Origin', '*')
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
         self.send_header('Access-Control-Allow-Headers', 'Content-Type')
         super().end_headers()
+
+    def do_GET(self):
+        # Security protection: Block access to backend code, credentials, and backups
+        path_lower = self.path.lower().split('?')[0]
+        blocked_suffixes = ('.py', '.env', '.bak', '.json', '.git', '.md')
+        if any(path_lower.endswith(s) for s in blocked_suffixes) or '/.' in path_lower or 'package' in path_lower:
+            self.send_response(404)
+            self.end_headers()
+            self.wfile.write(b"404 Not Found")
+            return
+        super().do_GET()
 
     def do_OPTIONS(self):
         self.send_response(200)
@@ -279,6 +293,14 @@ class SwayamvaraHandler(SimpleHTTPRequestHandler):
 
             try:
                 payload = json.loads(post_data.decode('utf-8'))
+                
+                # Bot honeypot check
+                if payload.get('website'):
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'application/json')
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"success": True, "simulated": True, "message": "Processed"}).encode('utf-8'))
+                    return
                 result = send_smtp_email(payload)
                 response_bytes = json.dumps(result).encode('utf-8')
                 self.send_response(200)

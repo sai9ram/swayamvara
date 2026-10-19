@@ -284,6 +284,11 @@
                         </div>
                         <div class="q-form-wrap">
                             <form id="qForm" novalidate>
+                                <!-- Anti-bot honeypot field (hidden from legitimate users) -->
+                                <div style="position: absolute; left: -9999px; top: -9999px; opacity: 0; pointer-events: none;" aria-hidden="true">
+                                    <label for="qWebsite">Leave blank</label>
+                                    <input type="text" id="qWebsite" name="website" tabindex="-1" autocomplete="off">
+                                </div>
                                 <div class="q-form-grid">
                                     <div>
                                         <label class="q-label" for="qName">Full Name *</label>
@@ -963,7 +968,11 @@
             }
         });
 
+        const hpEl = document.getElementById('qWebsite');
+        const hpVal = hpEl ? hpEl.value : '';
+
         const payload = {
+            website: hpVal,
             quoteId: state.quoteId,
             customerDetails: state.customerDetails,
             styleLabel: getSelectedStyleLabel(),
@@ -995,6 +1004,9 @@
                     statusEl.className = 'q-email-status success';
                 } else if (data.simulated) {
                     statusEl.textContent = 'ℹ Quotation generated! Live email delivery requires Gmail App Password configuration in Vercel. Download PDF or share via WhatsApp below.';
+                    statusEl.className = 'q-email-status info';
+                } else if (data.error) {
+                    statusEl.textContent = 'ℹ ' + data.error;
                     statusEl.className = 'q-email-status info';
                 } else {
                     statusEl.textContent = '✓ Quotation generated for ' + state.customerDetails.email + '. Download PDF or share via WhatsApp below.';

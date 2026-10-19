@@ -1,0 +1,6 @@
+.env*
+server.py
+*.py
+*.bak
+__pycache__
+*.md
