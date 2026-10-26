@@ -5873,11 +5873,11 @@
                 <div class="portfolio-slider-track" id="prewedSliderTrack">
 
                     <!-- SLIDE 1: Ananya's Wedding -->
-                    <div class="portfolio-card portfolio-slide" data-img="621829770_18085461035126499_5689806598605301436_n.webp"
-                        data-title="Ananya's Wedding" data-loc="City Palace, Udaipur &bull; Palace Wedding">
+                    <div class="portfolio-card portfolio-slide" data-img="483580332_18061234117967204_8819667154284543056_n.jpg"
+                        data-title="Ananya's Wedding">
                         <div class="portfolio-img-wrap">
-                            <img src="621829770_18085461035126499_5689806598605301436_n.webp"
-                                alt="Ananya's Wedding — Swayamvara Wedding Photography" loading="lazy">
+                            <img src="483580332_18061234117967204_8819667154284543056_n.jpg"
+                                alt="Ananya's Wedding — Swayamvara Wedding Photography" loading="lazy" style="object-position: center top;">
                             <div class="portfolio-scrim"></div>
                             <span class="portfolio-tag">Bridal Portrait</span>
                             <div class="portfolio-caption">
@@ -5888,7 +5888,7 @@
 
                     <!-- SLIDE 2: Dev & Meera's Wedding -->
                     <div class="portfolio-card portfolio-slide" data-img="601625421_18088845055967204_6523291512231873774_n.jpg"
-                        data-title="Dev &amp; Meera's Wedding" data-loc="Umaid Bhawan Palace, Jodhpur &bull; Sunset Pheras">
+                        data-title="Dev &amp; Meera's Wedding">
                         <div class="portfolio-img-wrap">
                             <img src="601625421_18088845055967204_6523291512231873774_n.jpg"
                                 alt="Dev &amp; Meera's Wedding — Swayamvara Wedding Photography" loading="lazy">
@@ -5902,7 +5902,7 @@
 
                     <!-- SLIDE 3: Ashish & Manogna (Changed from Henna & Jewelry Details) -->
                     <div class="portfolio-card portfolio-slide" data-img="609948448_18090306871967204_1300483370148847510_n.jpg"
-                        data-title="Ashish &amp; Manogna" data-loc="Traditional Mehendi &bull; Gold Jewelry">
+                        data-title="Ashish &amp; Manogna">
                         <div class="portfolio-img-wrap">
                             <img src="609948448_18090306871967204_1300483370148847510_n.jpg"
                                 alt="Ashish &amp; Manogna — Swayamvara Wedding Photography" loading="lazy">
@@ -5916,7 +5916,7 @@
 
                     <!-- SLIDE 4: Bride getting Ready (Changed from Haldi & Family Fun) -->
                     <div class="portfolio-card portfolio-slide" data-img="627541499_18312294562254376_7295613415810448020_n.jpg"
-                        data-title="Bride getting Ready" data-loc="Candid Rituals &bull; Happy Moments">
+                        data-title="Bride getting Ready">
                         <div class="portfolio-img-wrap">
                             <img src="627541499_18312294562254376_7295613415810448020_n.jpg"
                                 alt="Bride getting Ready — Swayamvara Wedding Photography" loading="lazy">
@@ -5930,7 +5930,7 @@
 
                     <!-- SLIDE 5: Beautiful Bride (Changed from Handsome Groom) -->
                     <div class="portfolio-card portfolio-slide" data-img="629835153_18094156381967204_2880516111171031160_n.jpg"
-                        data-title="Beautiful Bride" data-loc="Fort Rajwada, Jaisalmer &bull; Royal Portrait">
+                        data-title="Beautiful Bride">
                         <div class="portfolio-img-wrap">
                             <img src="629835153_18094156381967204_2880516111171031160_n.jpg"
                                 alt="Beautiful Bride — Swayamvara Wedding Photography" loading="lazy">
@@ -5944,7 +5944,7 @@
 
                     <!-- SLIDE 6: Mani & Pooja (Changed from Udaipur Lake wedding) -->
                     <div class="portfolio-card portfolio-slide" data-img="654663041_18083966831601910_6151680735575874864_n.jpg"
-                        data-title="Mani &amp; Pooja" data-loc="Taj Lake Palace, Udaipur &bull; Destination Pre-Wedding">
+                        data-title="Mani &amp; Pooja">
                         <div class="portfolio-img-wrap">
                             <img src="654663041_18083966831601910_6151680735575874864_n.jpg"
                                 alt="Mani &amp; Pooja — Swayamvara Wedding Photography" loading="lazy">
@@ -7558,12 +7558,14 @@
                 card.addEventListener('click', () => {
                     const imgUrl = card.dataset.img || (card.querySelector('img') ? card.querySelector('img').src : '');
                     const title = card.dataset.title || '';
-                    const loc = card.dataset.loc || '';
 
                     if (lightbox && lightboxImg) {
                         lightboxImg.src = imgUrl;
                         if (lightboxTitle) lightboxTitle.textContent = title;
-                        if (lightboxLoc) lightboxLoc.textContent = loc;
+                        if (lightboxLoc) {
+                            lightboxLoc.textContent = '';
+                            lightboxLoc.style.display = 'none';
+                        }
                         lightbox.classList.add('active');
                         document.body.style.overflow = 'hidden';
                     }
