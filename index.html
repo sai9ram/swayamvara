@@ -4803,13 +4803,14 @@
         /* Main Headline */
         .enquiry-title {
             font-family: var(--font-serif);
-            font-size: clamp(2.4rem, 5vw, 4.4rem);
+            font-size: clamp(1.4rem, 3.8vw, 3.4rem);
             font-weight: 400;
             line-height: 1.16;
             color: var(--bg-primary);
             margin-bottom: 40px;
             letter-spacing: -0.01em;
             text-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+            white-space: nowrap;
             opacity: 0;
             transform: translateY(25px);
             transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
@@ -4941,7 +4942,8 @@
             }
 
             .enquiry-title {
-                font-size: 2.1rem;
+                font-size: clamp(1.05rem, 4.8vw, 1.85rem);
+                white-space: nowrap;
                 margin-bottom: 30px;
             }
 
