@@ -2305,93 +2305,142 @@
         }
 
         /* ============================================================
-           EDITORIAL ASYMMETRIC GALLERY GRID
+           PRE-WEDDING GALLERY AUTO-SLIDER
            ============================================================ */
-        .portfolio-editorial-grid {
+        .portfolio-slider-wrapper {
             position: relative;
             max-width: 1400px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-auto-rows: minmax(75px, auto);
-            gap: clamp(16px, 2.5vw, 32px);
+            padding: 0 54px;
             z-index: 2;
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Thin maroon architectural connecting lines overlaid across grid */
-        .portfolio-arch-lines-overlay {
+        .portfolio-slider-wrapper.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .portfolio-slider-viewport {
+            position: relative;
+            overflow: hidden;
+            border-radius: clamp(18px, 2vw, 28px);
+            padding: 14px 4px 18px;
+        }
+
+        .portfolio-slider-track {
+            display: flex;
+            gap: clamp(16px, 2.2vw, 28px);
+            transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
+        }
+
+        /* Slide item card */
+        .portfolio-slide {
+            flex: 0 0 calc((100% - 2 * clamp(16px, 2.2vw, 28px)) / 3);
+            min-width: 0;
+            height: clamp(420px, 46vw, 530px);
+            position: relative;
+            border-radius: clamp(18px, 2vw, 28px);
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow:
+                0 14px 38px -10px rgba(59, 17, 27, 0.12),
+                0 2px 8px rgba(100, 29, 45, 0.05);
+            border: 1px solid rgba(100, 29, 45, 0.16);
+            background: #EDE2CF;
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            transition:
+                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+            user-select: none;
+        }
+
+        .portfolio-slide:hover {
+            transform: translateY(-8px) !important;
+            box-shadow:
+                0 26px 54px -12px rgba(59, 17, 27, 0.28),
+                0 6px 20px rgba(197, 160, 89, 0.25);
+            border-color: rgba(197, 160, 89, 0.7);
+        }
+
+        /* Left and Right Navigation Arrows */
+        .portfolio-slider-arrow {
             position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 1;
-            width: 100%;
-            height: 100%;
+            top: calc(50% - 20px);
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(100, 29, 45, 0.92) 0%, rgba(59, 17, 27, 0.95) 100%);
+            color: var(--cream-light);
+            border: 1.5px solid rgba(197, 160, 89, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 10px 26px rgba(59, 17, 27, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ---- Card 1: Large Vertical Portrait (Bride) ---- */
-        .port-item-1 {
-            grid-column: 1 / span 5;
-            grid-row: 1 / span 5;
+        .portfolio-slider-arrow:hover {
+            background: linear-gradient(135deg, #7A2437 0%, #4D1623 100%);
+            border-color: rgba(197, 160, 89, 0.95);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 14px 32px rgba(59, 17, 27, 0.5), 0 0 20px rgba(197, 160, 89, 0.35);
+        }
+
+        .portfolio-slider-arrow:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .portfolio-slider-arrow.prev {
+            left: 0;
+        }
+
+        .portfolio-slider-arrow.next {
+            right: 0;
+        }
+
+        /* Dots pagination indicators */
+        .portfolio-slider-dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 28px;
             position: relative;
-            margin-top: 24px;
-            z-index: 2;
-        }
-
-        /* Arch shape backdrop behind Card 1 */
-        .port-arch-backdrop {
-            position: absolute;
-            top: -28px;
-            left: -22px;
-            right: 22px;
-            bottom: 22px;
-            background: linear-gradient(180deg, rgba(100, 29, 45, 0.08) 0%, rgba(197, 160, 89, 0.14) 100%);
-            border: 1px solid rgba(100, 29, 45, 0.18);
-            border-radius: 200px 200px 20px 20px;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* ---- Card 2: Large Horizontal Image (Ceremony Mandap) ---- */
-        .port-item-2 {
-            grid-column: 6 / span 7;
-            grid-row: 1 / span 4;
-            position: relative;
-            z-index: 3;
-        }
-
-        /* ---- Card 3: Small Detail Image 1 (Jewellery / Mehndi) ---- */
-        .port-item-3 {
-            grid-column: 6 / span 3;
-            grid-row: 5 / span 3;
-            position: relative;
-            margin-top: -16px;
-            z-index: 4;
-        }
-
-        /* ---- Card 4: Small Detail Image 2 (Candid Laughter & Family) ---- */
-        .port-item-4 {
-            grid-column: 9 / span 4;
-            grid-row: 5 / span 3;
-            position: relative;
-            z-index: 3;
-        }
-
-        /* ---- Card 5: Medium Portrait (Groom / Royal Solitary) ---- */
-        .port-item-5 {
-            grid-column: 1 / span 5;
-            grid-row: 6 / span 5;
-            position: relative;
-            margin-top: clamp(20px, 3vw, 45px);
-            z-index: 3;
-        }
-
-        /* ---- Card 6: Panoramic Scene (Sunset Lake Palace & Venue) ---- */
-        .port-item-6 {
-            grid-column: 6 / span 7;
-            grid-row: 8 / span 4;
-            position: relative;
-            margin-top: clamp(-30px, -2vw, -10px);
             z-index: 5;
+        }
+
+        .portfolio-slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            background: rgba(100, 29, 45, 0.22);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 0;
+        }
+
+        .portfolio-slider-dot:hover {
+            background: rgba(100, 29, 45, 0.5);
+            border-color: rgba(197, 160, 89, 0.8);
+        }
+
+        .portfolio-slider-dot.active {
+            width: 34px;
+            background: linear-gradient(90deg, #641D2D, #C5A059);
+            border-color: #C5A059;
+            box-shadow: 0 0 12px rgba(197, 160, 89, 0.45);
         }
 
         /* ---- Base Item Box Styling ---- */
@@ -2573,64 +2622,42 @@
 
         /* ---- Responsive Breakpoints ---- */
         @media (max-width: 1024px) {
-            .portfolio-editorial-grid {
-                grid-template-columns: repeat(6, 1fr);
+            .portfolio-slider-wrapper {
+                padding: 0 44px;
             }
 
-            .port-item-1 {
-                grid-column: 1 / span 3;
-                grid-row: auto;
-                margin-top: 0;
+            .portfolio-slide {
+                flex: 0 0 calc((100% - clamp(16px, 2.2vw, 28px)) / 2);
+                height: 440px;
             }
 
-            .port-item-2 {
-                grid-column: 4 / span 3;
-                grid-row: auto;
-            }
-
-            .port-item-3 {
-                grid-column: 1 / span 3;
-                grid-row: auto;
-                margin-top: 0;
-            }
-
-            .port-item-4 {
-                grid-column: 4 / span 3;
-                grid-row: auto;
-            }
-
-            .port-item-5 {
-                grid-column: 1 / span 3;
-                grid-row: auto;
-                margin-top: 0;
-            }
-
-            .port-item-6 {
-                grid-column: 4 / span 3;
-                grid-row: auto;
-                margin-top: 0;
+            .portfolio-slider-arrow {
+                width: 44px;
+                height: 44px;
             }
         }
 
         @media (max-width: 640px) {
-            .portfolio-editorial-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .portfolio-slider-wrapper {
+                padding: 0 24px;
             }
 
-            .port-item-1,
-            .port-item-2,
-            .port-item-3,
-            .port-item-4,
-            .port-item-5,
-            .port-item-6 {
-                grid-column: 1 / -1;
-                grid-row: auto;
-                margin-top: 0;
+            .portfolio-slide {
+                flex: 0 0 100%;
+                height: 420px;
             }
 
-            .port-arch-backdrop {
-                display: none;
+            .portfolio-slider-arrow {
+                width: 38px;
+                height: 38px;
+            }
+
+            .portfolio-slider-arrow.prev {
+                left: -6px;
+            }
+
+            .portfolio-slider-arrow.next {
+                right: -6px;
             }
         }
 
@@ -5813,8 +5840,8 @@
 
         <!-- Section Header -->
         <header class="portfolio-header" id="portfolioHeader">
-            <p class="portfolio-eyebrow">Our Wedding Photos — Best Wedding Photography Studio in Hyderabad</p>
-            <h2 class="portfolio-title">Real Wedding Stories</h2>
+            <p class="portfolio-eyebrow">Pre-Wedding Photography — Best Wedding Photography Studio in Hyderabad</p>
+            <h2 class="portfolio-title">Pre Wedding Gallery</h2>
             <div class="portfolio-divider">
                 <span class="div-line"></span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
@@ -5823,128 +5850,123 @@
                 <span class="div-line"></span>
             </div>
             <p class="portfolio-subtitle">
-                Look at some of the beautiful weddings covered by our wedding photographers in Hyderabad, Telangana, and destination locations across India. We capture real feelings, family blessings, and happy moments that stay with you forever.
+                Look at some of the romantic pre-wedding moments captured by our wedding photographers in Hyderabad, Telangana, and destination locations across India. We capture real feelings, intimate laughter, and happy moments that stay with you forever.
             </p>
         </header>
 
-        <!-- Editorial Asymmetric Gallery Grid -->
-        <div class="portfolio-editorial-grid">
+        <!-- Pre Wedding Auto Slider -->
+        <div class="portfolio-slider-wrapper" id="prewedSliderWrapper">
+            <!-- Navigation Arrows -->
+            <button class="portfolio-slider-arrow prev" id="prewedSliderPrev" aria-label="Previous Slide">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+            <button class="portfolio-slider-arrow next" id="prewedSliderNext" aria-label="Next Slide">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </button>
 
-            <!-- SVG connecting lines between items -->
-            <svg class="portfolio-arch-lines-overlay" viewBox="0 0 1400 950" preserveAspectRatio="none" fill="none"
-                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M 420 210 L 600 210 L 600 460" stroke="#641D2D" stroke-width="1.2" stroke-dasharray="4 4"
-                    opacity="0.45" />
-                <circle cx="420" cy="210" r="3.5" fill="#641D2D" />
-                <circle cx="600" cy="460" r="3.5" fill="#C5A059" />
+            <!-- Slider Viewport -->
+            <div class="portfolio-slider-viewport" id="prewedSliderViewport">
+                <div class="portfolio-slider-track" id="prewedSliderTrack">
 
-                <path d="M 880 360 L 1040 360 L 1040 600" stroke="#641D2D" stroke-width="1.2" stroke-dasharray="4 4"
-                    opacity="0.45" />
-                <circle cx="880" cy="360" r="3.5" fill="#641D2D" />
-                <circle cx="1040" cy="600" r="3.5" fill="#C5A059" />
-
-                <path d="M 120 700 C 120 630, 480 630, 480 700" stroke="#641D2D" stroke-width="1" opacity="0.32" />
-            </svg>
-
-            <!-- ITEM 1: Large Vertical Portrait (Bride) -->
-            <div class="portfolio-card port-item-1" data-img="601104753_18088330816967204_6050546257599805495_n.jpg"
-                data-title="Ananya's Wedding" data-loc="City Palace, Udaipur &bull; Palace Wedding">
-
-                <!-- Architectural arch backdrop behind image -->
-                <div class="port-arch-backdrop"></div>
-
-                <div class="portfolio-img-wrap">
-                    <img src="601104753_18088330816967204_6050546257599805495_n.jpg"
-                        alt="Bridal Portrait — Swayamvara Wedding Photography" loading="lazy">
-                    <div class="portfolio-scrim"></div>
-                    <span class="portfolio-tag">Beautiful Bride</span>
-                    <div class="portfolio-caption">
-                        <h3 class="portfolio-caption-title">Ananya's Wedding</h3>
-                        <p class="portfolio-caption-sub">City Palace, Udaipur &bull; Palace Wedding</p>
+                    <!-- SLIDE 1: Ananya's Wedding -->
+                    <div class="portfolio-card portfolio-slide" data-img="601104753_18088330816967204_6050546257599805495_n.jpg"
+                        data-title="Ananya's Wedding" data-loc="City Palace, Udaipur &bull; Palace Wedding">
+                        <div class="portfolio-img-wrap">
+                            <img src="601104753_18088330816967204_6050546257599805495_n.jpg"
+                                alt="Ananya's Wedding — Swayamvara Wedding Photography" loading="lazy">
+                            <div class="portfolio-scrim"></div>
+                            <span class="portfolio-tag">Bridal Portrait</span>
+                            <div class="portfolio-caption">
+                                <h3 class="portfolio-caption-title">Ananya's Wedding</h3>
+                                <p class="portfolio-caption-sub">City Palace, Udaipur &bull; Palace Wedding</p>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- SLIDE 2: Dev & Meera's Wedding -->
+                    <div class="portfolio-card portfolio-slide" data-img="601625421_18088845055967204_6523291512231873774_n.jpg"
+                        data-title="Dev &amp; Meera's Wedding" data-loc="Umaid Bhawan Palace, Jodhpur &bull; Sunset Pheras">
+                        <div class="portfolio-img-wrap">
+                            <img src="601625421_18088845055967204_6523291512231873774_n.jpg"
+                                alt="Dev &amp; Meera's Wedding — Swayamvara Wedding Photography" loading="lazy">
+                            <div class="portfolio-scrim"></div>
+                            <span class="portfolio-tag">Wedding Pheras</span>
+                            <div class="portfolio-caption">
+                                <h3 class="portfolio-caption-title">Dev &amp; Meera's Wedding</h3>
+                                <p class="portfolio-caption-sub">Umaid Bhawan Palace, Jodhpur &bull; Sunset Pheras</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 3: Ashish & Manogna (Changed from Henna & Jewelry Details) -->
+                    <div class="portfolio-card portfolio-slide" data-img="609948448_18090306871967204_1300483370148847510_n.jpg"
+                        data-title="Ashish &amp; Manogna" data-loc="Traditional Mehendi &bull; Gold Jewelry">
+                        <div class="portfolio-img-wrap">
+                            <img src="609948448_18090306871967204_1300483370148847510_n.jpg"
+                                alt="Ashish &amp; Manogna — Swayamvara Wedding Photography" loading="lazy">
+                            <div class="portfolio-scrim"></div>
+                            <span class="portfolio-tag">Ashish &amp; Manogna</span>
+                            <div class="portfolio-caption">
+                                <h3 class="portfolio-caption-title">Ashish &amp; Manogna</h3>
+                                <p class="portfolio-caption-sub">Traditional Mehendi &bull; Gold Jewelry</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 4: Bride getting Ready (Changed from Haldi & Family Fun) -->
+                    <div class="portfolio-card portfolio-slide" data-img="627541499_18312294562254376_7295613415810448020_n.jpg"
+                        data-title="Bride getting Ready" data-loc="Candid Rituals &bull; Happy Moments">
+                        <div class="portfolio-img-wrap">
+                            <img src="627541499_18312294562254376_7295613415810448020_n.jpg"
+                                alt="Bride getting Ready — Swayamvara Wedding Photography" loading="lazy">
+                            <div class="portfolio-scrim"></div>
+                            <span class="portfolio-tag">Bride getting Ready</span>
+                            <div class="portfolio-caption">
+                                <h3 class="portfolio-caption-title">Bride getting Ready</h3>
+                                <p class="portfolio-caption-sub">Candid Moments &bull; Bridal Glow</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 5: Beautiful Bride (Changed from Handsome Groom) -->
+                    <div class="portfolio-card portfolio-slide" data-img="629835153_18094156381967204_2880516111171031160_n.jpg"
+                        data-title="Beautiful Bride" data-loc="Fort Rajwada, Jaisalmer &bull; Royal Portrait">
+                        <div class="portfolio-img-wrap">
+                            <img src="629835153_18094156381967204_2880516111171031160_n.jpg"
+                                alt="Beautiful Bride — Swayamvara Wedding Photography" loading="lazy">
+                            <div class="portfolio-scrim"></div>
+                            <span class="portfolio-tag">Beautiful Bride</span>
+                            <div class="portfolio-caption">
+                                <h3 class="portfolio-caption-title">Beautiful Bride</h3>
+                                <p class="portfolio-caption-sub">Fort Rajwada, Jaisalmer &bull; Royal Portrait</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 6: Mani & Pooja (Changed from Udaipur Lake wedding) -->
+                    <div class="portfolio-card portfolio-slide" data-img="654663041_18083966831601910_6151680735575874864_n.jpg"
+                        data-title="Mani &amp; Pooja" data-loc="Taj Lake Palace, Udaipur &bull; Destination Pre-Wedding">
+                        <div class="portfolio-img-wrap">
+                            <img src="654663041_18083966831601910_6151680735575874864_n.jpg"
+                                alt="Mani &amp; Pooja — Swayamvara Wedding Photography" loading="lazy">
+                            <div class="portfolio-scrim"></div>
+                            <span class="portfolio-tag">Mani &amp; Pooja</span>
+                            <div class="portfolio-caption">
+                                <h3 class="portfolio-caption-title">Mani &amp; Pooja</h3>
+                                <p class="portfolio-caption-sub">Taj Lake Palace, Udaipur &bull; Destination Pre-Wedding</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- ITEM 2: Large Horizontal Image (Ceremony Mandap) -->
-            <div class="portfolio-card port-item-2" data-img="601625421_18088845055967204_6523291512231873774_n.jpg"
-                data-title="Dev &amp; Meera's Wedding" data-loc="Umaid Bhawan Palace, Jodhpur &bull; Sunset Pheras">
-
-                <div class="portfolio-img-wrap">
-                    <img src="601625421_18088845055967204_6523291512231873774_n.jpg"
-                        alt="Mandap Ceremony — Swayamvara Wedding Photography" loading="lazy">
-                    <div class="portfolio-scrim"></div>
-                    <span class="portfolio-tag">Wedding Pheras</span>
-                    <div class="portfolio-caption">
-                        <h3 class="portfolio-caption-title">Dev &amp; Meera's Wedding</h3>
-                        <p class="portfolio-caption-sub">Umaid Bhawan Palace, Jodhpur &bull; Sunset Pheras</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ITEM 3: Small Detail Image 1 (Jewellery & Mehndi) -->
-            <div class="portfolio-card port-item-3" data-img="609948448_18090306871967204_1300483370148847510_n.jpg"
-                data-title="Henna &amp; Jewelry Details" data-loc="Traditional Mehendi &bull; Gold Jewelry">
-
-                <div class="portfolio-img-wrap">
-                    <img src="609948448_18090306871967204_1300483370148847510_n.jpg"
-                        alt="Jewelry Details — Swayamvara Wedding Photography" loading="lazy">
-                    <div class="portfolio-scrim"></div>
-                    <span class="portfolio-tag">Henna &amp; Jewelry</span>
-                    <div class="portfolio-caption">
-                        <h3 class="portfolio-caption-title">Henna &amp; Jewelry Details</h3>
-                        <p class="portfolio-caption-sub">Traditional Mehendi &bull; Gold Jewelry</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ITEM 4: Small Detail Image 2 (Candid Laughter & Family) -->
-            <div class="portfolio-card port-item-4" data-img="627541499_18312294562254376_7295613415810448020_n.jpg"
-                data-title="Haldi &amp; Family Fun" data-loc="Family Rituals &bull; Happy Moments">
-
-                <div class="portfolio-img-wrap">
-                    <img src="627541499_18312294562254376_7295613415810448020_n.jpg"
-                        alt="Candid Family Moments — Swayamvara Wedding Photography" loading="lazy">
-                    <div class="portfolio-scrim"></div>
-                    <span class="portfolio-tag">Family &amp; Fun</span>
-                    <div class="portfolio-caption">
-                        <h3 class="portfolio-caption-title">Haldi &amp; Family Fun</h3>
-                        <p class="portfolio-caption-sub">Family Rituals &bull; Happy Moments</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ITEM 5: Medium Portrait (Groom) -->
-            <div class="portfolio-card port-item-5" data-img="629835153_18094156381967204_2880516111171031160_n.jpg"
-                data-title="Vikram's Groom Photo" data-loc="Fort Rajwada, Jaisalmer &bull; Traditional Groom">
-
-                <div class="portfolio-img-wrap">
-                    <img src="629835153_18094156381967204_2880516111171031160_n.jpg"
-                        alt="Groom Portrait — Swayamvara Wedding Photography" loading="lazy">
-                    <div class="portfolio-scrim"></div>
-                    <span class="portfolio-tag">Handsome Groom</span>
-                    <div class="portfolio-caption">
-                        <h3 class="portfolio-caption-title">Vikram's Groom Photo</h3>
-                        <p class="portfolio-caption-sub">Fort Rajwada, Jaisalmer &bull; Traditional Groom</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ITEM 6: Panoramic Scene (Venue Architecture & Couple) -->
-            <div class="portfolio-card port-item-6" data-img="634520398_18094154743967204_5441340631586413793_n.jpg"
-                data-title="Udaipur Lake Wedding" data-loc="Taj Lake Palace, Udaipur &bull; Destination Wedding">
-
-                <div class="portfolio-img-wrap">
-                    <img src="654663041_18083966831601910_6151680735575874864_n.jpg"
-                        alt="Destination Architecture — Swayamvara Wedding Photography" loading="lazy">
-                    <div class="portfolio-scrim"></div>
-                    <span class="portfolio-tag">Couples Photo</span>
-                    <div class="portfolio-caption">
-                        <h3 class="portfolio-caption-title">Udaipur Lake Wedding</h3>
-                        <p class="portfolio-caption-sub">Taj Lake Palace, Udaipur &bull; Destination Wedding</p>
-                    </div>
-                </div>
-            </div>
-
+            <!-- Dots Indicators -->
+            <div class="portfolio-slider-dots" id="prewedSliderDots" role="tablist" aria-label="Pre-Wedding Slide Selector"></div>
         </div>
 
         <!-- CTA Button Group -->
@@ -7503,18 +7525,25 @@
             observer.observe(textCol);
         })();
         /* ============================================================
-           MAIN PORTFOLIO — IntersectionObserver + Lightbox Modal Trigger
+           PRE-WEDDING GALLERY AUTO-SLIDER + Lightbox Modal Trigger
            ============================================================ */
         (function () {
             const portHeader = document.getElementById('portfolioHeader');
-            const portCards = document.querySelectorAll('.portfolio-card');
+            const sliderWrapper = document.getElementById('prewedSliderWrapper');
+            const viewport = document.getElementById('prewedSliderViewport');
+            const track = document.getElementById('prewedSliderTrack');
+            const prevBtn = document.getElementById('prewedSliderPrev');
+            const nextBtn = document.getElementById('prewedSliderNext');
+            const dotsContainer = document.getElementById('prewedSliderDots');
             const portCta = document.getElementById('portfolioCta');
+            const slides = document.querySelectorAll('.portfolio-slide');
 
             const lightbox = document.getElementById('photoLightbox');
             const lightboxImg = document.getElementById('lightboxImg');
             const lightboxTitle = document.getElementById('lightboxTitle');
             const lightboxLoc = document.getElementById('lightboxLoc');
 
+            // Scroll reveal observer
             if (portHeader) {
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
@@ -7526,27 +7555,186 @@
                 }, { rootMargin: '0px 0px -50px 0px', threshold: 0.05 });
 
                 observer.observe(portHeader);
+                if (sliderWrapper) observer.observe(sliderWrapper);
                 if (portCta) observer.observe(portCta);
+            }
 
-                portCards.forEach((card, idx) => {
-                    card.style.transitionDelay = `${0.06 + idx * 0.09}s`;
-                    observer.observe(card);
+            // Click slide to open high-res lightbox
+            slides.forEach((card) => {
+                card.addEventListener('click', () => {
+                    const imgUrl = card.dataset.img || (card.querySelector('img') ? card.querySelector('img').src : '');
+                    const title = card.dataset.title || '';
+                    const loc = card.dataset.loc || '';
 
-                    // Click to open high-res lightbox
-                    card.addEventListener('click', () => {
-                        const imgUrl = card.dataset.img || card.querySelector('img').src;
-                        const title = card.dataset.title || '';
-                        const loc = card.dataset.loc || '';
+                    if (lightbox && lightboxImg) {
+                        lightboxImg.src = imgUrl;
+                        if (lightboxTitle) lightboxTitle.textContent = title;
+                        if (lightboxLoc) lightboxLoc.textContent = loc;
+                        lightbox.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
 
-                        if (lightbox && lightboxImg) {
-                            lightboxImg.src = imgUrl;
-                            if (lightboxTitle) lightboxTitle.textContent = title;
-                            if (lightboxLoc) lightboxLoc.textContent = loc;
-                            lightbox.classList.add('active');
-                        }
+            if (!viewport || !track || !slides.length) return;
+
+            let currentIndex = 0;
+            let autoTimer = null;
+            const autoPlayDuration = 3500;
+
+            function getVisibleCount() {
+                if (window.innerWidth <= 640) return 1;
+                if (window.innerWidth <= 1024) return 2;
+                return 3;
+            }
+
+            function getMaxIndex() {
+                return Math.max(0, slides.length - getVisibleCount());
+            }
+
+            function renderDots() {
+                if (!dotsContainer) return;
+                dotsContainer.innerHTML = '';
+                const totalPages = getMaxIndex() + 1;
+                if (totalPages <= 1) return;
+
+                for (let i = 0; i < totalPages; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = `portfolio-slider-dot ${i === currentIndex ? 'active' : ''}`;
+                    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                    dot.addEventListener('click', () => {
+                        currentIndex = i;
+                        updateSlider(true);
+                        resetAutoPlay();
                     });
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function updateSlider(animate = true) {
+                const maxIndex = getMaxIndex();
+                if (currentIndex > maxIndex) currentIndex = 0;
+                if (currentIndex < 0) currentIndex = maxIndex;
+
+                const firstSlide = slides[0];
+                if (!firstSlide) return;
+
+                const slideWidth = firstSlide.getBoundingClientRect().width;
+                const style = window.getComputedStyle(track);
+                const gap = parseFloat(style.gap) || 20;
+                const offset = currentIndex * (slideWidth + gap);
+
+                track.style.transition = animate ? 'transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)' : 'none';
+                track.style.transform = `translateX(-${offset}px)`;
+
+                // Update active dot
+                if (dotsContainer) {
+                    const dots = dotsContainer.querySelectorAll('.portfolio-slider-dot');
+                    dots.forEach((dot, idx) => {
+                        dot.classList.toggle('active', idx === currentIndex);
+                    });
+                }
+            }
+
+            function nextSlide() {
+                const maxIndex = getMaxIndex();
+                if (currentIndex >= maxIndex) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex++;
+                }
+                updateSlider(true);
+            }
+
+            function prevSlide() {
+                const maxIndex = getMaxIndex();
+                if (currentIndex <= 0) {
+                    currentIndex = maxIndex;
+                } else {
+                    currentIndex--;
+                }
+                updateSlider(true);
+            }
+
+            function startAutoPlay() {
+                stopAutoPlay();
+                autoTimer = setInterval(nextSlide, autoPlayDuration);
+            }
+
+            function stopAutoPlay() {
+                if (autoTimer) {
+                    clearInterval(autoTimer);
+                    autoTimer = null;
+                }
+            }
+
+            function resetAutoPlay() {
+                stopAutoPlay();
+                startAutoPlay();
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    nextSlide();
+                    resetAutoPlay();
                 });
             }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    prevSlide();
+                    resetAutoPlay();
+                });
+            }
+
+            // Pause on hover
+            viewport.addEventListener('mouseenter', stopAutoPlay);
+            viewport.addEventListener('mouseleave', startAutoPlay);
+            if (prevBtn) {
+                prevBtn.addEventListener('mouseenter', stopAutoPlay);
+                prevBtn.addEventListener('mouseleave', startAutoPlay);
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('mouseenter', stopAutoPlay);
+                nextBtn.addEventListener('mouseleave', startAutoPlay);
+            }
+
+            // Mobile Touch / Swipe gestures
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            viewport.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                stopAutoPlay();
+            }, { passive: true });
+
+            viewport.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchEndX - touchStartX;
+                if (Math.abs(diff) > 40) {
+                    if (diff < 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                }
+                startAutoPlay();
+            }, { passive: true });
+
+            // Handle Resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    renderDots();
+                    updateSlider(false);
+                }, 100);
+            });
+
+            // Initialize
+            renderDots();
+            updateSlider(false);
+            startAutoPlay();
         })();
 
         /* ============================================================
