@@ -2864,6 +2864,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 45%;
             display: block;
             filter: saturate(1.08) contrast(1.03);
             transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -6181,7 +6182,7 @@
         <!-- Corner Mandala Watermark Elements -->
 
         <!-- Background Image with Scrim Overlay -->
-        <img id="destBgImg" class="dest-bg-img" src="649224271_17936090148161384_1548357089514220750_n.jpg"
+        <img id="destBgImg" class="dest-bg-img" src="655610223_18124880890601234_5446684186304653476_n.jpg"
             alt="Destination Wedding Background">
 
         <div class="dest-overlay-scrim"></div>
@@ -6195,27 +6196,26 @@
 
         <!-- Horizontal Destination Navigation Tabs -->
         <div class="dest-nav-container" role="tablist" aria-label="Destination Locations">
-            <button class="dest-nav-tab active" data-loc="jaipur" role="tab" aria-selected="true">JAIPUR</button>
-            <button class="dest-nav-tab" data-loc="goa" role="tab" aria-selected="false">GOA</button>
-            <button class="dest-nav-tab" data-loc="hyderabad" role="tab" aria-selected="false">HYDERABAD</button>
-            <button class="dest-nav-tab" data-loc="udaipur" role="tab" aria-selected="false">UDAIPUR</button>
-            <button class="dest-nav-tab" data-loc="kerala" role="tab" aria-selected="false">KERALA</button>
-            <button class="dest-nav-tab" data-loc="rajasthan" role="tab" aria-selected="false">RAJASTHAN</button>
+            <button class="dest-nav-tab active" data-loc="hyderabad" role="tab" aria-selected="true">HYDERABAD</button>
+            <button class="dest-nav-tab" data-loc="vijayawada" role="tab" aria-selected="false">VIJAYAWADA</button>
+            <button class="dest-nav-tab" data-loc="guntur" role="tab" aria-selected="false">GUNTUR</button>
+            <button class="dest-nav-tab" data-loc="rjy" role="tab" aria-selected="false">RJY</button>
+            <button class="dest-nav-tab" data-loc="bhimavaram" role="tab" aria-selected="false">BHIMAVARAM</button>
+            <button class="dest-nav-tab" data-loc="kakinada" role="tab" aria-selected="false">KAKINADA</button>
         </div>
 
         <!-- Indian Architectural Arch Mask Showcase -->
         <div class="dest-showcase">
             <div class="dest-arch-frame">
-                <img id="destMaskImg" class="dest-arch-img" src="649224271_17936090148161384_1548357089514220750_n.jpg"
-                    alt="Jaipur Destination Wedding">
+                <img id="destMaskImg" class="dest-arch-img" src="655610223_18124880890601234_5446684186304653476_n.jpg"
+                    alt="Hyderabad Destination Wedding">
             </div>
 
             <div class="dest-info-wrap" id="destTextWrap">
-                <span class="dest-tag-badge" id="destTag">Palace Weddings &amp; Mandaps</span>
-                <h3 class="dest-heading" id="destHeading">Jaipur — Palace Weddings</h3>
-                <p class="dest-story" id="destStory">Beautiful palace weddings in Jaipur with family and grand mandap
-                    setup.</p>
-                <p class="dest-stats" id="destStats">32+ Happy Weddings Covered</p>
+                <span class="dest-tag-badge" id="destTag">Royal Heritage Courtyards</span>
+                <h3 class="dest-heading" id="destHeading">Hyderabad — Heritage Weddings</h3>
+                <p class="dest-story" id="destStory">Grand traditional weddings in Hyderabad with full family celebrations and feasts.</p>
+                <p class="dest-stats" id="destStats">50+ Happy Weddings Covered</p>
             </div>
         </div>
 
@@ -6274,7 +6274,7 @@
                         timings, and what kind of photos you like.</p>
                 </div>
                 <div class="exp-stage-media">
-                    <img src="654990268_18076523210149042_524526476239052513_n.jpg"
+                    <img src="649217820_17876305497413900_190827038339169959_n.jpg"
                         alt="Pre-wedding understanding and bridal preparations" loading="lazy">
                     <div class="exp-media-scrim"></div>
                 </div>
@@ -7759,47 +7759,53 @@
             if (!tabs.length) return;
 
             const data = {
-                jaipur: {
-                    img: "649224271_17936090148161384_1548357089514220750_n.jpg",
-                    tag: "Palace Weddings & Mandaps",
-                    heading: "Jaipur — Palace Weddings",
-                    story: "Beautiful palace weddings in Jaipur with family and grand mandap setup.",
-                    stats: "32+ Happy Weddings Covered"
-                },
-                goa: {
-                    img: "652369335_17935613736035356_8515373101810282062_n.jpg",
-                    tag: "Beachside Vows & Sunset",
-                    heading: "Goa — Beach Weddings",
-                    story: "Fun and lovely beach weddings under the open sky and ocean sunset.",
-                    stats: "24+ Happy Weddings Covered"
-                },
                 hyderabad: {
-                    img: "653996531_18061191608380728_168673783010089141_n.jpg",
+                    img: "655610223_18124880890601234_5446684186304653476_n.jpg",
                     tag: "Royal Heritage Courtyards",
                     heading: "Hyderabad — Heritage Weddings",
-                    story: "Grand traditional weddings in Hyderabad with full family celebrations and feasts.",
-                    stats: "18+ Happy Weddings Covered"
+                    story: "Grand traditional celebrations in Hyderabad with rich family rituals and royal feasts.",
+                    stats: "50+ Happy Weddings Covered",
+                    pos: "center 45%"
                 },
-                udaipur: {
+                vijayawada: {
+                    img: "649224271_17936090148161384_1548357089514220750_n.jpg",
+                    tag: "Grand Mandaps & Celebrations",
+                    heading: "Vijayawada — Grand Celebrations",
+                    story: "Vibrant traditional weddings along the Krishna river with grand mandaps and heartfelt moments.",
+                    stats: "35+ Happy Weddings Covered",
+                    pos: "center center"
+                },
+                guntur: {
+                    img: "652369335_17935613736035356_8515373101810282062_n.jpg",
+                    tag: "Traditional Rituals & Festive Pheras",
+                    heading: "Guntur — Traditional Weddings",
+                    story: "Festive family weddings filled with authentic Andhra traditions, joy, and grand memories.",
+                    stats: "28+ Happy Weddings Covered",
+                    pos: "center center"
+                },
+                rjy: {
                     img: "654133454_18040384025685409_7668423551746430989_n.jpg",
-                    tag: "Lake Palaces & Boats",
-                    heading: "Udaipur — Lake Weddings",
-                    story: "Romantic weddings right next to the lake with royal palace views and boat entry.",
-                    stats: "40+ Happy Weddings Covered"
+                    tag: "Godavari Riverside Romance",
+                    heading: "Rjy — Riverside Weddings",
+                    story: "Scenic weddings in Rajahmundry near the majestic Godavari with cultural grace and soulful captures.",
+                    stats: "25+ Happy Weddings Covered",
+                    pos: "center center"
                 },
-                kerala: {
-                    img: "654620390_18089550533335175_632383676172421790_n.jpg",
-                    tag: "Green Nature & Backwaters",
-                    heading: "Kerala — Nature Weddings",
-                    story: "Peaceful green nature, houseboat flowers, and backwater wedding celebrations.",
-                    stats: "15+ Happy Weddings Covered"
+                bhimavaram: {
+                    img: "621829770_18085461035126499_5689806598605301436_n.webp",
+                    tag: "Lush Greenery & Royal Festivities",
+                    heading: "Bhimavaram — Royal Festivities",
+                    story: "Warm Delta hospitality, scenic celebrations, and grand wedding moments captured forever.",
+                    stats: "20+ Happy Weddings Covered",
+                    pos: "center 30%"
                 },
-                rajasthan: {
+                kakinada: {
                     img: "654663041_18083966831601910_6151680735575874864_n.jpg",
-                    tag: "Forts & Desert Lights",
-                    heading: "Rajasthan — Fort Weddings",
-                    story: "Heritage fort weddings with colorful decorations, desert lights, and folk music.",
-                    stats: "29+ Happy Weddings Covered"
+                    tag: "Coastal Elegance & Sunset Vows",
+                    heading: "Kakinada — Coastal Weddings",
+                    story: "Breezy coastal celebrations in Kakinada with elegant wedding ceremonies and candid happiness.",
+                    stats: "22+ Happy Weddings Covered",
+                    pos: "center center"
                 }
             };
 
@@ -7823,6 +7829,7 @@
                         maskImg.style.transform = 'scale(1.06)';
                         setTimeout(() => {
                             maskImg.src = item.img;
+                            maskImg.style.objectPosition = item.pos || 'center center';
                             maskImg.onload = () => {
                                 maskImg.style.opacity = '1';
                                 maskImg.style.transform = 'scale(1.0)';
@@ -7834,6 +7841,7 @@
                         bgImg.style.opacity = '0.12';
                         setTimeout(() => {
                             bgImg.src = item.img;
+                            bgImg.style.objectPosition = item.pos || 'center center';
                             bgImg.style.opacity = '0.32';
                         }, 220);
                     }
