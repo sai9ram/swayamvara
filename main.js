@@ -208,7 +208,7 @@
         });
     }
 
-    // 5. Cinematic Intro Splash Screen Engine (5-Second Fast Forward with Smooth Landing)
+    // 5. Cinematic Intro Splash Screen Engine (Full Intro with Final Brand Name & Smooth Landing)
     (function initSplashScreen() {
         const splash = document.getElementById('siteSplashScreen');
         if (!splash) return;
@@ -236,9 +236,7 @@
                 const srcElem = inactiveVideo.querySelector('source');
                 if (srcElem) srcElem.removeAttribute('src');
                 inactiveVideo.load();
-            } catch (e) {
-                // Ignore silent cleanup errors
-            }
+            } catch (e) {}
         }
 
         let isDismissed = false;
@@ -260,29 +258,12 @@
                     try { activeVideo.pause(); } catch (e) {}
                 }
                 splash.style.display = 'none';
-            }, 950);
+            }, 1150);
         }
 
         if (activeVideo) {
             activeVideo.muted = true; // Required by all browsers for autoplay
-
-            // Fast-forward video playback so full animation completes in ~4.2 seconds
-            // allowing a 0.95s silky fade out to land on the index page at ~5 seconds
-            function applyFastForward() {
-                try {
-                    const dur = activeVideo.duration;
-                    if (dur && dur > 0) {
-                        const targetRate = dur / 4.2;
-                        activeVideo.playbackRate = Math.min(2.8, Math.max(1.5, targetRate));
-                    } else {
-                        activeVideo.playbackRate = isMobile ? 1.85 : 2.25;
-                    }
-                } catch (err) {}
-            }
-
-            activeVideo.addEventListener('loadedmetadata', applyFastForward);
-            activeVideo.addEventListener('play', applyFastForward);
-            applyFastForward();
+            activeVideo.playbackRate = 1.0; // Play at full natural speed so the final Brand Name plays completely
 
             // Sync progress indicator bar
             activeVideo.addEventListener('timeupdate', () => {
@@ -292,16 +273,17 @@
                 }
             });
 
-            // Smooth exit when the video finishes
-            activeVideo.addEventListener('ended', dismissSplash);
+            // Smooth exit when the full intro animation finishes and Brand Name settles
+            activeVideo.addEventListener('ended', () => {
+                // Hold briefly on the final Brand Name before smoothly fading into the index page
+                setTimeout(dismissSplash, 450);
+            });
 
             // Trigger autoplay
             const playPromise = activeVideo.play();
             if (playPromise !== undefined) {
                 playPromise.catch(() => {
-                    // Autoplay was blocked by low-power mode or browser restriction
                     activeVideo.muted = true;
-                    applyFastForward();
                     activeVideo.play().catch(() => {});
                 });
             }
@@ -344,11 +326,11 @@
             }
         });
 
-        // 5-Second Maximum Timer: Automatically initiates smooth fade out at ~4.3s
-        // so transition finishes and user lands cleanly on index page at exactly 5 seconds
-        setTimeout(dismissSplash, 4300);
+        // Fail-safe safety timeout: set beyond full video length (10s desktop, 8s mobile)
+        // so it NEVER prematurely cuts off the intro or Brand Name
+        setTimeout(dismissSplash, 12500);
     })();
 
-
 })();
+
 
