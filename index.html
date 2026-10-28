@@ -5322,6 +5322,59 @@
 
 <body>
 
+    <!-- =============================================================
+         CINEMATIC INTRO SPLASH SCREEN (DESKTOP & MOBILE RESPONSIVE)
+         ============================================================= -->
+    <div id="siteSplashScreen" class="site-splash-screen" role="dialog" aria-modal="true" aria-label="Welcome to Swayamvara Wedding Photography">
+        <div class="splash-video-stage">
+            <!-- Desktop Splash Video (1280x720 Landscape) -->
+            <video id="splashVideoDesktop" class="splash-video splash-video--desktop" 
+                   playsinline muted autoplay preload="auto">
+                <source src="Swayamvara%20weddings%20Splash%20Screen%20desktop.mp4" type="video/mp4">
+            </video>
+
+            <!-- Mobile Splash Video (1080x1920 Portrait) -->
+            <video id="splashVideoMobile" class="splash-video splash-video--mobile" 
+                   playsinline muted autoplay preload="auto">
+                <source src="SWAYAMVARA_WEDDINGS_Mobile%20Splash%20screen.mp4" type="video/mp4">
+            </video>
+
+            <!-- Subtle Vignette & Branding Scrim -->
+            <div class="splash-vignette"></div>
+        </div>
+
+        <!-- Controls: Sound Toggle (Desktop) & Skip Intro -->
+        <div class="splash-action-bar">
+            <button id="splashSoundBtn" class="splash-ctrl-btn splash-sound-btn" type="button" aria-label="Toggle sound">
+                <span class="splash-sound-icon">
+                    <svg class="icon-muted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                        <line x1="23" y1="9" x2="17" y2="15"/>
+                        <line x1="17" y1="9" x2="23" y2="15"/>
+                    </svg>
+                    <svg class="icon-unmuted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                </span>
+                <span class="splash-btn-text">SOUND</span>
+            </button>
+
+            <button id="splashSkipBtn" class="splash-ctrl-btn splash-skip-btn" type="button" aria-label="Skip Intro Animation">
+                <span class="splash-btn-text">SKIP INTRO</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="5 4 15 12 5 20 5 4"/>
+                    <line x1="19" y1="5" x2="19" y2="19"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Antique Gold Bottom Progress Indicator -->
+        <div class="splash-progress-track">
+            <div id="splashProgressBar" class="splash-progress-fill"></div>
+        </div>
+    </div>
+
     <!-- TOP MINIMAL NAVIGATION -->
     <header class="site-header">
         <a href="index.html" class="brand-logo">

@@ -208,4 +208,122 @@
         });
     }
 
+    // 5. Cinematic Intro Splash Screen Engine
+    (function initSplashScreen() {
+        const splash = document.getElementById('siteSplashScreen');
+        if (!splash) return;
+
+        const desktopVideo = document.getElementById('splashVideoDesktop');
+        const mobileVideo = document.getElementById('splashVideoMobile');
+        const skipBtn = document.getElementById('splashSkipBtn');
+        const soundBtn = document.getElementById('splashSoundBtn');
+        const progressBar = document.getElementById('splashProgressBar');
+
+        // Lock background page scroll while splash plays
+        document.documentElement.classList.add('splash-active');
+        document.body.classList.add('splash-active');
+
+        // Responsive video selection: Mobile (<= 768px), Desktop (> 768px)
+        const isMobile = window.innerWidth <= 768;
+        const activeVideo = isMobile ? mobileVideo : desktopVideo;
+        const inactiveVideo = isMobile ? desktopVideo : mobileVideo;
+
+        // Unload inactive video to prevent downloading unused heavy video file
+        if (inactiveVideo) {
+            try {
+                inactiveVideo.pause();
+                inactiveVideo.removeAttribute('src');
+                const srcElem = inactiveVideo.querySelector('source');
+                if (srcElem) srcElem.removeAttribute('src');
+                inactiveVideo.load();
+            } catch (e) {
+                // Ignore silent cleanup errors
+            }
+        }
+
+        let isDismissed = false;
+
+        function dismissSplash() {
+            if (isDismissed) return;
+            isDismissed = true;
+
+            splash.classList.add('is-dismissed');
+            document.documentElement.classList.remove('splash-active');
+            document.body.classList.remove('splash-active');
+
+            setTimeout(() => {
+                if (activeVideo) {
+                    try { activeVideo.pause(); } catch (e) {}
+                }
+                splash.style.display = 'none';
+            }, 900);
+        }
+
+        if (activeVideo) {
+            activeVideo.muted = true; // Required by all browsers for autoplay
+
+            // Sync progress indicator bar
+            activeVideo.addEventListener('timeupdate', () => {
+                if (progressBar && activeVideo.duration) {
+                    const pct = Math.min(100, (activeVideo.currentTime / activeVideo.duration) * 100);
+                    progressBar.style.width = pct + '%';
+                }
+            });
+
+            // Smooth exit when the video finishes
+            activeVideo.addEventListener('ended', dismissSplash);
+
+            // Trigger autoplay
+            const playPromise = activeVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    // Autoplay was blocked by low-power mode or browser restriction
+                    activeVideo.muted = true;
+                    activeVideo.play().catch(() => {});
+                });
+            }
+        }
+
+        // Sound toggle button (Desktop video features an audio track)
+        if (soundBtn && activeVideo) {
+            const iconMuted = soundBtn.querySelector('.icon-muted');
+            const iconUnmuted = soundBtn.querySelector('.icon-unmuted');
+
+            soundBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                activeVideo.muted = !activeVideo.muted;
+                if (!activeVideo.muted) {
+                    if (iconMuted) iconMuted.style.display = 'none';
+                    if (iconUnmuted) iconUnmuted.style.display = 'inline-block';
+                    soundBtn.style.borderColor = '#C5A059';
+                    soundBtn.style.color = '#FFFFFF';
+                } else {
+                    if (iconMuted) iconMuted.style.display = 'inline-block';
+                    if (iconUnmuted) iconUnmuted.style.display = 'none';
+                    soundBtn.style.borderColor = 'rgba(197, 160, 89, 0.45)';
+                    soundBtn.style.color = '#FBF7F0';
+                }
+            });
+        }
+
+        // Skip button handler
+        if (skipBtn) {
+            skipBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dismissSplash();
+            });
+        }
+
+        // Keyboard navigation (Escape key skips intro immediately)
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' || e.code === 'Escape') {
+                dismissSplash();
+            }
+        });
+
+        // Fail-safe timeout (Desktop is 10s, Mobile is 8s; 12s safety timeout)
+        setTimeout(dismissSplash, 12000);
+    })();
+
 })();
+
