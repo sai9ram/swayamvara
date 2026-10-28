@@ -208,7 +208,7 @@
         });
     }
 
-    // 5. Cinematic Intro Splash Screen Engine
+    // 5. Cinematic Intro Splash Screen Engine (5-Second Fast Forward with Smooth Landing)
     (function initSplashScreen() {
         const splash = document.getElementById('siteSplashScreen');
         if (!splash) return;
@@ -247,20 +247,42 @@
             if (isDismissed) return;
             isDismissed = true;
 
+            // Trigger smooth cinematic fade out & scale
             splash.classList.add('is-dismissed');
+
+            // Unlock background scroll immediately so the landed page is interactive
             document.documentElement.classList.remove('splash-active');
             document.body.classList.remove('splash-active');
 
+            // Complete landing cleanup after transition finishes
             setTimeout(() => {
                 if (activeVideo) {
                     try { activeVideo.pause(); } catch (e) {}
                 }
                 splash.style.display = 'none';
-            }, 900);
+            }, 950);
         }
 
         if (activeVideo) {
             activeVideo.muted = true; // Required by all browsers for autoplay
+
+            // Fast-forward video playback so full animation completes in ~4.2 seconds
+            // allowing a 0.95s silky fade out to land on the index page at ~5 seconds
+            function applyFastForward() {
+                try {
+                    const dur = activeVideo.duration;
+                    if (dur && dur > 0) {
+                        const targetRate = dur / 4.2;
+                        activeVideo.playbackRate = Math.min(2.8, Math.max(1.5, targetRate));
+                    } else {
+                        activeVideo.playbackRate = isMobile ? 1.85 : 2.25;
+                    }
+                } catch (err) {}
+            }
+
+            activeVideo.addEventListener('loadedmetadata', applyFastForward);
+            activeVideo.addEventListener('play', applyFastForward);
+            applyFastForward();
 
             // Sync progress indicator bar
             activeVideo.addEventListener('timeupdate', () => {
@@ -279,6 +301,7 @@
                 playPromise.catch(() => {
                     // Autoplay was blocked by low-power mode or browser restriction
                     activeVideo.muted = true;
+                    applyFastForward();
                     activeVideo.play().catch(() => {});
                 });
             }
@@ -321,9 +344,11 @@
             }
         });
 
-        // Fail-safe timeout (Desktop is 10s, Mobile is 8s; 12s safety timeout)
-        setTimeout(dismissSplash, 12000);
+        // 5-Second Maximum Timer: Automatically initiates smooth fade out at ~4.3s
+        // so transition finishes and user lands cleanly on index page at exactly 5 seconds
+        setTimeout(dismissSplash, 4300);
     })();
+
 
 })();
 

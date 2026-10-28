@@ -1299,16 +1299,16 @@ body.splash-active {
     overflow: hidden;
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
-                filter 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.95s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform, filter;
 }
 
 .site-splash-screen.is-dismissed {
     opacity: 0;
-    transform: scale(1.03);
-    filter: blur(8px);
+    transform: scale(1.04);
+    filter: blur(12px);
     pointer-events: none;
     visibility: hidden;
 }
