@@ -208,8 +208,10 @@
         });
     }
 
-    // 5. Cinematic Intro Splash Screen Engine (Full Intro with Final Brand Name & Smooth Landing)
+    // 5. Enter The Celebration Gate + Cinematic Intro Splash Screen Engine (With Autoplayed Audio)
     (function initSplashScreen() {
+        const enterScreen = document.getElementById('enterCelebrationScreen');
+        const enterBtn = document.getElementById('enterCelebrationBtn');
         const splash = document.getElementById('siteSplashScreen');
         if (!splash) return;
 
@@ -219,7 +221,7 @@
         const soundBtn = document.getElementById('splashSoundBtn');
         const progressBar = document.getElementById('splashProgressBar');
 
-        // Lock background page scroll while splash plays
+        // Lock background page scroll while gate & splash play
         document.documentElement.classList.add('splash-active');
         document.body.classList.add('splash-active');
 
@@ -240,10 +242,30 @@
         }
 
         let isDismissed = false;
+        let hasEntered = !enterScreen || !enterBtn;
+        let failSafeTimer = null;
+
+        function syncSoundButtonUI() {
+            if (!soundBtn || !activeVideo) return;
+            const iconMuted = soundBtn.querySelector('.icon-muted');
+            const iconUnmuted = soundBtn.querySelector('.icon-unmuted');
+            if (!activeVideo.muted) {
+                if (iconMuted) iconMuted.style.display = 'none';
+                if (iconUnmuted) iconUnmuted.style.display = 'inline-block';
+                soundBtn.style.borderColor = '#C5A059';
+                soundBtn.style.color = '#FFFFFF';
+            } else {
+                if (iconMuted) iconMuted.style.display = 'inline-block';
+                if (iconUnmuted) iconUnmuted.style.display = 'none';
+                soundBtn.style.borderColor = 'rgba(197, 160, 89, 0.45)';
+                soundBtn.style.color = '#FBF7F0';
+            }
+        }
 
         function dismissSplash() {
             if (isDismissed) return;
             isDismissed = true;
+            if (failSafeTimer) clearTimeout(failSafeTimer);
 
             // Trigger smooth cinematic fade out & scale
             splash.classList.add('is-dismissed');
@@ -261,10 +283,28 @@
             }, 1150);
         }
 
-        if (activeVideo) {
-            activeVideo.muted = true; // Required by all browsers for autoplay
-            activeVideo.playbackRate = 1.0; // Play at full natural speed so the final Brand Name plays completely
+        function startSplashPlayback(withAudio) {
+            if (!activeVideo) return;
+            activeVideo.muted = !withAudio;
+            activeVideo.volume = 1.0;
+            activeVideo.playbackRate = 1.0;
+            syncSoundButtonUI();
 
+            const playPromise = activeVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    activeVideo.muted = true;
+                    syncSoundButtonUI();
+                    activeVideo.play().catch(() => {});
+                });
+            }
+
+            // Fail-safe safety timeout: starts when splash begins playing
+            if (failSafeTimer) clearTimeout(failSafeTimer);
+            failSafeTimer = setTimeout(dismissSplash, 12500);
+        }
+
+        if (activeVideo) {
             // Sync progress indicator bar
             activeVideo.addEventListener('timeupdate', () => {
                 if (progressBar && activeVideo.duration) {
@@ -278,36 +318,34 @@
                 // Hold briefly on the final Brand Name before smoothly fading into the index page
                 setTimeout(dismissSplash, 450);
             });
-
-            // Trigger autoplay
-            const playPromise = activeVideo.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(() => {
-                    activeVideo.muted = true;
-                    activeVideo.play().catch(() => {});
-                });
-            }
         }
 
-        // Sound toggle button (Desktop video features an audio track)
-        if (soundBtn && activeVideo) {
-            const iconMuted = soundBtn.querySelector('.icon-muted');
-            const iconUnmuted = soundBtn.querySelector('.icon-unmuted');
+        // Enter The Celebration CTA: user gesture unlocks unmuted audio autoplay
+        if (enterScreen && enterBtn) {
+            enterBtn.addEventListener('click', () => {
+                if (hasEntered) return;
+                hasEntered = true;
 
+                // Start splash video with audio immediately inside the user click gesture
+                startSplashPlayback(true);
+
+                // Smoothly reveal the splash screen
+                enterScreen.classList.add('is-entered');
+                setTimeout(() => {
+                    enterScreen.style.display = 'none';
+                }, 900);
+            });
+        } else {
+            // Fallback if gate is absent
+            startSplashPlayback(false);
+        }
+
+        // Sound toggle button
+        if (soundBtn && activeVideo) {
             soundBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 activeVideo.muted = !activeVideo.muted;
-                if (!activeVideo.muted) {
-                    if (iconMuted) iconMuted.style.display = 'none';
-                    if (iconUnmuted) iconUnmuted.style.display = 'inline-block';
-                    soundBtn.style.borderColor = '#C5A059';
-                    soundBtn.style.color = '#FFFFFF';
-                } else {
-                    if (iconMuted) iconMuted.style.display = 'inline-block';
-                    if (iconUnmuted) iconUnmuted.style.display = 'none';
-                    soundBtn.style.borderColor = 'rgba(197, 160, 89, 0.45)';
-                    soundBtn.style.color = '#FBF7F0';
-                }
+                syncSoundButtonUI();
             });
         }
 
@@ -319,16 +357,12 @@
             });
         }
 
-        // Keyboard navigation (Escape key skips intro immediately)
+        // Keyboard navigation (Escape key skips intro once entered)
         window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' || e.code === 'Escape') {
+            if ((e.key === 'Escape' || e.code === 'Escape') && hasEntered) {
                 dismissSplash();
             }
         });
-
-        // Fail-safe safety timeout: set beyond full video length (10s desktop, 8s mobile)
-        // so it NEVER prematurely cuts off the intro or Brand Name
-        setTimeout(dismissSplash, 12500);
     })();
 
 })();
