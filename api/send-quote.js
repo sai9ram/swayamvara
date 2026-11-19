@@ -303,8 +303,8 @@ module.exports = async (req, res) => {
                             <div style="background: #FFFDF9; border: 1px solid #EDE6DC; border-radius: 8px; padding: 16px; font-size: 12px; color: #555; line-height: 1.6;">
                                 <strong style="color: #581D2B;">Next Steps to Lock Dates:</strong><br>
                                 • Reply to this email or contact us on WhatsApp at <strong>+91 79893 04874</strong> to confirm crew availability.<br>
-                                • 25% booking deposit locks your dates exclusively on our master creative calendar.<br>
-                                • Standard deliverables include Master High-Res Edited Photos, 4K Cinematic Highlights Film, and 1-Year Private Online Cloud Gallery access.
+                                • 30% booking deposit locks your dates exclusively on our master creative calendar.<br>
+                                • Standard deliverables include Master High-Res Edited Photos and 4K Cinematic Highlights Film.
                             </div>
                         </td>
                     </tr>

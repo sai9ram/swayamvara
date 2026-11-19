@@ -394,16 +394,15 @@
                                     <ul class="q-doc-list">
                                         <li>Master Color-Graded High-Resolution Photographs</li>
                                         <li>4K Ultra-HD Cinematic Wedding Highlights &amp; Full Film</li>
-                                        <li>Private Online Cloud Gallery with 1-Year Access</li>
                                         <li>High-Speed Digital Master Drive Delivery</li>
                                     </ul>
                                 </div>
                                 <div class="q-doc-terms-box">
                                     <div class="q-doc-box-title">PAYMENT MILESTONES</div>
                                     <ul class="q-doc-list">
-                                        <li><strong>25% Advance:</strong> Upon booking to lock the dates</li>
+                                        <li><strong>30% Advance:</strong> Upon booking to lock the dates</li>
                                         <li><strong>50% Milestone:</strong> 7 days prior to wedding events</li>
-                                        <li><strong>25% Settlement:</strong> Upon delivery of final films &amp; gallery</li>
+                                        <li><strong>20% Settlement:</strong> Upon delivery of final films &amp; gallery</li>
                                     </ul>
                                 </div>
                             </div>
